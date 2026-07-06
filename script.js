@@ -18,11 +18,11 @@ const total = cards3D.length;
 let currentIndex = 0;
 
 const carouselStates = {
-  active: { xPercent: 0, scale: 1, rotateY: 0, opacity: 1, zIndex: 3, z: 0 },
-  next: { xPercent: 45, scale: 0.85, rotateY: -12, opacity: 0.6, zIndex: 2, z: -150 },
-  prev: { xPercent: -45, scale: 0.85, rotateY: 12, opacity: 0.6, zIndex: 2, z: -150 },
-  'hidden-right': { xPercent: 80, scale: 0.7, rotateY: -20, opacity: 0, zIndex: 1, z: -250 },
-  'hidden-left': { xPercent: -80, scale: 0.7, rotateY: 20, opacity: 0, zIndex: 1, z: -250 }
+  active: { x: 0, scale: 1, rotateY: 0, opacity: 1, zIndex: 3, z: 0 },
+  next: { x: 300, scale: 0.85, rotateY: -12, opacity: 0.6, zIndex: 2, z: -150 },
+  prev: { x: -300, scale: 0.85, rotateY: 12, opacity: 0.6, zIndex: 2, z: -150 },
+  'hidden-right': { x: 540, scale: 0.7, rotateY: -20, opacity: 0, zIndex: 1, z: -250 },
+  'hidden-left': { x: -540, scale: 0.7, rotateY: 20, opacity: 0, zIndex: 1, z: -250 }
 };
 
 function updateCarousel() {
@@ -42,13 +42,13 @@ function updateCarousel() {
 
     gsap.killTweensOf(card);
     gsap.to(card, {
-      xPercent: target.xPercent,
-      scale: target.scale,
-      rotationY: target.rotateY,
+      '--card-x': `${target.x}px`,
+      '--card-scale': target.scale,
+      '--card-rotateY': `${target.rotateY}deg`,
+      '--card-z': `${target.z}px`,
       opacity: target.opacity,
-      z: target.z,
-      duration: 0.95,
-      ease: 'power3.inOut',
+      duration: 0.55,
+      ease: 'power3.out',
       overwrite: 'auto'
     });
   });
@@ -61,27 +61,55 @@ function animateCarouselTo(index) {
   currentIndex = index;
   updateCarousel();
 }
+function handleTreatmentCardClick(index, event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  if (window.innerWidth <= 768) {
+    openTreatmentModal(index);
+    return;
+  }
+
+  moveCarousel(index);
+}
 updateCarousel();
 
 // Touch swipe for 3D carousel
 (function() {
   const wrap = document.getElementById('carousel3D');
   let startX = 0;
+  let startY = 0;
   let isDragging = false;
+  let isHorizontalSwipe = false;
+
   wrap.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
+    const touch = e.touches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
     isDragging = true;
+    isHorizontalSwipe = false;
   }, { passive: true });
+
   wrap.addEventListener('touchmove', e => {
     if (!isDragging) return;
-    const dx = e.touches[0].clientX - startX;
-    if (Math.abs(dx) > 10) {
+    const touch = e.touches[0];
+    const dx = touch.clientX - startX;
+    const dy = touch.clientY - startY;
+
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+      isHorizontalSwipe = true;
       e.preventDefault();
     }
   }, { passive: false });
+
   wrap.addEventListener('touchend', e => {
     if (!isDragging) return;
     isDragging = false;
+
+    if (!isHorizontalSwipe) return;
+
     const dx = e.changedTouches[0].clientX - startX;
     if (Math.abs(dx) > 70) {
       dx < 0 ? animateCarouselTo((currentIndex + 1) % total) : animateCarouselTo((currentIndex - 1 + total) % total);
