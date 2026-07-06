@@ -17,15 +17,40 @@ const cards3D = Array.from(document.querySelectorAll('.t-card-3d'));
 const total = cards3D.length;
 let currentIndex = 0;
 
+const carouselStates = {
+  active: { xPercent: 0, scale: 1, rotateY: 0, opacity: 1, zIndex: 3, z: 0 },
+  next: { xPercent: 45, scale: 0.85, rotateY: -12, opacity: 0.6, zIndex: 2, z: -150 },
+  prev: { xPercent: -45, scale: 0.85, rotateY: 12, opacity: 0.6, zIndex: 2, z: -150 },
+  'hidden-right': { xPercent: 80, scale: 0.7, rotateY: -20, opacity: 0, zIndex: 1, z: -250 },
+  'hidden-left': { xPercent: -80, scale: 0.7, rotateY: 20, opacity: 0, zIndex: 1, z: -250 }
+};
+
 function updateCarousel() {
   cards3D.forEach((card, i) => {
-    card.className = 't-card-3d';
     const dist = (i - currentIndex + total) % total;
-    if (dist === 0) card.classList.add('active');
-    else if (dist === 1) card.classList.add('next');
-    else if (dist === total - 1) card.classList.add('prev');
-    else if (dist <= Math.floor(total / 2)) card.classList.add('hidden-right');
-    else card.classList.add('hidden-left');
+    let stateName = 'hidden-left';
+    if (dist === 0) stateName = 'active';
+    else if (dist === 1) stateName = 'next';
+    else if (dist === total - 1) stateName = 'prev';
+    else if (dist <= Math.floor(total / 2)) stateName = 'hidden-right';
+
+    const target = carouselStates[stateName];
+    card.classList.remove('active', 'next', 'prev', 'hidden-left', 'hidden-right');
+    card.classList.add(stateName);
+    card.style.zIndex = target.zIndex;
+    card.style.pointerEvents = stateName === 'hidden-left' || stateName === 'hidden-right' ? 'none' : 'auto';
+
+    gsap.killTweensOf(card);
+    gsap.to(card, {
+      xPercent: target.xPercent,
+      scale: target.scale,
+      rotationY: target.rotateY,
+      opacity: target.opacity,
+      z: target.z,
+      duration: 0.75,
+      ease: 'power3.inOut',
+      overwrite: 'auto'
+    });
   });
 }
 
