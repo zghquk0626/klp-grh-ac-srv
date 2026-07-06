@@ -47,7 +47,7 @@ function updateCarousel() {
       rotationY: target.rotateY,
       opacity: target.opacity,
       z: target.z,
-      duration: 0.75,
+      duration: 0.95,
       ease: 'power3.inOut',
       overwrite: 'auto'
     });
@@ -57,16 +57,35 @@ function updateCarousel() {
 function moveCarousel(index) { currentIndex = index; updateCarousel(); }
 function prevCarousel() { currentIndex = (currentIndex - 1 + total) % total; updateCarousel(); }
 function nextCarousel() { currentIndex = (currentIndex + 1) % total; updateCarousel(); }
+function animateCarouselTo(index) {
+  currentIndex = index;
+  updateCarousel();
+}
 updateCarousel();
 
 // Touch swipe for 3D carousel
 (function() {
   const wrap = document.getElementById('carousel3D');
   let startX = 0;
-  wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  let isDragging = false;
+  wrap.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+  wrap.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    const dx = e.touches[0].clientX - startX;
+    if (Math.abs(dx) > 10) {
+      e.preventDefault();
+    }
+  }, { passive: false });
   wrap.addEventListener('touchend', e => {
+    if (!isDragging) return;
+    isDragging = false;
     const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) { dx < 0 ? nextCarousel() : prevCarousel(); }
+    if (Math.abs(dx) > 70) {
+      dx < 0 ? animateCarouselTo((currentIndex + 1) % total) : animateCarouselTo((currentIndex - 1 + total) % total);
+    }
   }, { passive: true });
 })();
 
