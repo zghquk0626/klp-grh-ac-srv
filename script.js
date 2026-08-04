@@ -564,7 +564,7 @@ document.addEventListener('keydown', function(e) {
 const translations = {
   en: {
     // Nav
-    nav_treatments: 'Treatments', nav_testimonials: 'Testimonials', nav_about: 'About Us',
+    nav_treatments: 'Treatments', nav_testimonials: 'Testimonials', nav_about: 'Our Doctor',
     nav_quiz: 'Treatment Quiz', nav_book: 'Book Consultation',
     // Hero
     hero_tagline: 'Aesthetic Clinic Surabaya',
@@ -632,7 +632,7 @@ const translations = {
     testi9_quote: '"I\u2019m Yani from Hong Kong — I travelled here for treatment and was so happy to receive a discount from Dr. Yoan. Thank you, Doc!"',
     testi9_treat: 'Revolushine',
     // About Us
-    about_tagline: 'About Us',
+    about_tagline: 'Our Doctor',
     about_creds: 'Board-Certified Aesthetic Physician',
     about_p1: 'Revolushine was built to bridge the gap between clinical excellence and heartfelt care. Led by Dr. Yoanita, we provide a sanctuary where your concerns are heard, and treatments are meticulously customized.',
     about_p2: 'Her approach isn\'t to fix what isn\'t broken. It\'s to listen deeply, understand fully, and enhance what\'s already there using academic-medical-center protocols. The result never looks like a treatment—it just looks like the best version of you.',
@@ -664,7 +664,7 @@ const translations = {
   },
   id: {
     // Nav
-    nav_treatments: 'Treatment', nav_testimonials: 'Testimoni', nav_about: 'Tentang Kami',
+    nav_treatments: 'Treatment', nav_testimonials: 'Testimoni', nav_about: 'Dokter Kami',
     nav_quiz: 'Treatment Quiz', nav_book: 'Konsultasi Sekarang',
     // Hero
     hero_tagline: 'Klinik Estetika Surabaya',
@@ -732,7 +732,7 @@ const translations = {
     testi9_quote: '"saya yani dari Hongkong, jauh-jauh datang buat perawatan, happy banget dapat discount dari dokter Yoan, thanks Dok"',
     testi9_treat: 'Revolushine',
     // About Us
-    about_tagline: 'Tentang Kami',
+    about_tagline: 'Dokter Kami',
     about_creds: 'Dokter Estetika Bersertifikat',
     about_p1: 'Revolushine dibangun untuk menjembatani kesenjangan antara keunggulan klinis dan kepedulian yang tulus. Dipimpin oleh Dr. Yoanita, kami menyediakan ruang di mana kekhawatiranmu didengar dan perawatan dirancang khusus untukmu.',
     about_p2: 'Pendekatannya bukan memperbaiki yang tidak rusak. Melainkan mendengarkan dengan sepenuh hati, memahami sepenuhnya, dan menonjolkan apa yang sudah ada menggunakan protokol medis akademis. Hasilnya tidak pernah terlihat seperti treatment—hanya terlihat seperti versi terbaik dari dirimu.',
