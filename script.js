@@ -262,8 +262,8 @@ function switchCase(i) {
       afterImg.src = c.after;
       const beforeWebp = document.getElementById('baBeforeWebp');
       const afterWebp = document.getElementById('baAfterWebp');
-      if (beforeWebp) beforeWebp.srcset = c.before + '.webp';
-      if (afterWebp) afterWebp.srcset = c.after + '.webp';
+      if (beforeWebp) beforeWebp.srcset = c.before.replace(/\.\w+$/, '.webp');
+      if (afterWebp) afterWebp.srcset = c.after.replace(/\.\w+$/, '.webp');
       document.getElementById('baTagline').textContent = d.tagline;
       document.getElementById('baTitle').innerHTML = d.title;
       document.getElementById('baCopy').textContent = d.copy;
