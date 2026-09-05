@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /img/revolushine-beforeafter/analisis-revolushine.html
+Disallow: /generate_treatment_pages.py
+Disallow: /convert_to_webp.py
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://revolushine.id/sitemap.xml
