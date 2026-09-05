@@ -423,3 +423,33 @@ document.addEventListener('keydown', function(e) {
 })();
 
 // Language switcher loaded from js/i18n.js
+
+// ── FREE CONSULTATION POPUP ──
+(function(){
+  const POPUP_TIMER = 60000;
+  const SCROLL_THRESHOLD = 0.3;
+  const popup = document.getElementById('ctaPopup');
+  if (!popup) return;
+  if (sessionStorage.getItem('ctaDismissed')) return;
+
+  let shown = false;
+  function showPopup() {
+    if (shown) return;
+    shown = true;
+    popup.classList.add('show');
+  }
+  setTimeout(showPopup, POPUP_TIMER);
+  window.addEventListener('scroll', function onScroll() {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    if (max > 0 && window.scrollY / max >= SCROLL_THRESHOLD) {
+      showPopup();
+      window.removeEventListener('scroll', onScroll);
+    }
+  }, { passive: true });
+
+  window.closeCtaPopup = function() {
+    sessionStorage.setItem('ctaDismissed', '1');
+    popup.classList.remove('show');
+  };
+})();
