@@ -18,6 +18,7 @@ html{scroll-behavior:auto}
 }
 body{font-family:var(--font-main);background:var(--bg-primary);color:var(--text-main);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
 img{max-width:100%;display:block}
+picture{display:contents}
 a{text-decoration:none;color:inherit}
 button{font-family:var(--font-main)}
 .container{max-width:1300px;margin:0 auto;}
@@ -82,7 +83,7 @@ em{font-style:normal;color:var(--bg-dark);font-weight:300;}
 }
 
 /* ── HERO ── */
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:80px;overflow:hidden;background:url('img/hero-img-revolushine.jpg') center center/cover no-repeat;}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:80px;overflow:hidden;background:url('img/hero-img-revolushine.webp') center center/cover no-repeat;}
 .hero::before{content:'';position:absolute;inset:0;background:rgba(18,8,12,.48);z-index:1;}
 .hero-content{position:relative;z-index:10;max-width:860px;padding:0 32px;display:flex;flex-direction:column;align-items:center;text-align:center;color:#fff;}
 .hero-content .tagline{color:rgba(255,255,255,.7);}
