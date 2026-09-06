@@ -431,34 +431,203 @@ if (promoLightboxEl) {
 
 // Language switcher loaded from js/i18n.js
 
-// ── FREE CONSULTATION POPUP ──
+// ── AI CHAT WIDGET (v2.0 · replaces the free-consultation popup) ──
 (function(){
-  const POPUP_TIMER = 60000;
-  const SCROLL_THRESHOLD = 0.3;
-  const popup = document.getElementById('ctaPopup');
-  if (!popup) return;
-  if (sessionStorage.getItem('ctaDismissed')) return;
+  const bubbleEl = document.getElementById('chatBubble');
+  if (!bubbleEl) return; // treatment pages: keep the WhatsApp float as-is
 
-  let shown = false;
-  function showPopup() {
-    if (shown) return;
-    shown = true;
-    popup.classList.add('show');
+  const windowEl = document.getElementById('chatWindow');
+  const msgsEl = document.getElementById('chatMessages');
+  const inputEl = document.getElementById('chatInput');
+  const floatWrap = document.querySelector('.whatsapp-float-wrap');
+  const WA_NUMBER = '6287736386388';
+  const TRIGGER = { timer: 60000, scroll: 0.3 };
+
+  let opened = false;
+  let bubbleShown = false;
+
+  const waLink = t => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`;
+  const cd = () => chatData[currentLang] || chatData.id;
+
+  // Trigger: swap the WhatsApp float for the pulsing chat bubble
+  function showBubble() {
+    if (bubbleShown) return;
+    bubbleShown = true;
+    bubbleEl.classList.add('show');
+    if (floatWrap) floatWrap.classList.add('hide');
   }
-  setTimeout(showPopup, POPUP_TIMER);
+  setTimeout(showBubble, TRIGGER.timer);
   window.addEventListener('scroll', function onScroll() {
     const doc = document.documentElement;
     const max = doc.scrollHeight - window.innerHeight;
-    if (max > 0 && window.scrollY / max >= SCROLL_THRESHOLD) {
-      showPopup();
+    if (max > 0 && window.scrollY / max >= TRIGGER.scroll) {
+      showBubble();
       window.removeEventListener('scroll', onScroll);
     }
   }, { passive: true });
 
-  window.closeCtaPopup = function() {
-    sessionStorage.setItem('ctaDismissed', '1');
-    popup.classList.remove('show');
+  // Rendering helpers
+  function scrollDown() { msgsEl.scrollTop = msgsEl.scrollHeight; }
+
+  function addMsg(text, user) {
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + (user ? 'chat-msg-user' : 'chat-msg-bot');
+    div.textContent = text;
+    msgsEl.appendChild(div);
+    scrollDown();
+  }
+
+  function addTyping() {
+    const div = document.createElement('div');
+    div.className = 'chat-msg chat-msg-bot chat-typing';
+    div.innerHTML = '<span class="c-dot"></span><span class="c-dot"></span><span class="c-dot"></span>';
+    msgsEl.appendChild(div);
+    scrollDown();
+    return div;
+  }
+
+  function addCtaLink(url, label, intro) {
+    const box = document.createElement('div');
+    box.className = 'chat-msg chat-msg-bot chat-msg-link';
+    if (intro) {
+      const p = document.createElement('p');
+      p.textContent = intro;
+      box.appendChild(p);
+    }
+    const type = url.includes('instagram.com') ? 'ig' : (label.toLowerCase().includes('map') ? 'maps' : 'wa');
+    const a = document.createElement('a');
+    a.href = url;
+    a.className = 'chat-cta';
+    a.setAttribute('data-cta', type);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = label;
+    box.appendChild(a);
+    msgsEl.appendChild(box);
+    scrollDown();
+  }
+
+  function botSay(text, then) {
+    const typing = addTyping();
+    setTimeout(() => {
+      typing.remove();
+      if (text) addMsg(text);
+      if (then) then();
+    }, 650);
+  }
+
+  // Greeting + quick-reply buttons + free-text button
+  function renderActions() {
+    const d = cd();
+    const box = document.createElement('div');
+    box.className = 'chat-actions';
+    d.chips.forEach(c => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chat-chip';
+      btn.textContent = c.label;
+      btn.addEventListener('click', () => handleChip(c));
+      box.appendChild(btn);
+    });
+    const ft = document.createElement('button');
+    ft.type = 'button';
+    ft.className = 'chat-freetext';
+    ft.textContent = d.freeTextBtn;
+    ft.addEventListener('click', handleFreeText);
+    box.appendChild(ft);
+    msgsEl.appendChild(box);
+    scrollDown();
+  }
+
+  function finishActions() {
+    opened = true;
+    const box = msgsEl.querySelector('.chat-actions');
+    if (box) box.remove();
+  }
+
+  function handleChip(c) {
+    finishActions();
+    const d = cd();
+    if (c.waMessage) {
+      botSay(c.reply, () => addCtaLink(waLink(c.waMessage), d.waCta, d.handoffText));
+    } else {
+      botSay(c.info, () => { if (c.url) addCtaLink(c.url, c.cta); });
+    }
+  }
+
+  function handleFreeText() {
+    finishActions();
+    const d = cd();
+    botSay(d.freeTextReply, () => inputEl.focus());
+  }
+
+  function matchAutoReply(text) {
+    const t = text.toLowerCase().replace(/[^a-z0-9\s]/gi, ' ').replace(/\s+/g, ' ').trim();
+    for (const r of cd().autoReplies) {
+      if (r.keys.some(k => t.includes(k))) return r;
+    }
+    return null;
+  }
+
+  function handleTyped(text) {
+    finishActions();
+    addMsg(text, true);
+    const hit = matchAutoReply(text);
+    if (hit) {
+      botSay(hit.info, () => { if (hit.url) addCtaLink(hit.url, hit.cta); });
+    } else {
+      const d = cd();
+      const url = waLink(text);
+      botSay(null, () => {
+        addCtaLink(url, d.waCta, d.handoffText);
+        window.open(url, '_blank', 'noopener');
+      });
+    }
+  }
+
+  // Open / close / toggle
+  function openChat() {
+    windowEl.classList.add('open');
+    bubbleEl.setAttribute('aria-expanded', 'true');
+    bubbleEl.setAttribute('aria-label', 'Tutup chat');
+    if (msgsEl.children.length === 0) {
+      opened = false;
+      addMsg(cd().greeting);
+      renderActions();
+    }
+    setTimeout(() => inputEl.focus(), 250);
+  }
+
+  function closeChat() {
+    windowEl.classList.remove('open');
+    bubbleEl.setAttribute('aria-expanded', 'false');
+    bubbleEl.setAttribute('aria-label', 'Chat dengan tim Revolushine');
+  }
+
+  window.toggleChat = () => windowEl.classList.contains('open') ? closeChat() : openChat();
+  window.closeChat = closeChat;
+
+  window.sendChat = function(e) {
+    if (e) e.preventDefault();
+    const msg = inputEl.value.trim();
+    if (!msg) return false;
+    inputEl.value = '';
+    handleTyped(msg);
+    return false;
   };
+
+  // Keep placeholder/aria in sync with the active language
+  inputEl.placeholder = cd().placeholder;
+  document.addEventListener('langchange', () => {
+    inputEl.placeholder = cd().placeholder;
+    const actions = msgsEl.querySelector('.chat-actions');
+    if (actions || msgsEl.children.length === 0) {
+      msgsEl.innerHTML = '';
+      opened = false;
+      addMsg(cd().greeting);
+      renderActions();
+    }
+  });
 })();
 
 // ── ACCESSIBILITY: MODAL FOCUS TRAP ──

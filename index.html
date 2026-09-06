@@ -70,6 +70,7 @@
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css"></noscript>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
 
@@ -614,16 +615,29 @@
 <script defer src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script defer src="js/i18n.js"></script>
 <script defer src="js/treatment-data.js"></script>
+<script defer src="js/chat-data.js"></script>
 <script defer src="quiz-logic.js"></script>
 <script defer src="script.js"></script>
 
-<!-- ── FREE CONSULTATION POPUP ── -->
-<div class="cta-popup" id="ctaPopup">
-  <button class="cta-popup-close" onclick="closeCtaPopup()" aria-label="Close">&#x2715;</button>
-  <p class="cta-popup-text" data-i18n="popup_text">Anda mendapatkan kesempatan konsultasi GRATIS!</p>
-  <div class="cta-popup-btns">
-    <a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="cta-popup-wa" target="_blank" rel="noopener" data-i18n="popup_wa">Chat Sekarang!</a>
-    <a href="https://www.instagram.com/revolushine.id/" class="cta-popup-ig" target="_blank" rel="noopener" data-i18n="popup_ig">Lihat Portfolio</a>
+<!-- ── AI CHAT WIDGET (v2.0 · replaces the free-consultation popup) ── -->
+<div id="chatWrap">
+  <button type="button" class="chat-bubble" id="chatBubble" onclick="toggleChat()" aria-label="Chat dengan tim Revolushine" aria-expanded="false">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.5 1.2 4.8 3.2 6.4L4.6 21l3.6-1.9c1.2.4 2.5.6 3.8.6 5.5 0 10-3.9 10-8.7S17.5 3 12 3zm-5.3 7.6h10.6c.4 0 .7.3.7.7s-.3.7-.7.7H6.7c-.4 0-.7-.3-.7-.7s.3-.7.7-.7z"/></svg>
+  </button>
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat Revolushine" data-lenis-prevent>
+    <div class="chat-header">
+      <div class="chat-avatar">R</div>
+      <div class="chat-title">
+        <span class="chat-name">Revolushine</span>
+        <span class="chat-status" data-i18n="chat_status">● Online</span>
+      </div>
+      <button type="button" class="chat-close" onclick="closeChat()" aria-label="Tutup">&#x2715;</button>
+    </div>
+    <div class="chat-messages" id="chatMessages" data-lenis-prevent></div>
+    <form class="chat-form" onsubmit="return sendChat(event)">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ketik pesanmu&hellip;" aria-label="Ketik pesan" autocomplete="off">
+      <button type="submit" class="chat-send" id="chatSend" aria-label="Kirim">&#10148;</button>
+    </form>
   </div>
 </div>
 </body>

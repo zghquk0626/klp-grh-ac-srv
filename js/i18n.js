@@ -79,9 +79,7 @@ const translations = {
     foot_wa: 'WhatsApp Consultation',
     foot_address: 'Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.',
     foot_copy: '\u00a9 2026 Revolushine Clinics. All rights reserved.',
-    popup_text: 'You\'ve got a FREE consultation!',
-    popup_wa: 'Chat Now!',
-    popup_ig: 'View Portfolio'
+    chat_status: '● Online'
   },
   id: {
     nav_treatments: 'Treatment', nav_testimonials: 'Testimoni', nav_about: 'Dokter Kami',
@@ -162,9 +160,7 @@ const translations = {
     foot_wa: 'Konsultasi via WhatsApp',
     foot_address: 'Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.',
     foot_copy: '\u00a9 2026 Revolushine Clinics. Hak cipta dilindungi.',
-    popup_text: 'Anda mendapatkan kesempatan konsultasi GRATIS!',
-    popup_wa: 'Chat Sekarang!',
-    popup_ig: 'Lihat Portfolio'
+    chat_status: '● Online'
   }
 };
 
@@ -199,6 +195,7 @@ function setLang(lang) {
     const isActive = lang === 'en' ? enIds.includes(btn.id) : idIds.includes(btn.id);
     btn.classList.toggle('active', isActive);
   });
+  document.dispatchEvent(new CustomEvent('langchange'));
 }
 
 setLang('id');
