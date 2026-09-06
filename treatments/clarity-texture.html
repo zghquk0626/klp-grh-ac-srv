@@ -70,7 +70,7 @@
     <li><a href="../#hotspot" data-i18n="nav_treatments">Treatment</a></li>
     <li><a href="../#testimonials" data-i18n="nav_testimonials">Testimoni</a></li>
     <li><a href="../#about" data-i18n="nav_about">Dokter Kami</a></li>
-    <li><a href="#" onclick="openQuiz();return false;" data-i18n="nav_quiz">Treatment Quiz</a></li>
+    <li><button type="button" class="nav-quiz-btn" onclick="openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
     <li class="lang-switcher desktop-lang">
       <button class="lang-btn" id="langEn" onclick="setLang('en')">ENG</button>
       <button class="lang-btn active" id="langId" onclick="setLang('id')">IND</button>
@@ -87,12 +87,12 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="toggleMobileMenu()">&#10005;</button>
+  <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">&#10005;</button>
   <ul>
     <li><a href="../#hotspot" onclick="toggleMobileMenu()" data-i18n="nav_treatments">Treatment</a></li>
     <li><a href="../#testimonials" onclick="toggleMobileMenu()" data-i18n="nav_testimonials">Testimoni</a></li>
     <li><a href="../#about" onclick="toggleMobileMenu()" data-i18n="nav_about">Dokter Kami</a></li>
-    <li><a href="#" onclick="toggleMobileMenu();openQuiz();return false;" data-i18n="nav_quiz">Treatment Quiz</a></li>
+    <li><button type="button" class="nav-quiz-btn" onclick="toggleMobileMenu();openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
     <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" onclick="toggleMobileMenu()" data-i18n="nav_book">Konsultasi Sekarang</a></li>
   </ul>
 </div>
@@ -102,7 +102,7 @@
     <a href="../" style="color:#fff;font-size:14px;text-decoration:none;opacity:0.8;">&#8592; Kembali ke Beranda</a>
     <h1 class="title-xl" style="color:#fff;margin-top:16px;font-size:clamp(28px,5vw,48px);">Diamond Silk & Peeling Surabaya</h1>
     <p style="color:#fff;opacity:0.9;margin-top:12px;font-size:17px;line-height:1.6;">Treatment clarity, texture & peeling di Revolushine Surabaya fokus pada pembersihan mendalam, eksfoliasi, dan perbaikan permukaan kulit untuk acne dan scar.</p>
-    <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20clarity%20texture%20di%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" style="display:inline-block;margin-top:20px;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
+    <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20clarity%20texture%20di%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
   </div>
 </header>
 
@@ -113,7 +113,7 @@
 
 <section class="section" style="padding:40px 24px;text-align:center;">
   <p style="font-size:17px;color:var(--text-muted);margin-bottom:20px;">Butuh konsultasi lebih lanjut? Hubungi kami langsung.</p>
-  <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20clarity%20texture%20di%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" style="display:inline-block;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
+  <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20clarity%20texture%20di%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" rel="noopener" style="display:inline-block;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
 </section>
 
 <footer>
@@ -153,7 +153,7 @@
 </div>
 
 <div class="quiz-overlay" id="quizOverlay" data-lenis-prevent>
-  <button class="qclose" onclick="closeQuiz()">&#10005;</button>
+  <button class="qclose" onclick="closeQuiz()" aria-label="Close">&#10005;</button>
   <div class="qmodal">
     <div class="qprogress">
       <div class="qdot on" id="dot1"></div>
@@ -187,7 +187,7 @@
       <p class="q-label" data-i18n="quiz_result_label">Treatment yang Direkomendasikan</p>
       <div class="res-name" id="resName"></div>
       <p class="res-desc" id="resDesc"></p>
-      <a id="resWA" href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-primary" target="_blank" data-i18n="nav_book">Konsultasi Sekarang</a>
+      <a id="resWA" href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-primary" target="_blank" rel="noopener" data-i18n="nav_book">Konsultasi Sekarang</a>
       <div style="text-align:center"><button class="btn-retry" onclick="resetQuiz()" data-i18n="quiz_retry">&#8592; Ulangi quiz</button></div>
     </div>
   </div>

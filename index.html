@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Revolushine \u2013 Klinik Kecantikan Surabaya | LIFU, Filler &amp; Skinbooster</title>
 <meta name="description" content="Klinik kecantikan Revolushine di Graha Famili Surabaya oleh dr. Yoanita Budiwiyono. Layanan unggulan: LIFU, filler bibir, skin booster, Diamond Silk &amp; Hair Plasma. Konsultasi gratis via WhatsApp!" />
-<meta name="keywords" content="Revolushine, Surabaya, aesthetic clinic, LIFU, filler, facial, skin rejuvenation, skin booster, hair plasma, consultation" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://revolushine.id/" />
 <link rel="alternate" hreflang="id" href="https://revolushine.id/" />
@@ -80,7 +79,7 @@
     <li><a href="#hotspot" data-i18n="nav_treatments">Treatments</a></li>
     <li><a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a></li>
     <li><a href="#about" data-i18n="nav_about">Our Doctor</a></li>
-    <li><a href="#" onclick="openQuiz();return false;" data-i18n="nav_quiz">Treatment Quiz</a></li>
+    <li><button type="button" class="nav-quiz-btn" onclick="openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
     <li class="lang-switcher desktop-lang">
       <button class="lang-btn active" id="langEn" onclick="setLang('en')">ENG</button>
       <button class="lang-btn" id="langId" onclick="setLang('id')">IND</button>
@@ -97,12 +96,12 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+  <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">✕</button>
   <ul>
     <li><a href="#hotspot" onclick="toggleMobileMenu()" data-i18n="nav_treatments">Treatments</a></li>
     <li><a href="#testimonials" onclick="toggleMobileMenu()" data-i18n="nav_testimonials">Testimonials</a></li>
     <li><a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about">Our Doctor</a></li>
-    <li><a href="#" onclick="toggleMobileMenu();openQuiz();return false;" data-i18n="nav_quiz">Treatment Quiz</a></li>
+    <li><button type="button" class="nav-quiz-btn" onclick="toggleMobileMenu();openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
     <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" onclick="toggleMobileMenu()" data-i18n="nav_book">Book Consultation</a></li>
   </ul>
 </div>
@@ -116,7 +115,7 @@
       <button class="btn-hero-quiz" onclick="openQuiz()" data-i18n="btn_quiz">Treatment Quiz</button>
     </div>
     <div class="g-fade" style="margin-top:16px;">
-      <a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-book-hero" target="_blank" data-i18n="nav_book">Book Consultation</a>
+      <a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-book-hero" target="_blank" rel="noopener" data-i18n="nav_book">Book Consultation</a>
     </div>
   </div>
 </header>
@@ -497,7 +496,7 @@
         <li><a href="#hotspot" data-i18n="nav_treatments">Treatments</a></li>
         <li><a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a></li>
         <li><a href="#about" data-i18n="nav_about">About Us</a></li>
-        <li><a href="#" onclick="openQuiz();return false;" data-i18n="nav_quiz">Treatment Quiz</a></li>
+        <li><button type="button" class="nav-quiz-btn" onclick="openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
         <li><a href="/privacy.html">Privacy Policy</a></li>
       </ul>
     </div>
@@ -546,14 +545,14 @@
       <span class="tmodal-tagline" id="tmodalTagline">Signature Procedure</span>
       <h2 class="tmodal-title" id="tmodalTitle"></h2>
       <p class="tmodal-subtitle" id="tmodalSubtitle"></p>
-      <button class="tmodal-close" onclick="closeTreatmentModal()">✕</button>
+      <button class="tmodal-close" onclick="closeTreatmentModal()" aria-label="Close">✕</button>
     </div>
     <div class="tmodal-body" id="tmodalBody" data-lenis-prevent></div>
   </div>
 </div>
 
 <div class="quiz-overlay" id="quizOverlay" data-lenis-prevent>
-  <button class="qclose" onclick="closeQuiz()">✕</button>
+  <button class="qclose" onclick="closeQuiz()" aria-label="Close">✕</button>
   <div class="qmodal">
     <div class="qprogress">
       <div class="qdot on" id="dot1"></div>
@@ -587,7 +586,7 @@
       <p class="q-label" data-i18n="quiz_result_label">Your Recommended Treatment</p>
       <div class="res-name" id="resName"></div>
       <p class="res-desc" id="resDesc"></p>
-      <a id="resWA" href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-primary" target="_blank" data-i18n="nav_book">Book Consultation</a>
+      <a id="resWA" href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-primary" target="_blank" rel="noopener" data-i18n="nav_book">Book Consultation</a>
       <div style="text-align:center"><button class="btn-retry" onclick="resetQuiz()" data-i18n="quiz_retry">← Take the quiz again</button></div>
     </div>
   </div>
