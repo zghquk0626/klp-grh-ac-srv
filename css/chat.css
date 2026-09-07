@@ -69,6 +69,7 @@
 }
 .chat-chip:hover{background:var(--accent-light);}
 .chat-chip:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+.chat-chip.done{display:none;}
 .chat-freetext{
   margin-top:4px;align-self:stretch;
   background:linear-gradient(135deg,#25d366,#18a957);color:#fff;border:none;

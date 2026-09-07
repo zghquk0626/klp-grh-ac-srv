@@ -443,11 +443,31 @@ if (promoLightboxEl) {
   const WA_NUMBER = '6287736386388';
   const TRIGGER = { timer: 60000, scroll: 0.3 };
 
-  let opened = false;
+  let started = false;
   let bubbleShown = false;
+  let actionsEl = null;
+  let capture = null; // { freetext, step: 'name'|'location', name, location }
 
   const waLink = t => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`;
   const cd = () => chatData[currentLang] || chatData.id;
+
+  const timePeriod = () => {
+    const h = new Date().getHours();
+    if (h >= 5 && h < 11) return 'morning';
+    if (h >= 11 && h < 15) return 'afternoon';
+    if (h >= 15 && h < 18) return 'evening';
+    return 'night';
+  };
+  const greeting = () => cd().greet[timePeriod()];
+
+  const COOKIE = { name: 'rvChatName', loc: 'rvChatLoc', age: 31536000 };
+  function setCookie(key, value) {
+    document.cookie = key + '=' + encodeURIComponent(value) + ';max-age=' + COOKIE.age + ';path=/;SameSite=Lax' + (location.protocol === 'https:' ? ';Secure' : '');
+  }
+  function getCookie(key) {
+    const match = document.cookie.split('; ').filter(p => p.indexOf(key + '=') === 0)[0];
+    return match ? decodeURIComponent(match.slice(key.length + 1)) : '';
+  }
 
   // Trigger: swap the WhatsApp float for the pulsing chat bubble
   function showBubble() {
@@ -455,6 +475,7 @@ if (promoLightboxEl) {
     bubbleShown = true;
     bubbleEl.classList.add('show');
     if (floatWrap) floatWrap.classList.add('hide');
+    setTimeout(() => { if (!started && !windowEl.classList.contains('open')) openChat(); }, 650);
   }
   setTimeout(showBubble, TRIGGER.timer);
   window.addEventListener('scroll', function onScroll() {
@@ -519,34 +540,32 @@ if (promoLightboxEl) {
   // Greeting + quick-reply buttons + free-text button
   function renderActions() {
     const d = cd();
-    const box = document.createElement('div');
-    box.className = 'chat-actions';
-    d.chips.forEach(c => {
+    actionsEl = document.createElement('div');
+    actionsEl.className = 'chat-actions';
+    d.chips.forEach((c, i) => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'chat-chip';
       btn.textContent = c.label;
-      btn.addEventListener('click', () => handleChip(c));
-      box.appendChild(btn);
+      btn._idx = i;
+      btn.addEventListener('click', () => handleChip(btn, c));
+      actionsEl.appendChild(btn);
     });
     const ft = document.createElement('button');
     ft.type = 'button';
     ft.className = 'chat-freetext';
     ft.textContent = d.freeTextBtn;
     ft.addEventListener('click', handleFreeText);
-    box.appendChild(ft);
-    msgsEl.appendChild(box);
+    actionsEl.appendChild(ft);
+    msgsEl.appendChild(actionsEl);
     scrollDown();
   }
 
-  function finishActions() {
-    opened = true;
-    const box = msgsEl.querySelector('.chat-actions');
-    if (box) box.remove();
-  }
-
-  function handleChip(c) {
-    finishActions();
+  function handleChip(btn, c) {
+    started = true;
+    capture = null; // abandon a pending name/location capture
+    if (btn) { btn.disabled = true; btn.classList.add('done'); }
+    pruneActions();
     const d = cd();
     if (c.waMessage) {
       botSay(c.reply, () => addCtaLink(waLink(c.waMessage), d.waCta, d.handoffText));
@@ -555,8 +574,13 @@ if (promoLightboxEl) {
     }
   }
 
+  function pruneActions() {
+    if (!actionsEl || !actionsEl.isConnected) return;
+    if (actionsEl.querySelectorAll('.chat-chip:not(.done)').length === 0) actionsEl.remove();
+  }
+
   function handleFreeText() {
-    finishActions();
+    started = true;
     const d = cd();
     botSay(d.freeTextReply, () => inputEl.focus());
   }
@@ -569,19 +593,54 @@ if (promoLightboxEl) {
     return null;
   }
 
+  function composeWa(text, name, location) {
+    return cd().compose.replace('{name}', name).replace('{location}', location).replace('{freetext}', text);
+  }
+
   function handleTyped(text) {
-    finishActions();
+    started = true;
     addMsg(text, true);
+    const d = cd();
+
+    // Answering an in-progress name/location capture
+    if (capture) {
+      if (capture.step === 'name') {
+        capture.name = text;
+        setCookie(COOKIE.name, text);
+        capture.step = 'location';
+        botSay(d.askLocation.replace('{name}', capture.name), () => inputEl.focus());
+      } else {
+        capture.location = text;
+        setCookie(COOKIE.loc, text);
+        const url = waLink(composeWa(capture.freetext, capture.name, capture.location));
+        capture = null;
+        window.open(url, '_blank', 'noopener');
+        botSay(null, () => addCtaLink(url, d.waCta, d.handoffText));
+      }
+      return;
+    }
+
+    // Known informational question → answer inline
     const hit = matchAutoReply(text);
     if (hit) {
       botSay(hit.info, () => { if (hit.url) addCtaLink(hit.url, hit.cta); });
+      return;
+    }
+
+    // Unmatched free text → route to the team, asking only for what the cookie doesn't know
+    const knownName = getCookie(COOKIE.name);
+    const knownLoc = getCookie(COOKIE.loc);
+    if (knownName && knownLoc) {
+      const url = waLink(composeWa(text, knownName, knownLoc));
+      window.open(url, '_blank', 'noopener');
+      botSay(null, () => addCtaLink(url, d.waCta, d.handoffText));
+      return;
+    }
+    capture = { freetext: text, name: knownName, location: knownLoc, step: knownName ? 'location' : 'name' };
+    if (capture.step === 'name') {
+      botSay(d.askName, () => inputEl.focus());
     } else {
-      const d = cd();
-      const url = waLink(text);
-      botSay(null, () => {
-        addCtaLink(url, d.waCta, d.handoffText);
-        window.open(url, '_blank', 'noopener');
-      });
+      botSay(d.askLocation.replace('{name}', capture.name), () => inputEl.focus());
     }
   }
 
@@ -591,8 +650,8 @@ if (promoLightboxEl) {
     bubbleEl.setAttribute('aria-expanded', 'true');
     bubbleEl.setAttribute('aria-label', 'Tutup chat');
     if (msgsEl.children.length === 0) {
-      opened = false;
-      addMsg(cd().greeting);
+      started = false;
+      addMsg(greeting());
       renderActions();
     }
     setTimeout(() => inputEl.focus(), 250);
@@ -620,12 +679,19 @@ if (promoLightboxEl) {
   inputEl.placeholder = cd().placeholder;
   document.addEventListener('langchange', () => {
     inputEl.placeholder = cd().placeholder;
-    const actions = msgsEl.querySelector('.chat-actions');
-    if (actions || msgsEl.children.length === 0) {
+    if (!started) {
       msgsEl.innerHTML = '';
-      opened = false;
-      addMsg(cd().greeting);
+      started = false;
+      addMsg(greeting());
       renderActions();
+    } else if (actionsEl && actionsEl.isConnected) {
+      const d = cd();
+      actionsEl.querySelectorAll('.chat-chip:not(.done)').forEach(btn => {
+        const chip = d.chips[btn._idx];
+        if (chip) btn.textContent = chip.label;
+      });
+      const ft = actionsEl.querySelector('.chat-freetext');
+      if (ft) ft.textContent = d.freeTextBtn;
     }
   });
 })();

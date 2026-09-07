@@ -5,10 +5,18 @@ const CHAT_MAPS_URL = 'https://share.google/8bDS7EQUC5UBWy87x';
 
 const chatData = {
   en: {
-    greeting: 'Hello! 👋 Welcome to Revolushine Aesthetic Clinic.\nHow can we help you today?',
+    greet: {
+      morning: 'Good morning! 👋 How can we help you?',
+      afternoon: 'Good afternoon! 👋 How can we help you?',
+      evening: 'Good evening! 👋 How can we help you?',
+      night: 'Good evening! 👋 How can we help you?'
+    },
     placeholder: 'Type your message…',
     freeTextBtn: 'Tap here to send a message directly to our team:',
-    freeTextReply: 'Go ahead — type your message below and press Send. It goes straight to our team via WhatsApp. 🙌',
+    freeTextReply: 'Type your message below and press Send. We\'ll ask your name and city so our team can respond personally. 😊',
+    askName: 'May I know what your name is? 😊',
+    askLocation: 'Which city do you live in, {name}?',
+    compose: 'Hello, I\'m {name} from {location}. I\'d like to ask: {freetext}',
     handoffText: 'Your message is ready. Our team will reply on WhatsApp shortly. 👇',
     waCta: 'Chat via WhatsApp',
     chips: [
@@ -25,11 +33,19 @@ const chatData = {
     ]
   },
   id: {
-    greeting: 'Halo! 👋 Selamat datang di Revolushine Aesthetic Clinic.\nAda yang bisa kami bantu?',
+    greet: {
+      morning: 'Selamat pagi! 👋 Ada yang bisa kami bantu?',
+      afternoon: 'Selamat siang! 👋 Ada yang bisa kami bantu?',
+      evening: 'Selamat sore! 👋 Ada yang bisa kami bantu?',
+      night: 'Selamat malam! 👋 Ada yang bisa kami bantu?'
+    },
     placeholder: 'Ketik pesanmu…',
     freeTextBtn: 'Klik di sini untuk langsung mengirimkan pesan ke tim kami:',
-    freeTextReply: 'Silakan tulis pesanmu di bawah, lalu tekan Kirim. Pesan akan langsung diteruskan ke tim kami via WhatsApp. 🙌',
-    handoffText: 'Pesanmu sudah siap. Tim kami akan membalas lewat WhatsApp. 👇',
+    freeTextReply: 'Silakan tulis pesanmu di bawah, lalu tekan Kirim. Tim kami akan meminta nama dan kota kamu agar bisa merespons lebih personal. 😊',
+    askName: 'Boleh saya tahu, dengan Kakak siapa? 😊',
+    askLocation: 'Di kota mana Kakak {name} tinggal?',
+    compose: 'Halo, saya {name} dari {location}. Saya mau bertanya {freetext}',
+    handoffText: 'Pesanmu sudah tersusun. Tim kami akan membalas lewat WhatsApp. 👇',
     waCta: 'Chat via WhatsApp',
     chips: [
       { label: '💬 Konsultasi keluhan kulit saya', reply: 'Tentu! Ceritakan keluhanmu dan dokter kami akan merekomendasikan treatment yang paling sesuai. ✨', waMessage: 'Saya ingin konsultasi tentang keluhan kulit saya' },
