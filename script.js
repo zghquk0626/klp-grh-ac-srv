@@ -168,6 +168,12 @@ function showResult(){
   document.getElementById('resDesc').textContent = result.d;
   const msg = `Saya melihat treatment ${result.n} dari website Revolushine, apakah bisa konsultasi terlebih dahulu?`;
   document.getElementById('resWA').href = `https://wa.me/6287736386388?text=${encodeURIComponent(msg)}`;
+  quizPromo.treatment = result.n;
+  quizPromo.problems = getQuizProblemLabels();
+  const promoBox = document.getElementById('qpromo');
+  if (promoBox) promoBox.classList.remove('is-claiming', 'is-done');
+  const promoWa = document.getElementById('qpromoOpenWa');
+  if (promoWa) promoWa.removeAttribute('href');
   document.getElementById('qresult').classList.add('on');
 }
 
@@ -181,6 +187,51 @@ function resetQuiz(){
 }
 function openQuiz(){ document.getElementById('quizOverlay').classList.add('open'); document.documentElement.classList.add('modal-lock'); }
 function closeQuiz(){ document.getElementById('quizOverlay').classList.remove('open'); document.documentElement.classList.remove('modal-lock'); setTimeout(resetQuiz, 450); }
+
+// ── END-OF-QUIZ PROMO (free first consultation) ──
+const quizPromo = { treatment: '', problems: '' };
+
+function getQuizProblemLabels() {
+  const labelKeys = { lines: 'q1a_main', volume: 'q1b_main', texture: 'q1c_main', glow: 'q1d_main', chubby: 'q1e_main', none: 'q2a_main', downtime: 'q2b_main' };
+  const t = translations[currentLang] || translations.id;
+  return [quizState.q1, quizState.q2]
+    .filter(v => v && labelKeys[v])
+    .map(v => t[labelKeys[v]])
+    .join(', ');
+}
+
+function openFreeConsultWa(name) {
+  const t = translations[currentLang] || translations.id;
+  const msg = t.quiz_promo_wa
+    .replace('{name}', name)
+    .replace('{treatment}', quizPromo.treatment)
+    .replace('{list}', quizPromo.problems);
+  const url = 'https://wa.me/6287736386388?text=' + encodeURIComponent(msg);
+  setChatCookie(CHAT_COOKIE.name, name);
+  window.open(url, '_blank', 'noopener');
+  const box = document.getElementById('qpromo');
+  const openWa = document.getElementById('qpromoOpenWa');
+  if (box) box.classList.add('is-done');
+  if (openWa) openWa.href = url;
+}
+
+function claimFreeConsult() {
+  const known = getChatCookie(CHAT_COOKIE.name);
+  if (known) { openFreeConsultWa(known); return; }
+  const box = document.getElementById('qpromo');
+  const input = document.getElementById('qpromoNameInput');
+  if (!box || !input) return;
+  box.classList.add('is-claiming');
+  setTimeout(() => input.focus(), 60);
+}
+
+function submitFreeConsultName() {
+  const input = document.getElementById('qpromoNameInput');
+  if (!input) return;
+  const name = input.value.trim();
+  if (!name) { input.focus(); return; }
+  openFreeConsultWa(name);
+}
 
 // ── BURGER MENU ──
 function toggleMobileMenu(){
@@ -431,6 +482,16 @@ if (promoLightboxEl) {
 
 // Language switcher loaded from js/i18n.js
 
+// Shared cookie helpers (used by the chat widget + end-of-quiz promo)
+const CHAT_COOKIE = { name: 'rvChatName', loc: 'rvChatLoc', age: 31536000 };
+function setChatCookie(key, value) {
+  document.cookie = key + '=' + encodeURIComponent(value) + ';max-age=' + CHAT_COOKIE.age + ';path=/;SameSite=Lax' + (location.protocol === 'https:' ? ';Secure' : '');
+}
+function getChatCookie(key) {
+  const match = document.cookie.split('; ').filter(p => p.indexOf(key + '=') === 0)[0];
+  return match ? decodeURIComponent(match.slice(key.length + 1)) : '';
+}
+
 // ── AI CHAT WIDGET (v2.0 · replaces the free-consultation popup) ──
 (function(){
   const bubbleEl = document.getElementById('chatBubble');
@@ -459,15 +520,6 @@ if (promoLightboxEl) {
     return 'night';
   };
   const greeting = () => cd().greet[timePeriod()];
-
-  const COOKIE = { name: 'rvChatName', loc: 'rvChatLoc', age: 31536000 };
-  function setCookie(key, value) {
-    document.cookie = key + '=' + encodeURIComponent(value) + ';max-age=' + COOKIE.age + ';path=/;SameSite=Lax' + (location.protocol === 'https:' ? ';Secure' : '');
-  }
-  function getCookie(key) {
-    const match = document.cookie.split('; ').filter(p => p.indexOf(key + '=') === 0)[0];
-    return match ? decodeURIComponent(match.slice(key.length + 1)) : '';
-  }
 
   // Trigger: swap the WhatsApp float for the pulsing chat bubble
   function showBubble() {
@@ -606,12 +658,12 @@ if (promoLightboxEl) {
     if (capture) {
       if (capture.step === 'name') {
         capture.name = text;
-        setCookie(COOKIE.name, text);
+        setChatCookie(CHAT_COOKIE.name, text);
         capture.step = 'location';
         botSay(d.askLocation.replace('{name}', capture.name), () => inputEl.focus());
       } else {
         capture.location = text;
-        setCookie(COOKIE.loc, text);
+        setChatCookie(CHAT_COOKIE.loc, text);
         const url = waLink(composeWa(capture.freetext, capture.name, capture.location));
         capture = null;
         window.open(url, '_blank', 'noopener');
@@ -628,8 +680,8 @@ if (promoLightboxEl) {
     }
 
     // Unmatched free text → route to the team, asking only for what the cookie doesn't know
-    const knownName = getCookie(COOKIE.name);
-    const knownLoc = getCookie(COOKIE.loc);
+    const knownName = getChatCookie(CHAT_COOKIE.name);
+    const knownLoc = getChatCookie(CHAT_COOKIE.loc);
     if (knownName && knownLoc) {
       const url = waLink(composeWa(text, knownName, knownLoc));
       window.open(url, '_blank', 'noopener');

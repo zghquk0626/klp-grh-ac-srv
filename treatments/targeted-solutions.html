@@ -148,7 +148,7 @@
 
 <div class="whatsapp-float-wrap">
   <a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="whatsapp-float" target="_blank" rel="noopener">
-    <picture><source srcset="../img/WhatsApp-Logo.wine.webp" type="image/webp"><img loading="lazy" decoding="async" src="../img/WhatsApp-Logo.wine.png" alt="WhatsApp" class="whatsapp-float-icon" width="50" height="50" /></picture>
+    <picture><source srcset="../img/WhatsApp-Logo.wine.png.webp" type="image/webp"><img loading="lazy" decoding="async" src="../img/WhatsApp-Logo.wine.png" alt="WhatsApp" class="whatsapp-float-icon" width="50" height="50" /></picture>
   </a>
 </div>
 
@@ -188,6 +188,25 @@
       <div class="res-name" id="resName"></div>
       <p class="res-desc" id="resDesc"></p>
       <a id="resWA" href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-primary" target="_blank" rel="noopener" data-i18n="nav_book">Konsultasi Sekarang</a>
+      <div class="qpromo" id="qpromo">
+        <div class="qpromo-offer">
+          <p class="qpromo-tag" data-i18n="quiz_promo_tag">Special Offer</p>
+          <h3 class="qpromo-title" data-i18n="quiz_promo_title">First Consultation FREE</h3>
+          <p class="qpromo-body" data-i18n="quiz_promo_body">Claim your first consultation with dr. Yoanita for free and get the best treatment recommendation for your skin.</p>
+          <button type="button" class="qpromo-btn" onclick="claimFreeConsult()" data-i18n="quiz_promo_cta">Claim FREE Consultation</button>
+        </div>
+        <div class="qpromo-name">
+          <p class="qpromo-body" data-i18n="quiz_promo_askname">May I know your name?</p>
+          <div class="qpromo-name-row">
+            <input type="text" id="qpromoNameInput" data-i18n-placeholder="quiz_promo_name_ph" placeholder="Your name" aria-label="Your name" onkeydown="if(event.key==='Enter')submitFreeConsultName()">
+            <button type="button" class="qpromo-btn" onclick="submitFreeConsultName()" data-i18n="quiz_promo_send">Send</button>
+          </div>
+        </div>
+        <div class="qpromo-done">
+          <p class="qpromo-body" data-i18n="quiz_promo_done">Your message for our team is ready. Click the button below if WhatsApp hasn&#39;t opened.</p>
+          <a class="qpromo-btn" id="qpromoOpenWa" href="#" target="_blank" rel="noopener" data-i18n="quiz_promo_openwa">Open WhatsApp</a>
+        </div>
+      </div>
       <div style="text-align:center"><button class="btn-retry" onclick="resetQuiz()" data-i18n="quiz_retry">&#8592; Ulangi quiz</button></div>
     </div>
   </div>

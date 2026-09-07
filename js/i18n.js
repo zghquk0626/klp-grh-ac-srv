@@ -25,6 +25,16 @@ const translations = {
     q2a_main: 'Zero downtime', q2a_sub: 'I need to be back to life immediately',
     q2b_main: 'I can handle some downtime', q2b_sub: 'Minor redness or swelling is fine for real change',
     quiz_result_label: 'Your Recommended Treatment', quiz_retry: '← Take the quiz again', quiz_back: '← Back',
+    quiz_promo_tag: 'Special Offer',
+    quiz_promo_title: 'First Consultation FREE',
+    quiz_promo_body: 'Claim your first consultation with dr. Yoanita for free and get the best treatment recommendation for your skin.',
+    quiz_promo_cta: 'Claim FREE Consultation',
+    quiz_promo_askname: 'May I know your name?',
+    quiz_promo_name_ph: 'Your name',
+    quiz_promo_send: 'Send',
+    quiz_promo_done: 'Your message for our team is ready. Click the button below if WhatsApp hasn\'t opened.',
+    quiz_promo_openwa: 'Open WhatsApp',
+    quiz_promo_wa: 'I\'m {name}. I would like to know more about {treatment} for my concern: {list}',
     ba_label0: 'Lip Filler', ba_label1: 'Scar & Acne', ba_label2: 'Chin Filler',
     ba_label3: 'Skinbooster', ba_label4: 'Hair Plasma', ba_label5: 'Melasma', ba_label6: 'LIFU',
     treat_tagline: 'Signature Procedures',
@@ -106,6 +116,16 @@ const translations = {
     q2a_main: 'Tanpa downtime', q2a_sub: 'Saya harus langsung beraktivitas setelahnya',
     q2b_main: 'Tidak masalah ada downtime', q2b_sub: 'Sedikit kemerahan atau bengkak tidak apa untuk perubahan nyata',
     quiz_result_label: 'Treatment yang Direkomendasikan', quiz_retry: '← Ulangi quiz', quiz_back: '← Kembali',
+    quiz_promo_tag: 'Promo Khusus',
+    quiz_promo_title: 'Konsultasi Pertama GRATIS',
+    quiz_promo_body: 'Klaim konsultasi pertamamu dengan dr. Yoanita secara gratis dan dapatkan rekomendasi treatment terbaik untuk kebutuhan kulitmu.',
+    quiz_promo_cta: 'Klaim Konsultasi GRATIS',
+    quiz_promo_askname: 'Boleh saya tahu, dengan Kakak siapa?',
+    quiz_promo_name_ph: 'Nama kamu',
+    quiz_promo_send: 'Kirim',
+    quiz_promo_done: 'Pesan untuk tim kami sudah disiapkan. Klik tombol di bawah jika WhatsApp belum terbuka.',
+    quiz_promo_openwa: 'Buka WhatsApp',
+    quiz_promo_wa: 'Saya {name} mau tahu lebih lanjut tentang treatment {treatment} untuk keluhan: {list}',
     ba_label0: 'Filler Bibir', ba_label1: 'Scar Acne', ba_label2: 'Filler Dagu',
     ba_label3: 'Skinbooster', ba_label4: 'Hair Plasma', ba_label5: 'Melasma', ba_label6: 'LIFU',
     treat_tagline: 'Prosedur Unggulan',
@@ -176,6 +196,10 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
     if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
   });
   if (typeof resultsCases !== 'undefined' && typeof activeCase !== 'undefined') {
     const c = resultsCases[activeCase];
