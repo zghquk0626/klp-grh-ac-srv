@@ -15,6 +15,27 @@ TREATMENTS = [
         "img_webp": "img/treatments/1.rev-skinbooster.webp",
         "img_w": 724, "img_h": 483,
         "desc_long_id": "Treatment skin rejuvenation di Revolushine Surabaya fokus pada perbaikan kualitas kulit dari dalam, hidrasi, dan regenerasi sel. Dilakukan oleh dr. Yoanita Budiwiyono dengan produk dan protokol medis terbaik.",
+        "items_id": [
+            {"name": "Skinbooster (HA Glow / HA Boost / HA Revive)", "desc": "Seiring bertambahnya usia, kadar Hyaluronic Acid alami tubuh mengalami penurunan. Treatment ini bertujuan untuk membantu menghidrasi kulit dari dalam, sehingga kulit tampak lebih segar dan membantu proses regenerasi kulit."},
+            {"name": "Salmon DNA (PN / PDRN)", "desc": "Membantu meningkatkan kelembaban kulit, mencerahkan kulit, dan memperbaiki tekstur kulit."},
+            {"name": "Collagen Stimulator Series", "desc": "Treatment injeksi yang bertujuan untuk merangsang tubuh memproduksi kolagen baru."},
+            {"name": "Rejuve", "desc": "Treatment injeksi yang bertujuan untuk menyamarkan garis halus, mengecilkan pori-pori, kulit lebih kencang dan awet muda."},
+            {"name": "Citrus Glutaglow", "desc": "Treatment yang bertujuan untuk menyamarkan noda hitam bekas jerawat, flek, dan mencerahkan kulit kusam."},
+            {"name": "Exosome", "desc": "Treatment injeksi yang bertujuan untuk membantu mempercepat proses regenerasi sel kulit, meningkatkan elastisitas dan kekencangan kulit."}
+        ],
+        "enrich_id": {
+            "intro": [
+                "Treatment skin rejuvenation & skinbooster di Revolushine Surabaya dirancang untuk memperbaiki kualitas kulit dari dalam — mulai dari hidrasi, kecerahan, hingga regenerasi sel. Kategori ini cocok untuk kamu yang mengalami kulit kusam, garis halus tipis, pori-pori membesar, atau penurunan elastisitas ringan.",
+                "Semua treatment dikerjakan langsung oleh dr. Yoanita Budiwiyono, American Certified Aesthetic Doctor, dengan protokol medis berbasis bukti ilmiah dan produk bersertifikat. Konsultasi pertama sepenuhnya gratis dan tanpa tekanan, sehingga kamu bisa memahami kondisi kulitmu dan memilih treatment yang paling sesuai.",
+                "Sebagian besar treatment di kategori ini memiliki downtime yang minimal atau bahkan tanpa downtime sama sekali. Beberapa hasil sudah dapat dirasakan pada hari yang sama, sebagian lainnya mulai terlihat dalam 3 hingga 7 hari setelah treatment."
+            ],
+            "faq": [
+                ["Siapa yang cocok untuk treatment skin rejuvenation?", "Cocok untuk kamu yang mulai merasakan kulit kusam, garis halus, pori-pori besar, atau kelembaban kulit menurun. Treatment ini bekerja untuk semua jenis kulit dan disesuaikan oleh dokter dengan kebutuhan masing-masing pasien."],
+                ["Apakah treatment ini ada downtime?", "Kebanyakan treatment di kategori ini tanpa downtime atau hanya minimal downtime. Kamu bisa langsung kembali beraktivitas setelah treatment sesuai arahan dokter."],
+                ["Kapan hasil mulai terlihat?", "Beberapa treatment menunjukkan hasil pada hari yang sama, sementara lainnya mulai terlihat dalam 3 hingga 7 hari. Hasil optimal seringkali tercapai setelah beberapa kali treatment secara berkala."],
+                ["Apakah boleh dilakukan treatment berulang?", "Ya, perawatan seperti skinbooster dan treatment regeneratif umumnya dilakukan secara berkala agar kualitas kulit tetap terjaga. Dokter akan menyusun rencana perawatan berdasarkan kondisi dan tujuan kulitmu."]
+            ]
+        },
     },
     {
         "slug": "clarity-texture",
@@ -28,6 +49,24 @@ TREATMENTS = [
         "img_webp": "img/treatments/2.rev-skinpeel.webp",
         "img_w": 724, "img_h": 483,
         "desc_long_id": "Treatment clarity, texture & peeling di Revolushine Surabaya fokus pada pembersihan mendalam, eksfoliasi, dan perbaikan permukaan kulit untuk acne dan scar.",
+        "items_id": [
+            {"name": "Diamond Silk", "desc": "Quick facial yang bekerja mengangkat sel kulit mati sekaligus menginfuskan serum spesifik yang disesuaikan dengan kebutuhan kulit Anda."},
+            {"name": "3-Step Peeling", "desc": "Eksfoliasi mendalam untuk mengangkat sel kulit mati, mencegah timbulnya jerawat baru, menyamarkan noda bekas jerawat, dan meratakan warna kulit."},
+            {"name": "Plasma", "desc": "Terapi regenerasi sel untuk manfaat anti-aging, menghaluskan kulit, serta meratakan warna kulit yang tidak merata."}
+        ],
+        "enrich_id": {
+            "intro": [
+                "Kategori clarity, texture & peeling di Revolushine Surabaya berfokus pada pembersihan mendalam, eksfoliasi kulit, dan perbaikan permukaan kulit — solusi utama untuk masalah jerawat aktif, bekas jerawat (acne scar), tekstur kasar, dan warna kulit yang tidak merata.",
+                "Setiap treatment dikerjakan oleh dr. Yoanita Budiwiyono dengan metode medis yang terbukti efektif dan disesuaikan dengan jenis kulit, termasuk kulit berminyak maupun kulit sensitif. Konsultasi awal dijamin gratis untuk memastikan treatment yang dipilih tepat sasaran.",
+                "Untuk hasil terbaik, sebagian treatment di kategori ini membutuhkan satu hingga beberapa kali sesi. Hasil biasanya mulai terlihat dalam beberapa hari hingga beberapa minggu, tergantung jenis treatment yang dilakukan."
+            ],
+            "faq": [
+                ["Apakah treatment ini bisa menghilangkan bekas jerawat?", "3-Step Peeling dan Plasma dapat membantu menyamarkan noda bekas jerawat dan meratakan warna kulit secara bertahap. Hasil optimal biasanya membutuhkan beberapa sesi sesuai anjuran dokter."],
+                ["Apakah ada downtime setelah peeling?", "Diamond Silk tidak membutuhkan downtime. Untuk 3-Step Peeling, mungkin terdapat sedikit kemerahan selama 1 hingga 3 hari yang umumnya bisa ditutupi dengan skincare."],
+                ["Apakah aman untuk kulit berminyak atau berjerawat?", "Treatment di kategori ini dirancang khusus untuk mengatasi jerawat dan tekstur kulit, sehingga umumnya aman dan bermanfaat untuk kulit berminyak. Intensitasnya akan disesuaikan dokter dengan kondisi kulitmu."],
+                ["Bagaimana dengan kulit sensitif?", "Diamond Silk sangat ringan dan cocok untuk kulit sensitif. Untuk Peeling, dokter akan menyesuaikan formula dan intensitas agar tetap nyaman dan aman."]
+            ]
+        },
     },
     {
         "slug": "lifting-contouring",
@@ -41,6 +80,25 @@ TREATMENTS = [
         "img_webp": "img/treatments/3.rev-skinlift.webp",
         "img_w": 724, "img_h": 483,
         "desc_long_id": "Treatment lifting & contouring di Revolushine Surabaya bertujuan untuk membentuk, mempertegas, dan menyeimbangkan proporsi wajah sehingga wajah lebih tirus dan simetris.",
+        "items_id": [
+            {"name": "LIFU Face & Neck", "desc": "Treatment non injeksi yang berbasis gelombang ultrasound yang bertujuan untuk mengencangkan, mengangkat, membakar lemak, dan membentuk kontur wajah tanpa operasi, tanpa rasa sakit, dan tanpa downtime."},
+            {"name": "Fatlysis Pro", "desc": "Treatment injeksi yang bertujuan untuk membantu mengurangi lemak pada area tertentu seperti perut, lengan, pipi, paha, dan double chin."},
+            {"name": "Jaw Shot / Botox Rahang", "desc": "Treatment injeksi yang disuntikkan fokus pada area rahang untuk membantu mengecilkan rahang agar terlihat lebih proporsional."},
+            {"name": "Filler", "desc": "Treatment injeksi yang bertujuan untuk menambah volume, memperbaiki kontur, dan mengoreksi cekungan pada wajah. Filler biasa dilakukan pada area Bibir, Dagu, Jawline, Pelipis, Bawah mata, Smile Line, Tangan, dan pada area tertentu."}
+        ],
+        "enrich_id": {
+            "intro": [
+                "Treatment lifting & contouring di Revolushine Surabaya bertujuan untuk membentuk, mempertegas, dan menyeimbangkan proporsi wajah — tanpa operasi, tanpa rasa sakit, dan dengan downtime yang minimal.",
+                "Pilihan treatment mencakup LIFU (ultrasound non-injeksi), Fatlysis Pro (injeksi penghancur lemak), Jaw Shot / Botox Rahang, serta Dermal Filler untuk penambahan volume dan koreksi area seperti bibir, dagu, pelipis, dan bawah mata.",
+                "Seluruh prosedur dilakukan langsung oleh dr. Yoanita Budiwiyono dengan pendekatan natural — hasilnya terlihat seperti versi terbaik dari dirimu, bukan berlebihan. Konsultasi awal membantu menentukan treatment yang paling sesuai dengan struktur wajahmu."
+            ],
+            "faq": [
+                ["Apakah LIFU terasa sakit?", "LIFU umumnya nyaman dan hanya terasa hangat atau ringan. Tidak diperlukan anestesi, dan setelah treatment kamu bisa langsung beraktivitas."],
+                ["Kapan hasil filler mulai terlihat?", "Hasil filler terlihat langsung setelah treatment. Bentuk akhir umumnya stabil dalam 1 hingga 2 minggu setelah pembengkakan mereda."],
+                ["Bagaimana risiko dari filler?", "Risiko minimal jika dilakukan oleh dokter bersertifikat. Dapat terjadi sedikit bengkak atau memar yang biasanya hilang dalam beberapa hari."],
+                ["Siapa yang paling cocok untuk treatment lifting?", "Cocok untuk kamu yang menginginkan pengencangan wajah non-invasif, pengurangan lemak pada wajah atau rahang, atau penambahan volume secara alami tanpa prosedur bedah."]
+            ]
+        },
     },
     {
         "slug": "targeted-solutions",
@@ -54,6 +112,24 @@ TREATMENTS = [
         "img_webp": "img/treatments/4.rev-hairplasma.webp",
         "img_w": 724, "img_h": 483,
         "desc_long_id": "Solusi medis presisi untuk area spesifik di Revolushine Surabaya: Hair Plasma untuk rambut, Panda Eyes untuk mata, dan Hyperhidrosis untuk keringat berlebih.",
+        "items_id": [
+            {"name": "Panda Eyes", "desc": "Mengencangkan kulit area bawah mata, meningkatkan sirkulasi kapiler, mencerahkan warna gelap, dan merangsang kolagen untuk tampilan mata yang lebih segar."},
+            {"name": "Hair Plasma", "desc": "Perawatan spesifik pada kulit kepala untuk memperkuat akar, mencegah kerontokan, dan merangsang pertumbuhan rambut baru."},
+            {"name": "Hyperhidrosis", "desc": "Solusi medis untuk menghambat produksi keringat berlebih dan mengurangi masalah bau badan secara signifikan."}
+        ],
+        "enrich_id": {
+            "intro": [
+                "Kategori targeted solutions di Revolushine Surabaya menawarkan solusi medis presisi untuk kondisi dan area yang spesifik — Panda Eyes untuk area bawah mata, Hair Plasma untuk kesehatan rambut, dan Hyperhidrosis untuk keringat berlebih.",
+                "Solusi-solusi ini dirancang untuk masalah yang membutuhkan pendekatan lebih terfokus, melampaui perawatan wajah umum. Seluruh prosedur dilakukan oleh dr. Yoanita dengan standar medis yang terbukti dan peralatan yang aman.",
+                "Konsultasi awal diperlukan untuk memastikan kondisi kamu cocok dengan salah satu solusi di atas, sekaligus merencanakan jumlah sesi yang dibutuhkan untuk hasil yang terbaik."
+            ],
+            "faq": [
+                ["Apakah treatment Panda Eyes memerlukan downtime?", "Sebagian pasien mengalami sedikit kemerahan atau bengkak ringan di area bawah mata selama 1 hingga 2 hari, namun biasanya bisa ditutupi dan tidak mengganggu aktivitas harian."],
+                ["Apakah Hair Plasma harus dilakukan berkali-kali?", "Ya, hasil optimal biasanya membutuhkan beberapa sesi. Jumlah sesi akan ditentukan dokter berdasarkan kondisi rambut kamu setelah konsultasi."],
+                ["Apakah treatment Hyperhidrosis menyakitkan?", "Treatment ini umumnya nyaman. Pengurangan keringat berlebih biasanya mulai dirasakan dalam beberapa hari setelah prosedur."],
+                ["Siapa yang paling cocok untuk treatment ini?", "Cocok untuk kamu yang memiliki masalah spesifik: area bawah mata gelap, rambut rontok, atau keringat berlebih yang sudah mengganggu aktivitas sehari-hari."]
+            ]
+        },
     },
     {
         "slug": "facial-experience",
@@ -67,10 +143,53 @@ TREATMENTS = [
         "img_webp": "img/treatments/5.rev-facial.webp",
         "img_w": 724, "img_h": 483,
         "desc_long_id": "Treatment facial di Revolushine Surabaya menggunakan rangkaian produk premium untuk deep cleansing, eksfoliasi, dan relaksasi dengan pijatan wajah, bahu, punggung hingga kepala.",
+        "items_id": [
+            {"name": "Facial Luxury", "desc": "Facial dengan menggunakan rangkaian produk dari Eropa yang berbahan dasar alami dan premium sehingga proses eksfoliasinya lebih ringan. Sangat cocok untuk kulit sensitif."},
+            {"name": "Facial Korea", "desc": "Facial dengan menggunakan rangkaian produk dari Korea yang bertujuan untuk menghidrasi kulit, dan membantu mengatasi jerawat."}
+        ],
+        "enrich_id": {
+            "intro": [
+                "Facial experience di Revolushine Surabaya menawarkan perawatan relaksasi dan pemeliharaan kulit dasar — deep cleansing, eksfoliasi lembut, hingga pijatan menyeluruh pada wajah, bahu, punggung, dan kepala.",
+                "Dua pilihan utama adalah Facial Luxury dengan rangkaian produk Eropa berbahan dasar alami yang sangat cocok untuk kulit sensitif, serta Facial Korea dengan produk Korea untuk hidrasi mendalam dan membantu mengatasi jerawat.",
+                "Setiap sesi berlangsung sekitar 2 jam menggunakan rangkaian produk premium, dikerjakan langsung oleh dr. Yoanita. Treatment ini cocok untuk perawatan rutin, relaksasi setelah beraktivitas, atau hadiah istimewa untuk diri sendiri."
+            ],
+            "faq": [
+                ["Apakah facial memerlukan downtime?", "Tidak ada downtime. Kulit terlihat segar langsung setelah treatment. Beberapa pasien memilih untuk tidak ber-makeup selama beberapa jam demi hasil yang maksimal."],
+                ["Apakah facial boleh dilakukan secara rutin?", "Ya, facial dapat dilakukan secara rutin, misalnya 1 hingga 2 bulan sekali, untuk menjaga kesehatan kulit. Dokter akan menyesuaikan jadwal dan jenis facial dengan kondisi kulitmu."],
+                ["Apakah aman untuk kulit sensitif?", "Facial Luxury dirancang khusus dengan produk alami yang sangat lembut sehingga sangat cocok untuk kulit sensitif. Konsultasi sebelum treatment selalu dianjurkan."],
+                ["Apakah facial dapat mengatasi jerawat?", "Facial Korea diformulasikan untuk membantu menghidrasi kulit dan membantu mengatasi jerawat. Untuk jerawat aktif yang parah, dokter mungkin merekomendasikan treatment lain yang lebih sesuai."]
+            ]
+        },
     },
 ]
 
+def _enrich_intro_html(t):
+    return "".join(
+        f"<p style='font-size:17px;line-height:1.8;color:#4a3a46;margin:0 0 14px;'>{p}</p>"
+        for p in t["enrich_id"]["intro"]
+    )
+
+def _enrich_items_html(t):
+    # Static (server-rendered) item cards — overridden by JS with the active language.
+    return "".join(
+        "<div style='background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);'>"
+        f"<h3 style='font-size:19px;margin:0 0 8px;color:#333;'>{it['name']}</h3>"
+        f"<p style='margin:0;color:#666;line-height:1.7;'>{it['desc']}</p></div>"
+        for it in t["items_id"]
+    )
+
+def _enrich_faq_html(t):
+    return "".join(
+        "<div style='background:#fff;border-radius:12px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);'>"
+        f"<h3 style='font-size:18px;margin:0 0 6px;color:var(--text-main);'>{q}</h3>"
+        f"<p style='margin:0;color:#666;line-height:1.7;'>{a}</p></div>"
+        for q, a in t["enrich_id"]["faq"]
+    )
+
 def generate_page(t):
+    intro_html = _enrich_intro_html(t)
+    items_html = _enrich_items_html(t)
+    faq_html = _enrich_faq_html(t)
     return f'''<!DOCTYPE html>
 <html lang="id">
 <head>
@@ -132,6 +251,26 @@ def generate_page(t):
   }}]
 }}
 </script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  "name": "{t["h1_id"]}",
+  "description": "{t["desc_long_id"]}",
+  "url": "https://revolushine.id/treatments/{t["slug"]}.html",
+  "image": "https://revolushine.id/{t["img"]}",
+  "bodyLocation": "Wajah",
+  "performer": {{
+    "@type": "Physician",
+    "name": "dr. Yoanita Budiwiyono, dipl. AAAM"
+  }},
+  "provider": {{
+    "@type": "MedicalBusiness",
+    "name": "Revolushine Aesthetic Clinic",
+    "url": "https://revolushine.id/"
+  }}
+}}
+</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -180,8 +319,16 @@ def generate_page(t):
 </header>
 
 <section class="section" style="padding:60px 24px;max-width:900px;margin:0 auto;">
+  <p class="price-from" hidden style="text-align:center;color:var(--text-muted);font-size:16px;margin-bottom:16px;"><span data-i18n="price_from">Mulai dari</span> <span><!-- HARGA: isi nominal (mis. Rp 500rb) lalu hapus atribut "hidden" --></span></p>
+  <h2 style="font-size:28px;margin-bottom:12px;">Tentang {t["h1_id"]}</h2>
+  {intro_html}
   <h2 style="font-size:28px;margin-bottom:12px;" data-i18n="treat_tagline">Treatment Tersedia</h2>
-  <div id="treatmentItems" style="display:grid;gap:20px;margin-top:24px;"></div>
+  <div id="treatmentItems" style="display:grid;gap:20px;margin-top:24px;">{items_html}</div>
+</section>
+
+<section class="section" style="padding:20px 24px;max-width:900px;margin:0 auto;">
+  <h2 style="font-size:28px;margin-bottom:16px;">Pertanyaan yang Sering Diajukan</h2>
+  <div style="display:grid;gap:16px;">{faq_html}</div>
 </section>
 
 <section class="section" style="padding:40px 24px;text-align:center;">
@@ -211,6 +358,7 @@ def generate_page(t):
         <li><a href="https://www.instagram.com/revolushine.id/" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> <span>Instagram</span></a></li>
         <li><a href="https://www.tiktok.com/@revolushine.id" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.11a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-.81-.07 4.83 4.83 0 01-.38.67z"/></svg> <span>TikTok</span></a></li>
         <li class="foot-address" style="margin-top:4px;"><a href="https://share.google/8bDS7EQUC5UBWy87x" target="_blank" rel="noopener" data-i18n="foot_address" style="color:inherit;text-decoration:none;">Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Revolushine+Aesthetic+Clinic+Surabaya" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg> <span data-i18n="foot_review">Lihat review kami di Google</span></a></li>
       </ul>
     </div>
   </div>

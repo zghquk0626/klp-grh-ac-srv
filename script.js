@@ -3,6 +3,7 @@ const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.p
 function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 gsap.registerPlugin(ScrollTrigger);
+document.documentElement.classList.add('anim-ready');
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add(time => lenis.raf(time * 1000));
 

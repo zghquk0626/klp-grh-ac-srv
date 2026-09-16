@@ -88,6 +88,8 @@ const translations = {
     foot_nav_h: 'Explore', foot_connect_h: 'Connect',
     foot_wa: 'WhatsApp Consultation',
     foot_address: 'Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.',
+    foot_review: 'See our Google reviews',
+    price_from: 'Starting from',
     foot_copy: '\u00a9 2026 Revolushine Clinics. All rights reserved.',
     chat_status: '● Online'
   },
@@ -179,6 +181,8 @@ const translations = {
     foot_nav_h: 'Jelajahi', foot_connect_h: 'Hubungi Kami',
     foot_wa: 'Konsultasi via WhatsApp',
     foot_address: 'Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.',
+    foot_review: 'Lihat review kami di Google',
+    price_from: 'Mulai dari',
     foot_copy: '\u00a9 2026 Revolushine Clinics. Hak cipta dilindungi.',
     chat_status: '● Online'
   }

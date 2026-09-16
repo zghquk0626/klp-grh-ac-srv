@@ -67,6 +67,26 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What treatments does Revolushine offer?","acceptedAnswer":{"@type":"Answer","text":"Revolushine offers a comprehensive range of aesthetic treatments including Botox, Rejuvenation, Dermal Filler (lips, temples, cheeks & chin), LIFU Face & Neck, Skinbooster, Subsisi, Medical Facial, Peeling, Diamond Silk, Hair Plasma, Korean Facial, and more — all tailored by Dr. Yoanita to your unique skin profile and goals."},"inLanguage":"en"},
+    {"@type":"Question","name":"Is the consultation free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your first consultation with Dr. Yoanita is fully complimentary. We believe in understanding your concerns before recommending any treatment — no pressure, no rush."},"inLanguage":"en"},
+    {"@type":"Question","name":"When will results start to show?","acceptedAnswer":{"@type":"Answer","text":"Results typically start to appear within 3 to 7 days, varying by treatment. For example: LIFU results can be seen from the day of treatment up to around 30 days later. Skinbooster, Botox, and Rejuve results typically start showing on day 3. Facial results are visible on the same day."},"inLanguage":"en"},
+    {"@type":"Question","name":"Is there downtime after treatments?","acceptedAnswer":{"@type":"Answer","text":"Some treatments require around 3 days of downtime, such as Skinbooster Salmon DNA, Subsisi, and other injectable treatments depending on the ingredients used. Facial, Peeling, Diamond Silk, and LIFU have no downtime."},"inLanguage":"en"},
+    {"@type":"Question","name":"How long do results typically last?","acceptedAnswer":{"@type":"Answer","text":"Results vary depending on the treatment. Botox and Rejuve typically last 4–6 months. Filler can last around 1 year or more. Skinbooster results can last around 1 month or more depending on the formula used. LIFU results can last up to 6 months."},"inLanguage":"en"},
+    {"@type":"Question","name":"Is it safe for pregnant or nursing mothers?","acceptedAnswer":{"@type":"Answer","text":"Pregnant mothers are not recommended to undergo injectable treatments. They may safely have medical facial, Diamond Silk, and LIFU at low energy. For nursing mothers, facial, Diamond Silk, and LIFU at low energy are safe. For injectable treatments such as Skinbooster, Filler, and others, we will conduct a prior consultation as safety data for nursing mothers is still limited. The decision will be tailored to each patient's individual condition."},"inLanguage":"en"},
+    {"@type":"Question","name":"Treatment apa saja yang tersedia di Revolushine?","acceptedAnswer":{"@type":"Answer","text":"Revolushine menawarkan berbagai perawatan estetika termasuk Botox, Rejuvenasi, Dermal Filler (bibir, pelipis, pipi & dagu), LIFU Face & Neck, Skinbooster, Subsisi, Medical Facial, Peeling, Diamond Silk, Hair Plasma, Korean Facial, dan lainnya — semua disesuaikan oleh Dr. Yoanita dengan kebutuhan kulitmu."},"inLanguage":"id"},
+    {"@type":"Question","name":"Apakah konsultasi gratis?","acceptedAnswer":{"@type":"Answer","text":"Ya. Konsultasi pertamamu dengan Dr. Yoanita sepenuhnya gratis. Kami percaya bahwa memahami kebutuhanmu lebih penting sebelum merekomendasikan treatment apapun — tanpa tekanan, tanpa terburu-buru."},"inLanguage":"id"},
+    {"@type":"Question","name":"Berapa lama hasil treatmentnya mulai terlihat?","acceptedAnswer":{"@type":"Answer","text":"Hasil treatment biasanya mulai terlihat sekitar 3 hingga 7 hari, bervariasi tergantung treatment apa yang dilakukan. Contohnya: Lifu, hasil mulai terlihat pada hari H hingga sekitar 30 hari kemudian. Skinbooster, botox, dan rejuve biasanya hasil mulai terlihat pada hari ke-3. Facial, hasil akan mulai terlihat pada hari H."},"inLanguage":"id"},
+    {"@type":"Question","name":"Apakah ada downtime setelah treatment?","acceptedAnswer":{"@type":"Answer","text":"Ada beberapa treatment yang membutuhkan downtime sekitar 3 hari, seperti Skinbooster Salmon DNA, Subsisi, dan treatment injeksi lainnya tergantung kandungan yang ada dalam Skinboosternya. Untuk Facial, Peeling, Diamond Silk, dan Lifu tidak ada downtime."},"inLanguage":"id"},
+    {"@type":"Question","name":"Berapa lama hasil treatment biasanya bertahan?","acceptedAnswer":{"@type":"Answer","text":"Hasil treatment bisa bertahan bervariasi tergantung treatmentnya. Treatment botox dan Rejuve biasanya bisa bertahan 4–6 bulan. Treatment filler bisa bertahan sekitar 1 tahun hingga lebih. Treatment Skinbooster bisa bertahan sekitar 1 bulan hingga lebih tergantung kandungan yang ada dalam Skinboosternya. Lifu bisa bertahan hingga 6 bulan."},"inLanguage":"id"},
+    {"@type":"Question","name":"Apakah aman untuk ibu hamil dan menyusui?","acceptedAnswer":{"@type":"Answer","text":"Ibu hamil tidak disarankan melakukan treatment injeksi. Ibu hamil cukup melakukan medical facial, Diamond Silk, dan LIFU low energy. Untuk ibu menyusui, facial, Diamond Silk, dan LIFU low energy aman dilakukan. Namun untuk tindakan injeksi seperti Skinbooster, Filler, dan beberapa treatment lainnya, kami akan melakukan konsultasi terlebih dahulu karena data keamanan untuk ibu menyusui masih terbatas. Keputusan tindakan akan disesuaikan dengan kondisi masing-masing pasien."},"inLanguage":"id"}
+  ]
+}
+</script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css"></noscript>
 <link rel="stylesheet" href="styles.css">
@@ -285,6 +305,7 @@
     <button class="promo-prev" onclick="prevPromo()" aria-label="Previous">&#8249;</button>
     <button class="promo-next" onclick="nextPromo()" aria-label="Next">&#8250;</button>
   </div>
+  <p class="price-from" hidden style="text-align:center;color:var(--text-muted);font-size:16px;margin-top:20px;"><span data-i18n="price_from">Starting from</span> <span><!-- HARGA: isi nominal (mis. Rp 500rb) lalu hapus atribut "hidden" --></span></p>
 </section>
 
 <section class="testimonials section" id="testimonials">
@@ -524,6 +545,12 @@
         </li>
         <li class="foot-address" style="margin-top:4px;">
           <a href="https://share.google/8bDS7EQUC5UBWy87x" target="_blank" rel="noopener" data-i18n="foot_address" style="color:inherit;text-decoration:none;">Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.</a>
+        </li>
+        <li>
+          <a href="https://www.google.com/maps/search/?api=1&query=Revolushine+Aesthetic+Clinic+Surabaya" class="foot-icon-link" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <span data-i18n="foot_review">See our Google reviews</span>
+          </a>
         </li>
       </ul>
     </div>
