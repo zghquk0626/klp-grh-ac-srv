@@ -6,15 +6,15 @@ TREATMENTS = [
     {
         "slug": "skin-rejuvenation",
         "idx": 0,
-        "title_id": "Skin Rejuvenation & Skinbooster Surabaya | Revolushine",
-        "title_en": "Skin Rejuvenation & Skinbooster Surabaya | Revolushine",
-        "desc_id": "Treatment skin rejuvenation & skinbooster di Revolushine Surabaya: HA Glow, Salmon DNA, Rejuve, Collagen Stimulator, Exosome & Citrus Glutaglow. Konsultasi gratis!",
+        "title_id": "Skin Rejuvenation & Skinbooster Surabaya | Aesthetic Clinic Revolushine",
+        "title_en": "Skin Rejuvenation & Skinbooster Surabaya | Aesthetic Clinic Revolushine",
+        "desc_id": "Treatment skin rejuvenation & skinbooster di Aesthetic Clinic Revolushine Surabaya: HA Glow, Salmon DNA, Rejuve, Collagen Stimulator, Exosome & Citrus Glutaglow. Konsultasi gratis!",
         "h1_id": "Skin Rejuvenation & Skinbooster Surabaya",
         "h1_en": "Skin Rejuvenation & Skinbooster Surabaya",
         "img": "img/treatments/1.rev-skinbooster.jpg",
         "img_webp": "img/treatments/1.rev-skinbooster.webp",
         "img_w": 724, "img_h": 483,
-        "desc_long_id": "Treatment skin rejuvenation di Revolushine Surabaya fokus pada perbaikan kualitas kulit dari dalam, hidrasi, dan regenerasi sel. Dilakukan oleh dr. Yoanita Budiwiyono dengan produk dan protokol medis terbaik.",
+        "desc_long_id": "Treatment skin rejuvenation di Aesthetic Clinic Revolushine Surabaya fokus pada perbaikan kualitas kulit dari dalam, hidrasi, dan regenerasi sel. Dilakukan oleh dr. Yoanita Budiwiyono dengan produk dan protokol medis terbaik.",
         "items_id": [
             {"name": "Skinbooster (HA Glow / HA Boost / HA Revive)", "desc": "Seiring bertambahnya usia, kadar Hyaluronic Acid alami tubuh mengalami penurunan. Treatment ini bertujuan untuk membantu menghidrasi kulit dari dalam, sehingga kulit tampak lebih segar dan membantu proses regenerasi kulit."},
             {"name": "Salmon DNA (PN / PDRN)", "desc": "Membantu meningkatkan kelembaban kulit, mencerahkan kulit, dan memperbaiki tekstur kulit."},
@@ -25,7 +25,7 @@ TREATMENTS = [
         ],
         "enrich_id": {
             "intro": [
-                "Treatment skin rejuvenation & skinbooster di Revolushine Surabaya dirancang untuk memperbaiki kualitas kulit dari dalam — mulai dari hidrasi, kecerahan, hingga regenerasi sel. Kategori ini cocok untuk kamu yang mengalami kulit kusam, garis halus tipis, pori-pori membesar, atau penurunan elastisitas ringan.",
+                "Treatment skin rejuvenation & skinbooster di Aesthetic Clinic Revolushine Surabaya dirancang untuk memperbaiki kualitas kulit dari dalam — mulai dari hidrasi, kecerahan, hingga regenerasi sel. Kategori ini cocok untuk kamu yang mengalami kulit kusam, garis halus tipis, pori-pori membesar, atau penurunan elastisitas ringan.",
                 "Semua treatment dikerjakan langsung oleh dr. Yoanita Budiwiyono, American Certified Aesthetic Doctor, dengan protokol medis berbasis bukti ilmiah dan produk bersertifikat. Konsultasi pertama sepenuhnya gratis dan tanpa tekanan, sehingga kamu bisa memahami kondisi kulitmu dan memilih treatment yang paling sesuai.",
                 "Sebagian besar treatment di kategori ini memiliki downtime yang minimal atau bahkan tanpa downtime sama sekali. Beberapa hasil sudah dapat dirasakan pada hari yang sama, sebagian lainnya mulai terlihat dalam 3 hingga 7 hari setelah treatment."
             ],
@@ -40,15 +40,15 @@ TREATMENTS = [
     {
         "slug": "clarity-texture",
         "idx": 1,
-        "title_id": "Diamond Silk & Peeling Surabaya | Revolushine",
-        "title_en": "Diamond Silk & Peeling Surabaya | Revolushine",
-        "desc_id": "Treatment Diamond Silk, 3-Step Peeling & Plasma di Revolushine Surabaya untuk kulit bersih, acne scar berkurang, dan tekstur kulit merata.",
+        "title_id": "Diamond Silk & Peeling Surabaya | Aesthetic Clinic Revolushine",
+        "title_en": "Diamond Silk & Peeling Surabaya | Aesthetic Clinic Revolushine",
+        "desc_id": "Treatment Diamond Silk, 3-Step Peeling & Plasma di Aesthetic Clinic Revolushine Surabaya untuk kulit bersih, acne scar berkurang, dan tekstur kulit merata.",
         "h1_id": "Diamond Silk & Peeling Surabaya",
         "h1_en": "Diamond Silk & Peeling Surabaya",
         "img": "img/treatments/2.rev-skinpeel.jpg",
         "img_webp": "img/treatments/2.rev-skinpeel.webp",
         "img_w": 724, "img_h": 483,
-        "desc_long_id": "Treatment clarity, texture & peeling di Revolushine Surabaya fokus pada pembersihan mendalam, eksfoliasi, dan perbaikan permukaan kulit untuk acne dan scar.",
+        "desc_long_id": "Treatment clarity, texture & peeling di Aesthetic Clinic Revolushine Surabaya fokus pada pembersihan mendalam, eksfoliasi, dan perbaikan permukaan kulit untuk acne dan scar.",
         "items_id": [
             {"name": "Diamond Silk", "desc": "Quick facial yang bekerja mengangkat sel kulit mati sekaligus menginfuskan serum spesifik yang disesuaikan dengan kebutuhan kulit Anda."},
             {"name": "3-Step Peeling", "desc": "Eksfoliasi mendalam untuk mengangkat sel kulit mati, mencegah timbulnya jerawat baru, menyamarkan noda bekas jerawat, dan meratakan warna kulit."},
@@ -56,7 +56,7 @@ TREATMENTS = [
         ],
         "enrich_id": {
             "intro": [
-                "Kategori clarity, texture & peeling di Revolushine Surabaya berfokus pada pembersihan mendalam, eksfoliasi kulit, dan perbaikan permukaan kulit — solusi utama untuk masalah jerawat aktif, bekas jerawat (acne scar), tekstur kasar, dan warna kulit yang tidak merata.",
+                "Kategori clarity, texture & peeling di Aesthetic Clinic Revolushine Surabaya berfokus pada pembersihan mendalam, eksfoliasi kulit, dan perbaikan permukaan kulit — solusi utama untuk masalah jerawat aktif, bekas jerawat (acne scar), tekstur kasar, dan warna kulit yang tidak merata.",
                 "Setiap treatment dikerjakan oleh dr. Yoanita Budiwiyono dengan metode medis yang terbukti efektif dan disesuaikan dengan jenis kulit, termasuk kulit berminyak maupun kulit sensitif. Konsultasi awal dijamin gratis untuk memastikan treatment yang dipilih tepat sasaran.",
                 "Untuk hasil terbaik, sebagian treatment di kategori ini membutuhkan satu hingga beberapa kali sesi. Hasil biasanya mulai terlihat dalam beberapa hari hingga beberapa minggu, tergantung jenis treatment yang dilakukan."
             ],
@@ -71,15 +71,15 @@ TREATMENTS = [
     {
         "slug": "lifting-contouring",
         "idx": 2,
-        "title_id": "LIFU, Filler & Contouring Surabaya | Revolushine",
-        "title_en": "LIFU, Filler & Contouring Surabaya | Revolushine",
-        "desc_id": "Treatment LIFU, Filler, Jaw Shot & Fatlysis Pro di Revolushine Surabaya untuk wajah lebih tirus, kontur tegas, tanpa operasi.",
+        "title_id": "LIFU, Filler & Contouring Surabaya | Aesthetic Clinic Revolushine",
+        "title_en": "LIFU, Filler & Contouring Surabaya | Aesthetic Clinic Revolushine",
+        "desc_id": "Treatment LIFU, Filler, Jaw Shot & Fatlysis Pro di Aesthetic Clinic Revolushine Surabaya untuk wajah lebih tirus, kontur tegas, tanpa operasi.",
         "h1_id": "LIFU, Filler & Contouring Surabaya",
         "h1_en": "LIFU, Filler & Contouring Surabaya",
         "img": "img/treatments/3.rev-skinlift.jpg",
         "img_webp": "img/treatments/3.rev-skinlift.webp",
         "img_w": 724, "img_h": 483,
-        "desc_long_id": "Treatment lifting & contouring di Revolushine Surabaya bertujuan untuk membentuk, mempertegas, dan menyeimbangkan proporsi wajah sehingga wajah lebih tirus dan simetris.",
+        "desc_long_id": "Treatment lifting & contouring di Aesthetic Clinic Revolushine Surabaya bertujuan untuk membentuk, mempertegas, dan menyeimbangkan proporsi wajah sehingga wajah lebih tirus dan simetris.",
         "items_id": [
             {"name": "LIFU Face & Neck", "desc": "Treatment non injeksi yang berbasis gelombang ultrasound yang bertujuan untuk mengencangkan, mengangkat, membakar lemak, dan membentuk kontur wajah tanpa operasi, tanpa rasa sakit, dan tanpa downtime."},
             {"name": "Fatlysis Pro", "desc": "Treatment injeksi yang bertujuan untuk membantu mengurangi lemak pada area tertentu seperti perut, lengan, pipi, paha, dan double chin."},
@@ -88,7 +88,7 @@ TREATMENTS = [
         ],
         "enrich_id": {
             "intro": [
-                "Treatment lifting & contouring di Revolushine Surabaya bertujuan untuk membentuk, mempertegas, dan menyeimbangkan proporsi wajah — tanpa operasi, tanpa rasa sakit, dan dengan downtime yang minimal.",
+                "Treatment lifting & contouring di Aesthetic Clinic Revolushine Surabaya bertujuan untuk membentuk, mempertegas, dan menyeimbangkan proporsi wajah — tanpa operasi, tanpa rasa sakit, dan dengan downtime yang minimal.",
                 "Pilihan treatment mencakup LIFU (ultrasound non-injeksi), Fatlysis Pro (injeksi penghancur lemak), Jaw Shot / Botox Rahang, serta Dermal Filler untuk penambahan volume dan koreksi area seperti bibir, dagu, pelipis, dan bawah mata.",
                 "Seluruh prosedur dilakukan langsung oleh dr. Yoanita Budiwiyono dengan pendekatan natural — hasilnya terlihat seperti versi terbaik dari dirimu, bukan berlebihan. Konsultasi awal membantu menentukan treatment yang paling sesuai dengan struktur wajahmu."
             ],
@@ -103,15 +103,15 @@ TREATMENTS = [
     {
         "slug": "targeted-solutions",
         "idx": 3,
-        "title_id": "Hair Plasma & Panda Eyes Surabaya | Revolushine",
-        "title_en": "Hair Plasma & Panda Eyes Surabaya | Revolushine",
-        "desc_id": "Treatment Hair Plasma, Panda Eyes & Hyperhidrosis di Revolushine Surabaya untuk rambut lebih lebat dan mata lebih segar.",
+        "title_id": "Hair Plasma & Panda Eyes Surabaya | Aesthetic Clinic Revolushine",
+        "title_en": "Hair Plasma & Panda Eyes Surabaya | Aesthetic Clinic Revolushine",
+        "desc_id": "Treatment Hair Plasma, Panda Eyes & Hyperhidrosis di Aesthetic Clinic Revolushine Surabaya untuk rambut lebih lebat dan mata lebih segar.",
         "h1_id": "Hair Plasma & Panda Eyes Surabaya",
         "h1_en": "Hair Plasma & Panda Eyes Surabaya",
         "img": "img/treatments/4.rev-hairplasma.jpg",
         "img_webp": "img/treatments/4.rev-hairplasma.webp",
         "img_w": 724, "img_h": 483,
-        "desc_long_id": "Solusi medis presisi untuk area spesifik di Revolushine Surabaya: Hair Plasma untuk rambut, Panda Eyes untuk mata, dan Hyperhidrosis untuk keringat berlebih.",
+        "desc_long_id": "Solusi medis presisi untuk area spesifik di Aesthetic Clinic Revolushine Surabaya: Hair Plasma untuk rambut, Panda Eyes untuk mata, dan Hyperhidrosis untuk keringat berlebih.",
         "items_id": [
             {"name": "Panda Eyes", "desc": "Mengencangkan kulit area bawah mata, meningkatkan sirkulasi kapiler, mencerahkan warna gelap, dan merangsang kolagen untuk tampilan mata yang lebih segar."},
             {"name": "Hair Plasma", "desc": "Perawatan spesifik pada kulit kepala untuk memperkuat akar, mencegah kerontokan, dan merangsang pertumbuhan rambut baru."},
@@ -119,7 +119,7 @@ TREATMENTS = [
         ],
         "enrich_id": {
             "intro": [
-                "Kategori targeted solutions di Revolushine Surabaya menawarkan solusi medis presisi untuk kondisi dan area yang spesifik — Panda Eyes untuk area bawah mata, Hair Plasma untuk kesehatan rambut, dan Hyperhidrosis untuk keringat berlebih.",
+                "Kategori targeted solutions di Aesthetic Clinic Revolushine Surabaya menawarkan solusi medis presisi untuk kondisi dan area yang spesifik — Panda Eyes untuk area bawah mata, Hair Plasma untuk kesehatan rambut, dan Hyperhidrosis untuk keringat berlebih.",
                 "Solusi-solusi ini dirancang untuk masalah yang membutuhkan pendekatan lebih terfokus, melampaui perawatan wajah umum. Seluruh prosedur dilakukan oleh dr. Yoanita dengan standar medis yang terbukti dan peralatan yang aman.",
                 "Konsultasi awal diperlukan untuk memastikan kondisi kamu cocok dengan salah satu solusi di atas, sekaligus merencanakan jumlah sesi yang dibutuhkan untuk hasil yang terbaik."
             ],
@@ -134,22 +134,22 @@ TREATMENTS = [
     {
         "slug": "facial-experience",
         "idx": 4,
-        "title_id": "Facial Surabaya | Revolushine",
-        "title_en": "Facial Surabaya | Revolushine",
-        "desc_id": "Facial Luxury & Facial Korea di Revolushine Surabaya dengan produk premium, pijatan relaksasi, dan hasil kulit lebih bersih.",
+        "title_id": "Facial Surabaya | Aesthetic Clinic Revolushine",
+        "title_en": "Facial Surabaya | Aesthetic Clinic Revolushine",
+        "desc_id": "Facial Luxury & Facial Korea di Aesthetic Clinic Revolushine Surabaya dengan produk premium, pijatan relaksasi, dan hasil kulit lebih bersih.",
         "h1_id": "Facial Surabaya",
         "h1_en": "Facial Surabaya",
         "img": "img/treatments/5.rev-facial.jpg",
         "img_webp": "img/treatments/5.rev-facial.webp",
         "img_w": 724, "img_h": 483,
-        "desc_long_id": "Treatment facial di Revolushine Surabaya menggunakan rangkaian produk premium untuk deep cleansing, eksfoliasi, dan relaksasi dengan pijatan wajah, bahu, punggung hingga kepala.",
+        "desc_long_id": "Treatment facial di Aesthetic Clinic Revolushine Surabaya menggunakan rangkaian produk premium untuk deep cleansing, eksfoliasi, dan relaksasi dengan pijatan wajah, bahu, punggung hingga kepala.",
         "items_id": [
             {"name": "Facial Luxury", "desc": "Facial dengan menggunakan rangkaian produk dari Eropa yang berbahan dasar alami dan premium sehingga proses eksfoliasinya lebih ringan. Sangat cocok untuk kulit sensitif."},
             {"name": "Facial Korea", "desc": "Facial dengan menggunakan rangkaian produk dari Korea yang bertujuan untuk menghidrasi kulit, dan membantu mengatasi jerawat."}
         ],
         "enrich_id": {
             "intro": [
-                "Facial experience di Revolushine Surabaya menawarkan perawatan relaksasi dan pemeliharaan kulit dasar — deep cleansing, eksfoliasi lembut, hingga pijatan menyeluruh pada wajah, bahu, punggung, dan kepala.",
+                "Facial experience di Aesthetic Clinic Revolushine Surabaya menawarkan perawatan relaksasi dan pemeliharaan kulit dasar — deep cleansing, eksfoliasi lembut, hingga pijatan menyeluruh pada wajah, bahu, punggung, dan kepala.",
                 "Dua pilihan utama adalah Facial Luxury dengan rangkaian produk Eropa berbahan dasar alami yang sangat cocok untuk kulit sensitif, serta Facial Korea dengan produk Korea untuk hidrasi mendalam dan membantu mengatasi jerawat.",
                 "Setiap sesi berlangsung sekitar 2 jam menggunakan rangkaian produk premium, dikerjakan langsung oleh dr. Yoanita. Treatment ini cocok untuk perawatan rutin, relaksasi setelah beraktivitas, atau hadiah istimewa untuk diri sendiri."
             ],
@@ -226,9 +226,9 @@ def generate_page(t):
 {{
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "name": "Revolushine Aesthetic Clinic",
+  "name": "Aesthetic Clinic Revolushine",
   "url": "https://revolushine.id/",
-  "description": "Klinik kecantikan Revolushine di Graha Famili Surabaya oleh dr. Yoanita Budiwiyono.",
+  "description": "Klinik kecantikan Aesthetic Clinic Revolushine di Graha Famili Surabaya oleh dr. Yoanita Budiwiyono.",
   "telephone": "+6287736386388",
   "address": {{
     "@type": "PostalAddress",
@@ -266,7 +266,7 @@ def generate_page(t):
   }},
   "provider": {{
     "@type": "MedicalBusiness",
-    "name": "Revolushine Aesthetic Clinic",
+    "name": "Aesthetic Clinic Revolushine",
     "url": "https://revolushine.id/"
   }}
 }}
@@ -277,7 +277,7 @@ def generate_page(t):
 <body>
 
 <nav id="nav">
-  <a href="../" class="nav-logo"><picture><source srcset="../img/revolushine-logo-main.webp" type="image/webp"><img loading="lazy" decoding="async" src="../img/revolushine-logo-main.png" alt="Revolushine" class="nav-logo-img" width="140" height="34"></picture></a>
+  <a href="../" class="nav-logo"><picture><source srcset="../img/revolushine-logo-main.webp" type="image/webp"><img loading="lazy" decoding="async" src="../img/revolushine-logo-main.png" alt="Aesthetic Clinic Revolushine" class="nav-logo-img" width="140" height="34"></picture></a>
   <ul class="nav-links">
     <li><a href="../#hotspot" data-i18n="nav_treatments">Treatment</a></li>
     <li><a href="../#testimonials" data-i18n="nav_testimonials">Testimoni</a></li>
@@ -287,7 +287,7 @@ def generate_page(t):
       <button class="lang-btn" id="langEn" onclick="setLang('en')">ENG</button>
       <button class="lang-btn active" id="langId" onclick="setLang('id')">IND</button>
     </li>
-    <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" data-i18n="nav_book">Konsultasi Sekarang</a></li>
+    <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" data-i18n="nav_book">Konsultasi Sekarang</a></li>
   </ul>
   <div class="lang-switcher mobile-lang">
     <button class="lang-btn" id="mobileLangEn" onclick="setLang('en')">ENG</button>
@@ -305,7 +305,7 @@ def generate_page(t):
     <li><a href="../#testimonials" onclick="toggleMobileMenu()" data-i18n="nav_testimonials">Testimoni</a></li>
     <li><a href="../#about" onclick="toggleMobileMenu()" data-i18n="nav_about">Dokter Kami</a></li>
     <li><button type="button" class="nav-quiz-btn" onclick="toggleMobileMenu();openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
-    <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" onclick="toggleMobileMenu()" data-i18n="nav_book">Konsultasi Sekarang</a></li>
+    <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" onclick="toggleMobileMenu()" data-i18n="nav_book">Konsultasi Sekarang</a></li>
   </ul>
 </div>
 
@@ -314,7 +314,7 @@ def generate_page(t):
     <a href="../" style="color:#fff;font-size:14px;text-decoration:none;opacity:0.8;">&#8592; Kembali ke Beranda</a>
     <h1 class="title-xl" style="color:#fff;margin-top:16px;font-size:clamp(28px,5vw,48px);">{t["h1_id"]}</h1>
     <p style="color:#fff;opacity:0.9;margin-top:12px;font-size:17px;line-height:1.6;">{t["desc_long_id"]}</p>
-    <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20{t["slug"].replace("-","%20")}%20di%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
+    <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20{t["slug"].replace("-","%20")}%20di%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
   </div>
 </header>
 
@@ -333,13 +333,13 @@ def generate_page(t):
 
 <section class="section" style="padding:40px 24px;text-align:center;">
   <p style="font-size:17px;color:var(--text-muted);margin-bottom:20px;">Butuh konsultasi lebih lanjut? Hubungi kami langsung.</p>
-  <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20{t["slug"].replace("-","%20")}%20di%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" rel="noopener" style="display:inline-block;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
+  <a href="https://wa.me/6287736386388?text=Saya%20tertarik%20dengan%20treatment%20{t["slug"].replace("-","%20")}%20di%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%3F" class="btn-book-hero" target="_blank" rel="noopener" style="display:inline-block;background:#25d366;color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;text-decoration:none;">Konsultasi via WhatsApp</a>
 </section>
 
 <footer>
   <div class="foot-grid">
     <div>
-      <picture><source srcset="../img/revolushine-logo-main.webp" type="image/webp"><img loading="lazy" decoding="async" src="../img/revolushine-logo-main.png" alt="Revolushine" class="foot-logo-img" width="120" height="29"></picture>
+      <picture><source srcset="../img/revolushine-logo-main.webp" type="image/webp"><img loading="lazy" decoding="async" src="../img/revolushine-logo-main.png" alt="Aesthetic Clinic Revolushine" class="foot-logo-img" width="120" height="29"></picture>
       <p style="font-size:17px;color:var(--text-muted);line-height:1.7" data-i18n-html="foot_desc">Perawatan estetika aman berbasis bukti ilmiah.<br>#InsecureNoMore</p>
     </div>
     <div class="foot-col">
@@ -354,21 +354,21 @@ def generate_page(t):
     <div class="foot-col">
       <h5 data-i18n="foot_connect_h">Hubungi Kami</h5>
       <ul>
-        <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="foot_wa">Konsultasi via WhatsApp</span></a></li>
+        <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="foot_wa">Konsultasi via WhatsApp</span></a></li>
         <li><a href="https://www.instagram.com/revolushine.id/" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> <span>Instagram</span></a></li>
         <li><a href="https://www.tiktok.com/@revolushine.id" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.11a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-.81-.07 4.83 4.83 0 01-.38.67z"/></svg> <span>TikTok</span></a></li>
         <li class="foot-address" style="margin-top:4px;"><a href="https://share.google/8bDS7EQUC5UBWy87x" target="_blank" rel="noopener" data-i18n="foot_address" style="color:inherit;text-decoration:none;">Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.</a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query=Revolushine+Aesthetic+Clinic+Surabaya" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg> <span data-i18n="foot_review">Lihat review kami di Google</span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Aesthetic+Clinic+Revolushine+Surabaya" class="foot-icon-link" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg> <span data-i18n="foot_review">Lihat review kami di Google</span></a></li>
       </ul>
     </div>
   </div>
   <div class="foot-bottom">
-    <span data-i18n="foot_copy">&#169; 2026 Revolushine Clinics. Hak cipta dilindungi.</span>
+    <span data-i18n="foot_copy">&#169; 2026 Aesthetic Clinic Revolushine. Hak cipta dilindungi.</span>
   </div>
 </footer>
 
 <div class="whatsapp-float-wrap">
-  <a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="whatsapp-float" target="_blank" rel="noopener">
+  <a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="whatsapp-float" target="_blank" rel="noopener">
     <picture><source srcset="../img/WhatsApp-Logo.wine.png.webp" type="image/webp"><img loading="lazy" decoding="async" src="../img/WhatsApp-Logo.wine.png" alt="WhatsApp" class="whatsapp-float-icon" width="50" height="50" /></picture>
   </a>
 </div>
@@ -408,7 +408,7 @@ def generate_page(t):
       <p class="q-label" data-i18n="quiz_result_label">Treatment yang Direkomendasikan</p>
       <div class="res-name" id="resName"></div>
       <p class="res-desc" id="resDesc"></p>
-      <a id="resWA" href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-primary" target="_blank" rel="noopener" data-i18n="nav_book">Konsultasi Sekarang</a>
+      <a id="resWA" href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="btn-primary" target="_blank" rel="noopener" data-i18n="nav_book">Konsultasi Sekarang</a>
       <div class="qpromo" id="qpromo">
         <div class="qpromo-offer">
           <p class="qpromo-tag" data-i18n="quiz_promo_tag">Special Offer</p>

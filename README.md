@@ -1,6 +1,6 @@
-# Revolushine Aesthetic Clinic — Website
+# Aesthetic Clinic Revolushine — Website
 
-Website for **Revolushine Aesthetic Clinic** (Dr. Yoanita Budiwiyono, dipl. AAAM), a boutique aesthetic clinic in Surabaya. Live at **https://revolushine.id** (GitHub Pages + Cloudflare DNS).
+Website for **Aesthetic Clinic Revolushine** (Dr. Yoanita Budiwiyono, dipl. AAAM), a boutique aesthetic clinic in Surabaya. Live at **https://revolushine.id** (GitHub Pages + Cloudflare DNS).
 
 Bilingual Indonesian/English, conversion-focused: interactive Treatment Quiz, AI-style chat widget, end-of-quiz "Konsultasi Pertama GRATIS" promo, persistent WhatsApp hand-offs.
 

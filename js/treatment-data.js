@@ -129,6 +129,8 @@ function openTreatmentModal(index) {
     '</div>'
   ).join('');
   body.scrollTop = 0;
+  const pageLink = document.getElementById('tmodalPageLink');
+  if (pageLink) pageLink.href = ['skin-rejuvenation','clarity-texture','lifting-contouring','targeted-solutions','facial-experience'][index] + '.html';
   document.getElementById('treatmentModal').classList.add('open');
   document.documentElement.classList.add('modal-lock');
 }

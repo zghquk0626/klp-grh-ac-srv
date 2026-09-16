@@ -167,7 +167,7 @@ function showResult(){
   document.querySelectorAll('.qdot').forEach(d => d.classList.add('on'));
   document.getElementById('resName').textContent = result.n;
   document.getElementById('resDesc').textContent = result.d;
-  const msg = `Saya melihat treatment ${result.n} dari website Revolushine, apakah bisa konsultasi terlebih dahulu?`;
+  const msg = `Saya melihat treatment ${result.n} dari website Aesthetic Clinic Revolushine, apakah bisa konsultasi terlebih dahulu?`;
   document.getElementById('resWA').href = `https://wa.me/6287736386388?text=${encodeURIComponent(msg)}`;
   quizPromo.treatment = result.n;
   quizPromo.problems = getQuizProblemLabels();
@@ -746,7 +746,7 @@ function getChatCookie(key) {
   function closeChat() {
     windowEl.classList.remove('open');
     bubbleEl.setAttribute('aria-expanded', 'false');
-    bubbleEl.setAttribute('aria-label', 'Chat dengan tim Revolushine');
+    bubbleEl.setAttribute('aria-label', 'Chat dengan tim Aesthetic Clinic Revolushine');
   }
 
   window.toggleChat = () => windowEl.classList.contains('open') ? closeChat() : openChat();

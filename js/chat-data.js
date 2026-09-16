@@ -22,8 +22,8 @@ const chatData = {
     waCta: 'Chat via WhatsApp',
     chips: [
       { label: '💬 Consult about my concern', reply: 'Of course! Tell us about your concern and our doctor will recommend the treatment that suits you best. ✨', waMessage: 'I would like to consult about my skin concern' },
-      { label: '📅 Book an appointment', reply: 'We\'d be happy to arrange a visit that fits your schedule. 🗓️', waMessage: 'I would like to book an appointment at Revolushine' },
-      { label: '📋 Latest promos & packages', reply: 'Of course! Our team will share the latest promos and packages with you. 🎉', waMessage: 'Please inform me about the latest Revolushine promos' },
+      { label: '📅 Book an appointment', reply: 'We\'d be happy to arrange a visit that fits your schedule. 🗓️', waMessage: 'I would like to book an appointment at Aesthetic Clinic Revolushine' },
+      { label: '📋 Latest promos & packages', reply: 'Of course! Our team will share the latest promos and packages with you. 🎉', waMessage: 'Please inform me about the latest Aesthetic Clinic Revolushine promos' },
       { label: '🕙 Opening hours', info: 'We are open:\n📅 Monday – Saturday\n🕘 09.00 – 20.00 WIB\n📍 Plaza Graha Famili, Dukuhpakis, Surabaya' },
       { label: '📸 Our Instagram portfolio', info: 'See our treatment results on Instagram! ✨', url: 'https://www.instagram.com/revolushine.id/', cta: 'Open Instagram' }
     ],
@@ -51,8 +51,8 @@ const chatData = {
     waCta: 'Chat via WhatsApp',
     chips: [
       { label: '💬 Konsultasi keluhan kulit saya', reply: 'Tentu! Ceritakan keluhanmu dan dokter kami akan merekomendasikan treatment yang paling sesuai. ✨', waMessage: 'Saya ingin konsultasi tentang keluhan kulit saya' },
-      { label: '📅 Mau buat janji temu', reply: 'Siap! Tim kami akan bantu atur jadwal kunjungan yang paling cocok untukmu. 🗓️', waMessage: 'Saya ingin membuat appointment (janji temu) di Revolushine' },
-      { label: '📋 Info promo terbaru', reply: 'Tentunya! Tim kami akan membagikan info promo & paket terbaru. 🎉', waMessage: 'Tolong infokan promo terbaru Revolushine' },
+      { label: '📅 Mau buat janji temu', reply: 'Siap! Tim kami akan bantu atur jadwal kunjungan yang paling cocok untukmu. 🗓️', waMessage: 'Saya ingin membuat appointment (janji temu) di Aesthetic Clinic Revolushine' },
+      { label: '📋 Info promo terbaru', reply: 'Tentunya! Tim kami akan membagikan info promo & paket terbaru. 🎉', waMessage: 'Tolong infokan promo terbaru Aesthetic Clinic Revolushine' },
       { label: '🕙 Jam berapa buka?', info: 'Kami buka:\n📅 Senin – Sabtu\n🕘 09.00 – 20.00 WIB\n📍 Plaza Graha Famili, Dukuhpakis, Surabaya' },
       { label: '📸 Lihat portfolio kami', info: 'Lihat hasil treatment kami di Instagram! ✨', url: 'https://www.instagram.com/revolushine.id/', cta: 'Buka Instagram' }
     ],

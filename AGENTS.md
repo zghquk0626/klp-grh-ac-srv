@@ -3,7 +3,7 @@
 Guidance for AI coding agents working in this repository.
 
 ## What this is
-Static, bilingual (ID primary / EN toggle) marketing site for **Revolushine Aesthetic Clinic** (Dr. Yoanita Budiwiyono), Surabaya. Hosted on GitHub Pages behind Cloudflare DNS at `https://revolushine.id`. No build step for the site itself; a couple of small Python generators are used.
+Static, bilingual (ID primary / EN toggle) marketing site for **Aesthetic Clinic Revolushine** (Dr. Yoanita Budiwiyono), Surabaya. Hosted on GitHub Pages behind Cloudflare DNS at `https://revolushine.id`. No build step for the site itself; a couple of small Python generators are used.
 
 ## Deploy + access
 - Remote: `git@github.com:zghquk0626/klp-grh-ac-srv.git` (SSH). HTTPS push is NOT configured and `gh` CLI is NOT installed — always push via the SSH remote.
@@ -12,7 +12,7 @@ Static, bilingual (ID primary / EN toggle) marketing site for **Revolushine Aest
 - Key facts: WhatsApp `+62 877-3638-6388` → `https://wa.me/6287736386388?...` everywhere; Instagram `@revolushine.id`; hours Mon–Sat 09:00–20:00 WIB; address Plaza Graha Famili, Jl. Mayjend. Jonosewojo D-3A, Dukuhpakis, Surabaya.
 
 ## File map
-- `index.html` — homepage (hero, treatments carousel, before/after, testimonials, promo, FAQ, quiz overlay, chat widget, footer).
+- `index.html` — homepage (hero, treatments carousel, before/after, testimonials, promo, FAQ, quiz overlay, chat widget, footer). Carousel cards open the treatment modal AND have a "View Full Page" / "Lihat Halaman Lengkap" link (`t_view_detail`) to `treatments/*.html`; the modal has the same link whose href is set in `openTreatmentModal()` (`js/treatment-data.js`, slug array order = carousel order).
 - `treatments/*.html` — 5 GENERATED pages. Do NOT hand-edit them; edit `generate_treatment_pages.py` then run `python3 generate_treatment_pages.py`.
 - `generate_treatment_pages.py` — source of truth for treatment pages. Holds `TREATMENTS` data (meta, `items_id`, `enrich_id` intro/FAQ copy) and the full page template (f-string, so `{t[...]}` interpolates and JSON-LD braces must be doubled as `{{ }}`). Shared blocks (quiz result incl. `.qpromo`, footer, chat/price stubs) live here AND in `index.html` — keep them in sync.
 - `script.js` — Lenis + GSAP/ScrollTrigger animations, quiz logic, end-of-quiz promo, chat widget IIFE, cookie helpers.
