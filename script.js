@@ -502,6 +502,7 @@ function getChatCookie(key) {
   const msgsEl = document.getElementById('chatMessages');
   const inputEl = document.getElementById('chatInput');
   const floatWrap = document.querySelector('.whatsapp-float-wrap');
+  const capsuleEl = document.getElementById('chatCapsule');
   const WA_NUMBER = '6287736386388';
   const TRIGGER = { timer: 60000, scroll: 0.3 };
 
@@ -528,7 +529,11 @@ function getChatCookie(key) {
     bubbleShown = true;
     bubbleEl.classList.add('show');
     if (floatWrap) floatWrap.classList.add('hide');
-    setTimeout(() => { if (!started && !windowEl.classList.contains('open')) openChat(); }, 650);
+    setTimeout(() => {
+      if (started || windowEl.classList.contains('open')) return;
+      if (window.matchMedia('(max-width: 640px)').matches) showCapsule();
+      else openChat();
+    }, 650);
   }
   setTimeout(showBubble, TRIGGER.timer);
   window.addEventListener('scroll', function onScroll() {
@@ -539,6 +544,33 @@ function getChatCookie(key) {
       window.removeEventListener('scroll', onScroll);
     }
   }, { passive: true });
+
+  // Narrow screens: a soft semitransparent capsule hints instead of auto-opening
+  let capsuleTimer = null;
+  function showCapsule() {
+    if (!capsuleEl || capsuleEl.classList.contains('show') || windowEl.classList.contains('open')) return;
+    capsuleEl.querySelector('.chat-capsule-text').textContent = cd().capsule;
+    capsuleEl.classList.add('show');
+    clearTimeout(capsuleTimer);
+    capsuleTimer = setTimeout(hideCapsule, 9000);
+  }
+  function hideCapsule() {
+    if (!capsuleEl) return;
+    capsuleEl.classList.remove('show');
+    clearTimeout(capsuleTimer);
+  }
+  function openCapsuleChat() {
+    hideCapsule();
+    bubbleEl.classList.add('show');
+    openChat();
+  }
+  window.openCapsuleChat = openCapsuleChat;
+  if (capsuleEl) {
+    capsuleEl.addEventListener('click', openCapsuleChat);
+    capsuleEl.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCapsuleChat(); }
+    });
+  }
 
   // Rendering helpers
   function scrollDown() { msgsEl.scrollTop = msgsEl.scrollHeight; }
@@ -699,6 +731,7 @@ function getChatCookie(key) {
 
   // Open / close / toggle
   function openChat() {
+    hideCapsule();
     windowEl.classList.add('open');
     bubbleEl.setAttribute('aria-expanded', 'true');
     bubbleEl.setAttribute('aria-label', 'Tutup chat');
@@ -730,8 +763,10 @@ function getChatCookie(key) {
 
   // Keep placeholder/aria in sync with the active language
   inputEl.placeholder = cd().placeholder;
+  if (capsuleEl) capsuleEl.querySelector('.chat-capsule-text').textContent = cd().capsule;
   document.addEventListener('langchange', () => {
     inputEl.placeholder = cd().placeholder;
+    if (capsuleEl && capsuleEl.classList.contains('show')) capsuleEl.querySelector('.chat-capsule-text').textContent = cd().capsule;
     if (!started) {
       msgsEl.innerHTML = '';
       started = false;

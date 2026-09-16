@@ -26,7 +26,7 @@ Static, bilingual (ID primary / EN toggle) marketing site for **Revolushine Aest
 ## Conventions / rules
 - **i18n:** add new copy to BOTH `en` and `id` blocks in `js/i18n.js`, HTML uses `data-i18n`/`data-i18n-html`/`data-i18n-placeholder`. Chat copy goes in `js/chat-data.js` instead and is read via `chatData[currentLang] || chatData.id`.
 - **Chat + quiz share the visitor's name via cookies** `rvChatName` and `rvChatLoc` (1-yr, SameSite=Lax, Secure on https). Always use the module-scope helpers `setChatCookie()` / `getChatCookie()` and `CHAT_COOKIE` in `script.js` (both the chat IIFE and quiz promo use them). Never ask for something the cookie already knows.
-- **Chat widget behavior:** appears once after 60s OR 30% scroll (`TRIGGER` in script.js). It auto-opens once; window height is intentionally capped (desktop `min(480px, calc(100vh - 170px))`, mobile `min(420px, 55vh)`) to avoid covering content. On treatment pages the chat IIFE early-returns; they keep the WhatsApp float.
+- **Chat widget behavior:** appears once after 60s OR 30% scroll (`TRIGGER` in script.js). It auto-opens once on wide screens (>640px); on narrow/phone screens it instead shows a semitransparent `.chat-capsule` pill ("Hello, may we help you?" / ID "Halo, boleh kami bantu?") that opens the chat on tap and hides after 9s (copy key `capsule` in `chat-data.js`). Window height is intentionally capped (desktop `min(480px, calc(100vh - 170px))`, mobile `min(420px, 55vh)`) to avoid covering content. On treatment pages the chat IIFE early-returns; they keep the WhatsApp float.
 - **`window.open(url, '_blank', 'noopener')`** calls for WhatsApp hand-offs must be synchronous within the click handler (popup blockers).
 - **End-of-quiz promo:** `.qpromo` card in the quiz result sends `Saya {name} mau tahu lebih lanjut tentang treatment {treatment} untuk keluhan: {list}` (i18n key `quiz_promo_wa`); problems = localized labels of quiz answers. Keep `.qpromo` markup identical in `index.html` and the generator template.
 - **Animations:** `.g-fade` elements are VISIBLE by default; the hidden animated state is only applied via `.anim-ready` on `<html>`, added by `script.js` once GSAP is confirmed loaded. Never change `.g-fade` back to `opacity:0` by default, and respect `prefers-reduced-motion`.
@@ -42,6 +42,6 @@ Static, bilingual (ID primary / EN toggle) marketing site for **Revolushine Aest
 
 ## SEO / AEO (what the established schemas are)
 - `robots.txt` explicitly allows GPTBot and Google-Extended.
-- `index.html`: `MedicalBusiness` + bilingual `FAQPage` (12 questions).
+- `index.html`: `MedicalBusiness` + bilingual `FAQPage` (16 questions: 8 EN + 8 ID, mirroring the 8 visible `faq-item` accordion entries).
 - Treatment pages: `MedicalBusiness` + `MedicalProcedure` per page.
 - `sitemap.xml` lists all pages; `llms.txt` gives an AI-readable summary.

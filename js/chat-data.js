@@ -12,6 +12,7 @@ const chatData = {
       night: 'Good evening! 👋 How can we help you?'
     },
     placeholder: 'Type your message…',
+    capsule: 'Hello, may we help you?',
     freeTextBtn: 'Tap here to send a message directly to our team:',
     freeTextReply: 'Type your message below and press Send. We\'ll ask your name and city so our team can respond personally. 😊',
     askName: 'May I know what your name is? 😊',
@@ -40,6 +41,7 @@ const chatData = {
       night: 'Selamat malam! 👋 Ada yang bisa kami bantu?'
     },
     placeholder: 'Ketik pesanmu…',
+    capsule: 'Halo, boleh kami bantu?',
     freeTextBtn: 'Klik di sini untuk langsung mengirimkan pesan ke tim kami:',
     freeTextReply: 'Silakan tulis pesanmu di bawah, lalu tekan Kirim. Tim kami akan meminta nama dan kota kamu agar bisa merespons lebih personal. 😊',
     askName: 'Boleh saya tahu, dengan Kakak siapa? 😊',

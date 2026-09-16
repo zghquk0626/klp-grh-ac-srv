@@ -83,7 +83,11 @@
     {"@type":"Question","name":"Berapa lama hasil treatmentnya mulai terlihat?","acceptedAnswer":{"@type":"Answer","text":"Hasil treatment biasanya mulai terlihat sekitar 3 hingga 7 hari, bervariasi tergantung treatment apa yang dilakukan. Contohnya: Lifu, hasil mulai terlihat pada hari H hingga sekitar 30 hari kemudian. Skinbooster, botox, dan rejuve biasanya hasil mulai terlihat pada hari ke-3. Facial, hasil akan mulai terlihat pada hari H."},"inLanguage":"id"},
     {"@type":"Question","name":"Apakah ada downtime setelah treatment?","acceptedAnswer":{"@type":"Answer","text":"Ada beberapa treatment yang membutuhkan downtime sekitar 3 hari, seperti Skinbooster Salmon DNA, Subsisi, dan treatment injeksi lainnya tergantung kandungan yang ada dalam Skinboosternya. Untuk Facial, Peeling, Diamond Silk, dan Lifu tidak ada downtime."},"inLanguage":"id"},
     {"@type":"Question","name":"Berapa lama hasil treatment biasanya bertahan?","acceptedAnswer":{"@type":"Answer","text":"Hasil treatment bisa bertahan bervariasi tergantung treatmentnya. Treatment botox dan Rejuve biasanya bisa bertahan 4–6 bulan. Treatment filler bisa bertahan sekitar 1 tahun hingga lebih. Treatment Skinbooster bisa bertahan sekitar 1 bulan hingga lebih tergantung kandungan yang ada dalam Skinboosternya. Lifu bisa bertahan hingga 6 bulan."},"inLanguage":"id"},
-    {"@type":"Question","name":"Apakah aman untuk ibu hamil dan menyusui?","acceptedAnswer":{"@type":"Answer","text":"Ibu hamil tidak disarankan melakukan treatment injeksi. Ibu hamil cukup melakukan medical facial, Diamond Silk, dan LIFU low energy. Untuk ibu menyusui, facial, Diamond Silk, dan LIFU low energy aman dilakukan. Namun untuk tindakan injeksi seperti Skinbooster, Filler, dan beberapa treatment lainnya, kami akan melakukan konsultasi terlebih dahulu karena data keamanan untuk ibu menyusui masih terbatas. Keputusan tindakan akan disesuaikan dengan kondisi masing-masing pasien."},"inLanguage":"id"}
+    {"@type":"Question","name":"Apakah aman untuk ibu hamil dan menyusui?","acceptedAnswer":{"@type":"Answer","text":"Ibu hamil tidak disarankan melakukan treatment injeksi. Ibu hamil cukup melakukan medical facial, Diamond Silk, dan LIFU low energy. Untuk ibu menyusui, facial, Diamond Silk, dan LIFU low energy aman dilakukan. Namun untuk tindakan injeksi seperti Skinbooster, Filler, dan beberapa treatment lainnya, kami akan melakukan konsultasi terlebih dahulu karena data keamanan untuk ibu menyusui masih terbatas. Keputusan tindakan akan disesuaikan dengan kondisi masing-masing pasien."},"inLanguage":"id"},
+    {"@type":"Question","name":"How do I book a consultation or appointment?","acceptedAnswer":{"@type":"Answer","text":"It's easy: send a WhatsApp message to +62 877-3638-6388 with your concern or the treatment you're interested in, and our team will help schedule your free first consultation with Dr. Yoanita."},"inLanguage":"en"},
+    {"@type":"Question","name":"Where is the clinic located?","acceptedAnswer":{"@type":"Answer","text":"Revolushine is located at Plaza Graha Famili, Jl. Mayjend. Jonosewojo D-3A, Dukuhpakis, Surabaya. We're open Monday to Saturday, 09:00 – 20:00 WIB."},"inLanguage":"en"},
+    {"@type":"Question","name":"Bagaimana cara booking konsultasi atau appointment?","acceptedAnswer":{"@type":"Answer","text":"Mudah sekali: kirim pesan WhatsApp ke +62 877-3638-6388 berisi keluhan atau treatment yang kamu inginkan, dan tim kami akan membantu menjadwalkan konsultasi pertamamu yang gratis bersama Dr. Yoanita."},"inLanguage":"id"},
+    {"@type":"Question","name":"Di mana lokasi klinik Revolushine?","acceptedAnswer":{"@type":"Answer","text":"Revolushine berlokasi di Plaza Graha Famili, Jl. Mayjend. Jonosewojo D-3A, Dukuhpakis, Surabaya. Kami buka setiap Senin sampai Sabtu pukul 09.00 – 20.00 WIB."},"inLanguage":"id"}
   ]
 }
 </script>
@@ -504,6 +508,26 @@
       </div>
     </div>
 
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-i18n="faq7_q">How do I book a consultation or appointment?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-ans" data-i18n="faq7_a">It's easy: send a WhatsApp message to +62 877-3638-6388 with your concern or the treatment you're interested in, and our team will help schedule your free first consultation with Dr. Yoanita.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-i18n="faq8_q">Where is the clinic located?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-body">
+        <p class="faq-ans" data-i18n="faq8_a">Revolushine is located at Plaza Graha Famili, Jl. Mayjend. Jonosewojo D-3A, Dukuhpakis, Surabaya. We're open Monday to Saturday, 09:00 – 20:00 WIB.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 <footer>
@@ -670,6 +694,7 @@
   <button type="button" class="chat-bubble" id="chatBubble" onclick="toggleChat()" aria-label="Chat dengan tim Revolushine" aria-expanded="false">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.5 1.2 4.8 3.2 6.4L4.6 21l3.6-1.9c1.2.4 2.5.6 3.8.6 5.5 0 10-3.9 10-8.7S17.5 3 12 3zm-5.3 7.6h10.6c.4 0 .7.3.7.7s-.3.7-.7.7H6.7c-.4 0-.7-.3-.7-.7s.3-.7.7-.7z"/></svg>
   </button>
+  <div class="chat-capsule" id="chatCapsule" role="button" tabindex="0" aria-label="Buka chat"><span class="chat-capsule-text"></span></div>
   <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat Revolushine" data-lenis-prevent>
     <div class="chat-header">
       <div class="chat-avatar">R</div>
