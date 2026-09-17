@@ -68,12 +68,12 @@ function handleTreatmentCardClick(index, event) {
     event.stopPropagation();
   }
 
-  if (window.innerWidth <= 768) {
-    openTreatmentModal(index);
+  if (window.innerWidth > 768) {
+    moveCarousel(index);
     return;
   }
 
-  moveCarousel(index);
+  window.location.href = ['skin-rejuvenation','clarity-texture','lifting-contouring','targeted-solutions','facial-experience'][index] + '.html';
 }
 updateCarousel();
 
@@ -809,7 +809,6 @@ function getChatCookie(key) {
   let lastFocus = null;
 
   const baseOpenQuiz = window.openQuiz, baseCloseQuiz = window.closeQuiz;
-  const baseOpenTModal = window.openTreatmentModal, baseCloseTModal = window.closeTreatmentModal;
   const baseOpenPromo = window.openPromoModal, baseClosePromo = window.closePromoModal;
 
   window.openQuiz = function() {
@@ -822,20 +821,6 @@ function getChatCookie(key) {
   };
   window.closeQuiz = function() {
     if (baseCloseQuiz) baseCloseQuiz();
-    if (release) { release(); release = null; }
-    if (lastFocus) lastFocus.focus();
-  };
-
-  window.openTreatmentModal = function(index) {
-    lastFocus = document.activeElement;
-    if (baseOpenTModal) baseOpenTModal(index);
-    const overlay = document.getElementById('treatmentModal');
-    const closeBtn = overlay && overlay.querySelector('.tmodal-close');
-    if (closeBtn) closeBtn.focus();
-    release = trapFocus(overlay);
-  };
-  window.closeTreatmentModal = function() {
-    if (baseCloseTModal) baseCloseTModal();
     if (release) { release(); release = null; }
     if (lastFocus) lastFocus.focus();
   };

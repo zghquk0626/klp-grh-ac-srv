@@ -12,14 +12,14 @@ Static, bilingual (ID primary / EN toggle) marketing site for **Aesthetic Clinic
 - Key facts: WhatsApp `+62 877-3638-6388` → `https://wa.me/6287736386388?...` everywhere; Instagram `@revolushine.id`; hours Mon–Sat 09:00–20:00 WIB; address Plaza Graha Famili, Jl. Mayjend. Jonosewojo D-3A, Dukuhpakis, Surabaya.
 
 ## File map
-- `index.html` — homepage (hero, treatments carousel, before/after, testimonials, promo, FAQ, quiz overlay, chat widget, footer). Carousel cards open the treatment modal AND have a "View Full Page" / "Lihat Halaman Lengkap" link (`t_view_detail`) to `treatments/*.html`; the modal has the same link whose href is set in `openTreatmentModal()` (`js/treatment-data.js`, slug array order = carousel order).
+- `index.html` — homepage (hero, treatments carousel, before/after, testimonials, promo, FAQ, quiz overlay, chat widget, footer). Each carousel card's "Baca Selengkapnya" CTA (`t_card_read`, an `<a>` with class `t-card-read`) links directly to its `treatments/*.html` page; tapping a card on mobile also navigates there (`handleTreatmentCardClick`). The old `#treatmentModal` markup is commented out (its content now lives on the treatment pages).
 - `treatments/*.html` — 5 GENERATED pages. Do NOT hand-edit them; edit `generate_treatment_pages.py` then run `python3 generate_treatment_pages.py`.
 - `generate_treatment_pages.py` — source of truth for treatment pages. Holds `TREATMENTS` data (meta, `items_id`, `enrich_id` intro/FAQ copy) and the full page template (f-string, so `{t[...]}` interpolates and JSON-LD braces must be doubled as `{{ }}`). Shared blocks (quiz result incl. `.qpromo`, footer, chat/price stubs) live here AND in `index.html` — keep them in sync.
 - `script.js` — Lenis + GSAP/ScrollTrigger animations, quiz logic, end-of-quiz promo, chat widget IIFE, cookie helpers.
 - `quiz-logic.js` — quiz → treatment recommendation engine (`getQuizRecommendation`, `treatmentDetails`).
 - `js/i18n.js` — `translations = { en, id }`, `currentLang`, `setLang()` (dispatches `langchange`). Handles `data-i18n` (textContent), `data-i18n-html` (innerHTML), `data-i18n-placeholder`.
 - `js/chat-data.js` — chat widget copy (greeting, chips, auto-replies, compose templates). NOT in i18n.js (i18n.js only holds `chat_status`).
-- `js/treatment-data.js` — treatment categories + items (en/id) for modal grid; also statically embedded into generated pages.
+- `js/treatment-data.js` — treatment categories + items (en/id). Feeds the `#treatmentItems` list on each generated treatment page (per-page inline script) and the quiz/treatment-data-driven content; the old modal open/close functions are commented out.
 - `css/styles.css` and `css/chat.css` — styles. Chat CSS only loaded on the homepage.
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO/AEO files at root.
 

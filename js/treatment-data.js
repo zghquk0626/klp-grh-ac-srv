@@ -113,6 +113,11 @@ const treatmentData = [
   }
 ];
 
+// ── DISABLED: modal open/close handlers ──
+// Content that used to live in the homepage treatment modal is now rendered
+// directly on each treatments/*.html page (see the per-page inline script
+// that fills #treatmentItems from treatmentData; "Baca Selengkapnya" links there).
+/*
 function openTreatmentModal(index) {
   const data = treatmentData[index];
   const lang = typeof currentLang !== 'undefined' ? currentLang : 'id';
@@ -139,3 +144,4 @@ function closeTreatmentModal() {
   document.getElementById('treatmentModal').classList.remove('open');
   document.documentElement.classList.remove('modal-lock');
 }
+*/
