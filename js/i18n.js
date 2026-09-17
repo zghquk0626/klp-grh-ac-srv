@@ -3,6 +3,7 @@ const translations = {
   en: {
     nav_treatments: 'Treatments', nav_testimonials: 'Testimonials', nav_about: 'Our Doctor',
     nav_quiz: 'Treatment Quiz', nav_book: 'Book Consultation',
+    skip_link: 'Skip to main content',
     hero_tagline: 'Aesthetic Clinic Surabaya',
     hero_h1: 'Insecure <em>no more.</em>',
     hero_copy: 'Begin your skin journey with Aesthetic Clinic Revolushine,<br>where natural radiance is uncovered.',
@@ -94,12 +95,17 @@ const translations = {
     foot_address: 'Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.',
     foot_review: 'See our Google reviews',
     price_from: 'Starting from',
+    t_back: '← Back to Home',
+    t_cta_lead: 'Need further consultation? Contact us directly.',
+    t_cta_btn: 'Consult via WhatsApp',
+    t_faq_h2: 'Frequently Asked Questions',
     foot_copy: '\u00a9 2026 Aesthetic Clinic Revolushine. All rights reserved.',
     chat_status: '● Online'
   },
   id: {
     nav_treatments: 'Treatment', nav_testimonials: 'Testimoni', nav_about: 'Dokter Kami',
     nav_quiz: 'Treatment Quiz', nav_book: 'Konsultasi Sekarang',
+    skip_link: 'Lewati ke konten utama',
     hero_tagline: 'Klinik Estetika Surabaya',
     hero_h1: 'Tak lagi <em>insecure.</em>',
     hero_copy: 'Mulai perjalanan kulitmu bersama Aesthetic Clinic Revolushine,<br>di mana kecantikan alami kamu terpancar.',
@@ -191,6 +197,10 @@ const translations = {
     foot_address: 'Plaza Graha Famili, Ruko, Jl. Mayjend. Jonosewojo D-3A, Pradahkalikendal, Kec. Dukuhpakis, Surabaya.',
     foot_review: 'Lihat review kami di Google',
     price_from: 'Mulai dari',
+    t_back: '← Kembali ke Beranda',
+    t_cta_lead: 'Butuh konsultasi lebih lanjut? Hubungi kami langsung.',
+    t_cta_btn: 'Konsultasi via WhatsApp',
+    t_faq_h2: 'Pertanyaan yang Sering Diajukan',
     foot_copy: '\u00a9 2026 Aesthetic Clinic Revolushine. Hak cipta dilindungi.',
     chat_status: '● Online'
   }

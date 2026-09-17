@@ -1,17 +1,27 @@
-// ── LENIS SMOOTH SCROLL ──
-const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
-requestAnimationFrame(raf);
-gsap.registerPlugin(ScrollTrigger);
-document.documentElement.classList.add('anim-ready');
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add(time => lenis.raf(time * 1000));
+// ── LENIS + GSAP (single driver, delayed init, reduced-motion aware) ──
+const REDUCE_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ── GSAP ANIMATIONS ──
-ScrollTrigger.batch('.g-fade', {
-  onEnter: els => gsap.to(els, { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: 'power3.out' }),
-  start: 'top 85%', once: true
-});
+function initSmoothScroll() {
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+  document.documentElement.classList.add('anim-ready');
+  if (REDUCE_MOTION) return;
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(time => lenis.raf(time * 1000));
+    window.lenis = lenis;
+  }
+  ScrollTrigger.batch('.g-fade', {
+    onEnter: els => gsap.to(els, { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: 'power3.out' }),
+    start: 'top 85%', once: true
+  });
+}
+(function() {
+  const t0 = performance.now();
+  if (t0 >= 2500) initSmoothScroll();
+  else setTimeout(initSmoothScroll, 2500 - t0);
+})();
 
 // ── 3D CAROUSEL LOGIC ──
 const cards3D = Array.from(document.querySelectorAll('.t-card-3d'));
@@ -55,14 +65,26 @@ function updateCarousel() {
   });
 }
 
-function moveCarousel(index) { currentIndex = index; updateCarousel(); }
-function prevCarousel() { currentIndex = (currentIndex - 1 + total) % total; updateCarousel(); }
-function nextCarousel() { currentIndex = (currentIndex + 1) % total; updateCarousel(); }
+let carouselTimer = null;
+function pauseCarouselAuto() { if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; } }
+function restartCarouselAuto() {
+  pauseCarouselAuto();
+  if (!cards3D.length || REDUCE_MOTION) return;
+  carouselTimer = setInterval(function() { currentIndex = (currentIndex + 1) % total; updateCarousel(); }, 4500);
+}
+
+function moveCarousel(index) { currentIndex = index; updateCarousel(); restartCarouselAuto(); }
+function prevCarousel() { currentIndex = (currentIndex - 1 + total) % total; updateCarousel(); restartCarouselAuto(); }
+function nextCarousel() { currentIndex = (currentIndex + 1) % total; updateCarousel(); restartCarouselAuto(); }
 function animateCarouselTo(index) {
   currentIndex = index;
   updateCarousel();
+  restartCarouselAuto();
 }
 function handleTreatmentCardClick(index, event) {
+  if (event && event.target && event.target.closest && event.target.closest('.t-card-read')) {
+    return; // let the "Baca Selengkapnya" link navigate on its own
+  }
   if (event) {
     event.preventDefault();
     event.stopPropagation();
@@ -119,17 +141,54 @@ updateCarousel();
   }, { passive: true });
 })();
 
-// ── FLICKITY TESTIMONIALS (INFINITE) ──
-if (document.getElementById('tSlider') && typeof Flickity !== 'undefined') {
-  new Flickity('#tSlider', {
-    cellAlign: 'center',
-    contain: true,
-    wrapAround: true,
-    autoPlay: 4500,
-    prevNextButtons: false,
-    pageDots: false
-  });
-}
+// ── 3D CAROUSEL AUTOPLAY (4.5s, pauses on hover/touch) ──
+(function() {
+  const wrap = document.getElementById('carousel3D');
+  if (!wrap) return;
+  wrap.addEventListener('mouseenter', pauseCarouselAuto);
+  wrap.addEventListener('mouseleave', restartCarouselAuto);
+  wrap.addEventListener('touchstart', pauseCarouselAuto, { passive: true });
+  restartCarouselAuto();
+})();
+
+// ── FLICKITY TESTIMONIALS (INFINITE, lazily initialized + stylesheet injected near viewport) ──
+(function() {
+  const sliderEl = document.getElementById('tSlider');
+  if (!sliderEl) return;
+  const CSS_HREF = 'https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css';
+  let done = false;
+  function injectFlickityCSS() {
+    if (document.querySelector('link[data-flickity-css]')) return;
+    const l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = CSS_HREF;
+    l.setAttribute('data-flickity-css', '');
+    document.head.appendChild(l);
+  }
+  function initFlickity() {
+    if (done) return;
+    done = true;
+    injectFlickityCSS();
+    if (typeof Flickity !== 'undefined') {
+      new Flickity('#tSlider', {
+        cellAlign: 'center',
+        contain: true,
+        wrapAround: true,
+        autoPlay: 4500,
+        prevNextButtons: false,
+        pageDots: false
+      });
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { initFlickity(); io.disconnect(); }
+    }, { rootMargin: '800px' });
+    io.observe(sliderEl);
+  } else {
+    initFlickity();
+  }
+})();
 
 // ── QUIZ LOGIC ──
 const quizState = { q1: null, q2: null };

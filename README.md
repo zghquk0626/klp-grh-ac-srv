@@ -10,7 +10,14 @@ Bilingual Indonesian/English, conversion-focused: interactive Treatment Quiz, AI
 - **Free-consultation promo** at the end of the quiz (uses the visitor's name from the chat cookie or asks once)
 - **Before/after slider + patient testimonials** (reviews + Instagram portfolio)
 - **Promo carousel** with lightbox, **FAQ** section, **5 treatment landing pages**
-- **SEO/AEO**: MedicalBusiness + FAQPage schema (home), MedicalProcedure schema (treatment pages), `robots.txt` (GPTBot + Google-Extended allowed), `sitemap.xml`, `llms.txt`
+- **SEO/AEO**: MedicalBusiness + FAQPage schema (home), MedicalProcedure schema (treatment pages), `robots.txt` (GPTBot + Google-Extended allowed), `sitemap.xml` (hreflang alternates for `?lang=en`), `llms.txt`
+
+## Performance & accessibility (Sep 2026)
+- **Images**: `optimize_images.py` resizes promo/before-after/hero in place (longest side 1200–1400px), generates 200px `*-thumb.webp` thumbnails, and preserves originals under `img/*/original/`. All `<img>` tags carry explicit `width`/`height`; below-fold images are `loading="lazy"`.
+- **Render path**: gsap/ScrollTrigger/Lenis are `defer`red; Lenis/GSAP scroll init is delayed to ~2.5s so it can't block LCP; Flickity stylesheet + lib are loaded only when the testimonials section approaches the viewport.
+- **Motion**: single Lenis driver via `gsap.ticker`, `prefers-reduced-motion` disables smooth scroll and the 3D carousel autoplay.
+- **A11y**: `<main>` landmark + skip links on all pages, accessible names on promo dots, non-redundant thumbnail alts.
+- Build stamp `<!-- Build date: YYYYMMDDHHMMSS -->` after `<!DOCTYPE html>` on every page.
 
 ## Quick start
 No build step. Serve the folder statically:
@@ -34,6 +41,7 @@ js/treatment-data.js       Treatment categories & items
 css/styles.css, css/chat.css
 robots.txt, sitemap.xml, llms.txt
 convert_to_webp.py         Bulk image → WebP helper
+optimize_images.py         In-place resize + thumbnail generator (perf work)
 ```
 
 ## Regenerating treatment pages
