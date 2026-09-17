@@ -534,3 +534,6 @@ footer{background:var(--bg-primary);padding:80px 64px 40px;border-top:1px solid 
   .ba-title{font-size:28px;}
   .ba-split{aspect-ratio:5/4;}
 }
+
+/* Chat widget stays hidden until css/chat.css applies (loaded non-blocking) */
+.chat-bubble,.chat-capsule,.chat-window{opacity:0;visibility:hidden;}

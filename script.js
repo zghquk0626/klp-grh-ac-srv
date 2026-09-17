@@ -307,37 +307,37 @@ function toggleMobileMenu(){
 // ── BEFORE / AFTER RESULTS ──
 const resultsCases = [
   {
-    before: 'img/revolushine-beforeafter/revolushine-beforefillerbibir.jpg', after: 'img/revolushine-beforeafter/revolushine-afterfillerbibir.jpg',
+    before: 'img/revolushine-beforeafter/revolushine-beforefillerbibir.webp', after: 'img/revolushine-beforeafter/revolushine-afterfillerbibir.webp',
     en: { tagline: 'Lip Filler', title: 'Fuller Lips,<br>Naturally Defined.', copy: 'Lip filler is an injectable treatment that adds volume to the lips for a more balanced, proportionate look. Results are visible immediately once the procedure is complete.' },
     id: { tagline: 'Filler Bibir', title: 'Bibir Lebih Bervolume,<br>Terlihat Natural.', copy: 'Filler bibir adalah treatment injeksi pada area bibir yang bertujuan untuk menambah volume bibir sehingga terlihat lebih proporsional. Hasil filler bibir terlihat langsung ketika tindakan selesai dilakukan.' }
   },
   {
-    before: 'img/revolushine-beforeafter/revolushine-beforescaracne.jpg', after: 'img/revolushine-beforeafter/revolushine-afterscaracne.jpg',
+    before: 'img/revolushine-beforeafter/revolushine-beforescaracne.webp', after: 'img/revolushine-beforeafter/revolushine-afterscaracne.webp',
     en: { tagline: 'Scar & Acne Treatment', title: 'Smoother Skin,<br>Scars Minimized.', copy: 'Treatment designed to improve skin texture, minimize acne scars, and stimulate collagen production to enhance overall skin quality. Results typically appear gradually over several months. Repeated sessions are recommended for optimal results as advised by the doctor.' },
     id: { tagline: 'Scar Acne Treatment', title: 'Kulit Lebih Halus,<br>Bekas Minimal.', copy: 'Treatment yang bertujuan untuk memperbaiki tekstur kulit, menyamarkan berkas jerawat, merangsang produksi kolagen untuk membantu meningkatkan dan memperbaiki kualitas kulit. Hasil biasanya terlihat secara bertahap dalam beberapa bulan. Untuk hasil maksimal diperlukan pengulangan secara berkala sesuai saran dari dokter.' }
   },
   {
-    before: 'img/revolushine-beforeafter/revolushine-beforefillerdagu.jpg', after: 'img/revolushine-beforeafter/revolushine-afterfillerdagu.jpg',
+    before: 'img/revolushine-beforeafter/revolushine-beforefillerdagu.webp', after: 'img/revolushine-beforeafter/revolushine-afterfillerdagu.webp',
     en: { tagline: 'Chin Filler', title: 'Defined Contour,<br>No Surgery.', copy: 'Chin filler is an injectable treatment that adds volume and improves facial contour for a more proportionate appearance. Results are visible immediately once the procedure is complete.' },
     id: { tagline: 'Filler Dagu', title: 'Kontur Wajah Lebih Tegas,<br>Tanpa Operasi.', copy: 'Filler dagu adalah treatment injeksi pada area dagu yang bertujuan untuk menambah volume dan memperbaiki kontur wajah sehingga wajah terlihat lebih proporsional. Hasil filler dagu terlihat langsung ketika tindakan selesai dilakukan.' }
   },
   {
-    before: 'img/revolushine-beforeafter/revolushine-beforeskinbooster.jpg', after: 'img/revolushine-beforeafter/revolushine-afterskinbooster.jpg',
+    before: 'img/revolushine-beforeafter/revolushine-beforeskinbooster.webp', after: 'img/revolushine-beforeafter/revolushine-afterskinbooster.webp',
     en: { tagline: 'Skinbooster', title: 'Glowing Skin,<br>From Within.', copy: 'Injectable treatment that improves skin quality — fading dark spots, brightening dull skin, and boosting elasticity — leaving skin healthier, more hydrated, and with longer-lasting makeup. Results are typically visible within 1–3 days after the procedure.' },
     id: { tagline: 'Skinbooster', title: 'Kulit Glowing,<br>Dari Dalam.', copy: 'Treatment injeksi yang bertujuan untuk membantu meningkatkan dan memperbaiki kualitas kulit, seperti menyamarkan noda hitam, mencerahkan kulit kusam, dan membuat kulit lebih kenyal, sehingga kulit tampak lebih sehat, lembap, dan makeup lebih tahan lama. Hasil biasanya terlihat dalam 1–3 hari setelah tindakan.' }
   },
   {
-    before: 'img/revolushine-beforeafter/revolushine-beforehairplasma.jpg', after: 'img/revolushine-beforeafter/revolushine-afterhairplasma.jpg',
+    before: 'img/revolushine-beforeafter/revolushine-beforehairplasma.webp', after: 'img/revolushine-beforeafter/revolushine-afterhairplasma.webp',
     en: { tagline: 'Hair Plasma', title: 'Fuller Hair,<br>Less Shedding.', copy: 'Hair Plasma treatment helps reduce hair loss, stimulate hair growth, and improve hair thickness and density. Results vary per individual and typically require multiple sessions before becoming visible after a few months.' },
     id: { tagline: 'Hair Plasma', title: 'Rambut Lebih Lebat,<br>Kerontokan Berkurang.', copy: 'Hair plasma adalah treatment yang bertujuan untuk membantu mengurangi kerontokan rambut, merangsang pertumbuhan rambut, dan meningkatkan ketebalan maupun kepadatan rambut. Hasil treatment bervariasi pada setiap individu dan biasanya memerlukan beberapa sesi agar hasilnya mulai terlihat setelah beberapa bulan.' }
   },
   {
-    before: 'img/revolushine-beforeafter/revolushine-beforemelasma.jpg', after: 'img/revolushine-beforeafter/revolushine-aftermelasma.jpg',
+    before: 'img/revolushine-beforeafter/revolushine-beforemelasma.webp', after: 'img/revolushine-beforeafter/revolushine-aftermelasma.webp',
     en: { tagline: 'Melasma Treatment', title: 'Pigmentation Faded,<br>Brighter Skin.', copy: 'Melasma injection treatment targets and reduces dark pigmentation on the face. Results vary between individuals and may require repeat sessions for optimal outcomes.' },
     id: { tagline: 'Melasma', title: 'Pigmen Teratasi,<br>Wajah Lebih Cerah.', copy: 'Melasma adalah treatment injeksi yang bertujuan untuk menyamarkan pigmen hitam di wajah. Hasil treatment dapat bervariasi pada setiap individu, dan butuh pengulangan treatment untuk hasil yang maksimal.' }
   },
   {
-    before: 'img/revolushine-beforeafter/revolushine-beforelifu.jpg', after: 'img/revolushine-beforeafter/revolushine-afterlifu.jpg',
+    before: 'img/revolushine-beforeafter/revolushine-beforelifu.webp', after: 'img/revolushine-beforeafter/revolushine-afterlifu.webp',
     en: { tagline: 'LIFU', title: 'Defined Contour,<br>No Needles.', copy: 'LIFU targets fat, tightens skin, stimulates collagen production, and provides a lifting effect — all without needles, minimal discomfort, and zero downtime. Results typically appear gradually over weeks to months as the body builds new collagen. For optimal results, periodic sessions are recommended as advised by the doctor.' },
     id: { tagline: 'LIFU', title: 'Wajah Lebih Tegas,<br>Tanpa Jarum.', copy: 'Lifu adalah treatment yang bertujuan untuk membakar lemak, mengencangkan kulit, merangsang produksi kolagen, mempertegas kontur wajah, dan memberikan efek lifting pada wajah. Tanpa jarum, minim rasa sakit, dan tanpa downtime. Hasil lifu biasanya terlihat secara bertahap dalam beberapa minggu hingga bulan, karena tubuh memerlukan waktu untuk membentuk kolagen baru. Untuk hasil maksimal diperlukan pengulangan secara berkala sesuai saran dari dokter.' }
   }
@@ -354,9 +354,6 @@ function preloadImage(src) {
   });
 }
 
-function preloadResultsImages() {
-  return Promise.all(resultsCases.flatMap(c => [preloadImage(c.before), preloadImage(c.after)]));
-}
 
 function switchCase(i) {
   if (i === activeCase) return;
@@ -389,7 +386,6 @@ function switchCase(i) {
   }, 220);
 }
 
-preloadResultsImages();
 
 // ── DRAG COMPARISON SLIDER ──
 (function() {

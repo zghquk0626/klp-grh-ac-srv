@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-BUILD_STAMP = "<!-- Build date: 20260917020710 -->"
+BUILD_STAMP = "<!-- Build date: 20260917064735 -->"
 
 TREATMENTS = [
     {
@@ -300,6 +300,7 @@ def generate_page(t):
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="../font/FuturaCyrillicBold.ttf" crossorigin>
 <link rel="icon" type="image/png" href="../img/rev-icon-web.png" />
 <link rel="apple-touch-icon" href="../img/rev-icon-web.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V0XLB1LF7"></script>
