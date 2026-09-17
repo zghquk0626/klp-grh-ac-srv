@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Build date: 20260917080705 -->
+<!-- Build date: 20260917020710 -->
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -201,11 +201,11 @@
       </div>
       <p class="q-title" data-i18n-html="q1_title">Apa yang paling ingin<br>kamu ubah dari<br>kulitmu hari ini?</p>
       <div class="q-options">
-        <button class="qopt" onclick="pick(1,'lines')"><div class="opt-lbl">A</div><div><div class="opt-main" data-i18n="q1a_main">Garis halus &amp; kerutan</div><div class="opt-sub" data-i18n="q1a_sub">Dahi, antara alis, sudut mata</div></div></button>
-        <button class="qopt" onclick="pick(1,'volume')"><div class="opt-lbl">B</div><div><div class="opt-main" data-i18n="q1b_main">Volume hilang</div><div class="opt-sub" data-i18n="q1b_sub">Bibir tipis, pelipis cekung, pipi &amp; rahang</div></div></button>
+        <button class="qopt" onclick="pick(1,'lines')"><div class="opt-lbl">A</div><div><div class="opt-main" data-i18n="q1a_main">Garis halus & kerutan</div><div class="opt-sub" data-i18n="q1a_sub">Dahi, antara alis, sudut mata</div></div></button>
+        <button class="qopt" onclick="pick(1,'volume')"><div class="opt-lbl">B</div><div><div class="opt-main" data-i18n="q1b_main">Volume hilang</div><div class="opt-sub" data-i18n="q1b_sub">Bibir tipis, pelipis cekung, pipi & rahang</div></div></button>
         <button class="qopt" onclick="pick(1,'texture')"><div class="opt-lbl">C</div><div><div class="opt-main" data-i18n="q1c_main">Tekstur tidak merata</div><div class="opt-sub" data-i18n="q1c_sub">Permukaan kasar, pori besar, atau kulit berbintil</div></div></button>
-        <button class="qopt" onclick="pick(1,'glow')"><div class="opt-lbl">D</div><div><div class="opt-main" data-i18n="q1d_main">Kulit kusam &amp; dehidrasi</div><div class="opt-sub" data-i18n="q1d_sub">Kurang glow, tampak lelah, tidak bercahaya</div></div></button>
-        <button class="qopt" onclick="pick(1,'chubby')"><div class="opt-lbl">E</div><div><div class="opt-main" data-i18n="q1e_main">Kulit kendur, dagu ganda &amp; jawline kurang tegas</div><div class="opt-sub" data-i18n="q1e_sub">Kulit kendur, garis rahang kurang tegas, lemak berlebih</div></div></button>
+        <button class="qopt" onclick="pick(1,'glow')"><div class="opt-lbl">D</div><div><div class="opt-main" data-i18n="q1d_main">Kulit kusam & dehidrasi</div><div class="opt-sub" data-i18n="q1d_sub">Kurang glow, tampak lelah, tidak bercahaya</div></div></button>
+        <button class="qopt" onclick="pick(1,'chubby')"><div class="opt-lbl">E</div><div><div class="opt-main" data-i18n="q1e_main">Kulit kendur, dagu ganda & jawline kurang tegas</div><div class="opt-sub" data-i18n="q1e_sub">Kulit kendur, garis rahang kurang tegas, lemak berlebih</div></div></button>
       </div>
     </div>
     <div class="qscreen" id="q2">
@@ -268,7 +268,7 @@
     var el;
     if ((el = document.getElementById('tH1'))) el.innerHTML = esc(PAGE.h1[L] || PAGE.h1.id);
     if ((el = document.getElementById('tDesc'))) el.innerHTML = esc(PAGE.desc[L] || PAGE.desc.id);
-    if ((el = document.getElementById('tAboutH2'))) el.textContent = (L === 'en' ? 'About ' : 'Tentang ') + esc(PAGE.h1[L] || PAGE.h1.id);
+    if ((el = document.getElementById('tAboutH2'))) el.textContent = (L === 'en' ? 'About ' : 'Tentang ') + (PAGE.h1[L] || PAGE.h1.id);
     if ((el = document.getElementById('tIntro'))) el.innerHTML = (PAGE.intro[L] || PAGE.intro.id).map(function(p) { return '<p style="font-size:17px;line-height:1.8;color:#4a3a46;margin:0 0 14px;">' + esc(p) + '</p>'; }).join('');
     if ((el = document.getElementById('tFaq'))) el.innerHTML = (PAGE.faq[L] || PAGE.faq.id).map(function(f) { return faqCard + esc(f[0]) + '</h3><p style="margin:0;color:#666;line-height:1.7;">' + esc(f[1]) + '</p></div>'; }).join('');
     if (d && (el = document.getElementById('treatmentItems'))) el.innerHTML = d.items.map(function(it) { return itemCard + esc(it.name) + '</h3><p style="margin:0;color:#666;line-height:1.6;">' + it.desc + '</p></div>'; }).join('');
