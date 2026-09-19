@@ -1,6 +1,23 @@
 // ── LENIS + GSAP (single driver, delayed init, reduced-motion aware) ──
 const REDUCE_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// ── META PIXEL (ViewContent in <head>; Contact/Schedule fired here) ──
+let fbContactFired = false;
+let fbLastSchedule = 0;
+function fireFb(event, params) {
+  try { if (typeof window.fbq === 'function') window.fbq('track', event, params); } catch (e) {}
+}
+document.addEventListener('click', function (e) {
+  const el = e.target && e.target.closest
+    ? e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]')
+    : null;
+  if (!el) return;
+  const now = Date.now();
+  if (now - fbLastSchedule < 5000) return;
+  fbLastSchedule = now;
+  fireFb('Schedule');
+});
+
 function initSmoothScroll() {
   if (typeof gsap === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
@@ -268,6 +285,7 @@ function openFreeConsultWa(name) {
     .replace('{list}', quizPromo.problems);
   const url = 'https://wa.me/6287736386388?text=' + encodeURIComponent(msg);
   setChatCookie(CHAT_COOKIE.name, name);
+  fireFb('Schedule');
   window.open(url, '_blank', 'noopener');
   const box = document.getElementById('qpromo');
   const openWa = document.getElementById('qpromoOpenWa');
@@ -739,6 +757,7 @@ function getChatCookie(key) {
 
   function handleTyped(text) {
     started = true;
+    if (!fbContactFired) { fbContactFired = true; fireFb('Contact'); }
     addMsg(text, true);
     const d = cd();
 
@@ -754,6 +773,7 @@ function getChatCookie(key) {
         setChatCookie(CHAT_COOKIE.loc, text);
         const url = waLink(composeWa(capture.freetext, capture.name, capture.location));
         capture = null;
+        fireFb('Schedule');
         window.open(url, '_blank', 'noopener');
         botSay(null, () => addCtaLink(url, d.waCta, d.handoffText));
       }
@@ -772,6 +792,7 @@ function getChatCookie(key) {
     const knownLoc = getChatCookie(CHAT_COOKIE.loc);
     if (knownName && knownLoc) {
       const url = waLink(composeWa(text, knownName, knownLoc));
+      fireFb('Schedule');
       window.open(url, '_blank', 'noopener');
       botSay(null, () => addCtaLink(url, d.waCta, d.handoffText));
       return;
