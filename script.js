@@ -638,6 +638,11 @@ function getChatCookie(key) {
     openChat();
   }
   window.openCapsuleChat = openCapsuleChat;
+  window.openChatFromFloat = function() {
+    if (floatWrap) floatWrap.classList.add('hide');
+    bubbleEl.classList.add('show');
+    openChat();
+  };
   if (capsuleEl) {
     capsuleEl.addEventListener('click', openCapsuleChat);
     capsuleEl.addEventListener('keydown', e => {
