@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-BUILD_STAMP = "<!-- Build date: 20260919083945 -->"
+BUILD_STAMP = "<!-- Build date: 20260930072527 -->"
 
 TREATMENTS = [
     {
@@ -381,6 +381,7 @@ def generate_page(t):
     <li><a href="../#hotspot" data-i18n="nav_treatments">Treatment</a></li>
     <li><a href="../#testimonials" data-i18n="nav_testimonials">Testimoni</a></li>
     <li><a href="../#about" data-i18n="nav_about">Dokter Kami</a></li>
+    <li><a href="../blog/" data-i18n="nav_blog">Blog</a></li>
     <li><button type="button" class="nav-quiz-btn" onclick="openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
     <li class="lang-switcher desktop-lang">
       <button class="lang-btn" id="langEn" onclick="setLang('en')">ENG</button>
@@ -403,6 +404,7 @@ def generate_page(t):
     <li><a href="../#hotspot" onclick="toggleMobileMenu()" data-i18n="nav_treatments">Treatment</a></li>
     <li><a href="../#testimonials" onclick="toggleMobileMenu()" data-i18n="nav_testimonials">Testimoni</a></li>
     <li><a href="../#about" onclick="toggleMobileMenu()" data-i18n="nav_about">Dokter Kami</a></li>
+    <li><a href="../blog/" onclick="toggleMobileMenu()" data-i18n="nav_blog">Blog</a></li>
     <li><button type="button" class="nav-quiz-btn" onclick="toggleMobileMenu();openQuiz()" data-i18n="nav_quiz">Treatment Quiz</button></li>
     <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" onclick="toggleMobileMenu()" data-i18n="nav_book">Konsultasi Sekarang</a></li>
   </ul>
@@ -450,6 +452,7 @@ def generate_page(t):
         <li><a href="../#hotspot" data-i18n="nav_treatments">Treatment</a></li>
         <li><a href="../#testimonials" data-i18n="nav_testimonials">Testimoni</a></li>
         <li><a href="../#about" data-i18n="nav_about">Dokter Kami</a></li>
+        <li><a href="../blog/" data-i18n="nav_blog">Blog</a></li>
         <li><a href="../privacy.html">Privacy Policy</a></li>
       </ul>
     </div>
@@ -536,8 +539,6 @@ def generate_page(t):
 </div>
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="../js/i18n.js"></script>
 <script src="../js/treatment-data.js"></script>
 <script src="../quiz-logic.js"></script>

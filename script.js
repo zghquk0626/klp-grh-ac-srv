@@ -18,27 +18,7 @@ document.addEventListener('click', function (e) {
   fireFb('Schedule');
 });
 
-function initSmoothScroll() {
-  if (typeof gsap === 'undefined') return;
-  gsap.registerPlugin(ScrollTrigger);
-  document.documentElement.classList.add('anim-ready');
-  if (REDUCE_MOTION) return;
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(time => lenis.raf(time * 1000));
-    window.lenis = lenis;
-  }
-  ScrollTrigger.batch('.g-fade', {
-    onEnter: els => gsap.to(els, { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: 'power3.out' }),
-    start: 'top 85%', once: true
-  });
-}
-(function() {
-  const t0 = performance.now();
-  if (t0 >= 2500) initSmoothScroll();
-  else setTimeout(initSmoothScroll, 2500 - t0);
-})();
+// ── (Lenis smooth-scroll + scroll fade-in removed: native scroll, content always visible) ──
 
 // ── 3D CAROUSEL LOGIC ──
 const cards3D = Array.from(document.querySelectorAll('.t-card-3d'));
@@ -453,7 +433,7 @@ function toggleFaq(btn) {
 
 // ── PROMO SLIDER ──
 let promoIdx = 0;
-const promoTotal = 4;
+const promoTotal = 2;
 let promoTimer;
 
 function goPromo(idx) {
@@ -497,10 +477,8 @@ if (document.getElementById('promoTrack')) {
 
 // ── PROMO LIGHTBOX ──
 const promoImages = [
-  'img/revolushine-promo/rvl-promo-facial.JPEG',
-  'img/revolushine-promo/rvl-promo-facial2.jpg',
-  'img/revolushine-promo/rvl-promo-filler.jpg',
-  'img/revolushine-promo/rvl-promo-prfl.jpg'
+  'img/revolushine-promo/20260924_hyaluronicpromo.jpeg',
+  'img/revolushine-promo/20260924_hyaluronicpromo2.jpeg'
 ];
 let plbIdx = 0;
 

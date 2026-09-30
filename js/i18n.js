@@ -2,7 +2,7 @@
 const translations = {
   en: {
     nav_treatments: 'Treatments', nav_testimonials: 'Testimonials', nav_about: 'Our Doctor',
-    nav_quiz: 'Treatment Quiz', nav_book: 'Book Consultation',
+    nav_quiz: 'Treatment Quiz', nav_book: 'Book Consultation', nav_blog: 'Blog',
     skip_link: 'Skip to main content',
     hero_tagline: 'Aesthetic Clinic Surabaya',
     hero_h1: 'Insecure <em>no more.</em>',
@@ -100,11 +100,13 @@ const translations = {
     t_cta_btn: 'Consult via WhatsApp',
     t_faq_h2: 'Frequently Asked Questions',
     foot_copy: '\u00a9 2026 Aesthetic Clinic Revolushine. All rights reserved.',
-    chat_status: '● Online'
+    chat_status: '● Online',
+    blog_back: '\u2190 All Articles', blog_h1: 'Blog',
+    blog_lead: 'Skin & treatment articles from the Aesthetic Clinic Revolushine team.'
   },
   id: {
     nav_treatments: 'Treatment', nav_testimonials: 'Testimoni', nav_about: 'Dokter Kami',
-    nav_quiz: 'Treatment Quiz', nav_book: 'Konsultasi Sekarang',
+    nav_quiz: 'Treatment Quiz', nav_book: 'Konsultasi Sekarang', nav_blog: 'Blog',
     skip_link: 'Lewati ke konten utama',
     hero_tagline: 'Klinik Estetika Surabaya',
     hero_h1: 'Tak lagi <em>insecure.</em>',
@@ -202,7 +204,9 @@ const translations = {
     t_cta_btn: 'Konsultasi via WhatsApp',
     t_faq_h2: 'Pertanyaan yang Sering Diajukan',
     foot_copy: '\u00a9 2026 Aesthetic Clinic Revolushine. Hak cipta dilindungi.',
-    chat_status: '● Online'
+    chat_status: '● Online',
+    blog_back: '\u2190 Semua Artikel', blog_h1: 'Blog',
+    blog_lead: 'Artikel seputar kulit & treatment dari tim Aesthetic Clinic Revolushine.'
   }
 };
 
