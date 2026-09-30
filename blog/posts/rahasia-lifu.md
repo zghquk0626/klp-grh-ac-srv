@@ -2,6 +2,7 @@
 slug: rahasia-wajah-tirus-kencang-lifu-botox-surabaya
 date: 2026-10-05
 cover: img/blog/rahasia-lifu
+cover_webp: img/blog/rahasia-lifu.webp
 title_id: Rahasia Wajah Tirus & Kencang Alami: Kombinasi LIFU dan Botox di Surabaya
 title_en: V-Shape Face Goals: How LIFU and Botox Work Together for Natural Contouring
 h1_id: Rahasia Wajah Tirus & Kencang Alami: Kombinasi LIFU dan Botox di Surabaya

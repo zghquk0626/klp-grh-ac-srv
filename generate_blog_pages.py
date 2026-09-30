@@ -221,6 +221,15 @@ def cover_picture(cover, cover_webp, alt, hero=False):
              else "width:100%;height:200px;object-fit:cover;display:block;")
     img = (f'<img loading="lazy" decoding="async" src="../{cover}" alt="{html.escape(alt)}"'
            f"{size} style=\"{style}\">")
+    # auto-detect WebP if no cover_webp specified but file exists
+    detected_webp = ""
+    if not cover_webp:
+        possible = cover.replace('.jpeg', '.webp').replace('.jpg', '.webp')
+        import os
+        if os.path.exists(ROOT / possible):
+            detected_webp = possible
+    if detected_webp:
+        return (f"<picture><source srcset=\"../{detected_webp}\" type=\"image/webp\">" + img + "</picture>")
     if cover_webp:
         return (f"<picture><source srcset=\"../{cover_webp}\" type=\"image/webp\">" + img + "</picture>")
     return img
