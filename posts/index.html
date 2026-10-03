@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artikel Blog | Aesthetic Clinic Revolushine</title>
+<meta name="description" content="Artikel terbaru dari blog Aesthetic Clinic Revolushine">
+<link rel="canonical" href="https://revolushine.id/posts">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip_link">Lewati ke konten utama</a>
+
+<nav id="nav">
+  <a href="../" class="nav-logo"><picture><source srcset="img/revolushine-logo-main.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/revolushine-logo-main.png" alt="Aesthetic Clinic Revolushine" class="nav-logo-img" width="140" height="34"></picture></a>
+  <ul class="nav-links">
+    <li><a href="../#hotspot" data-i18n="nav_treatments">Treatment</a></li>
+    <li><a href="../#testimonials" data-i18n="nav_testimonials">Testimoni</a></li>
+    <li><a href="../#about" data-i18n="nav_about">Dokter Kami</a></li>
+    <li><a href="../" data-i18n="t_back">&#8592; Kembali ke Beranda</a></li>
+  </ul>
+  <div class="lang-switcher desktop-lang">
+    <button class="lang-btn" id="langEn" onclick="setLang('en')">ENG</button>
+    <button class="lang-btn active" id="langId" onclick="setLang('id')">IND</button>
+  </div>
+  <li><a href="https://wa.me/6287736386388?text=Saya%20melihat%20treatment%20wajah%20dari%20website%20Aesthetic%20Clinic%20Revolushine%2C%20apakah%20bisa%20konsultasi%20terlebih%20dahulu%3F" class="nav-cta" data-i18n="nav_book">Konsultasi Sekarang</a></li>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">&#10005;</button>
+  <ul>
+    <li><a href="../#hotspot" onclick="toggleMobileMenu()" data-i18n="nav_treatments">Treatment</a></li>
+    <li><a href="../#testimonials" onclick="toggleMobileMenu()" data-i18n="nav_testimonials">Testimoni</a></li>
+    <li><a href="../#about" onclick="toggleMobileMenu()" data-i18n="nav_about">Dokter Kami</a></li>
+    <li><a href="../" onclick="toggleMobileMenu()" data-i18n="t_back">Kembali ke Beranda</a></li>
+  </ul>
+</div>
+
+<main id="main">
+<section id="posts" style="padding:120px 24px 60px;max-width:1000px;margin:0 auto;">
+  <div style="text-align:center;padding:40px 20px;color:var(--text-muted);">
+    <p style="font-size:18px;margin:0 0 8px;">Sedang memuat artikel terbaru...</p>
+    <p style="font-size:15px;margin:0;">Harap tunggu sebentar hingga daftar artikel muncul.</p>
+  </div>
+  <div id="posts-grid" style="display:none;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;margin-top:32px;"></div>
+</section>
+</main>
+{FOOTER.format(wa=WA_GENERIC)}
+{QUIZ.format(wa=WA_GENERIC)}
+{SCRIPTS_BLOG}
+
+<script>
+(function() {
+  // Fetch RSS feed from Blogger
+  const rssUrl = 'https://blog.revolushine.id/feeds/posts/default?alt=rss';
+  const postsGrid = document.getElementById('posts-grid');
+  const postsSection = document.getElementById('posts');
+  
+  fetch(rssUrl)
+    .then(response => response.text())
+    .then(str => new DOMParser().parseFromString(str, "text/xml"))
+    .then(data => {
+      const items = data.querySelectorAll("item");
+      if (items.length === 0) {
+        postsGrid.parentElement.innerHTML = '<p style="color:var(--text-muted);">Tidak ada artikel ditemukan.</p>';
+        return;
+      }
+      
+      // Sort by date (newest first)
+      const sortedItems = Array.from(items).sort((a, b) => {
+        const da = new Date(a.querySelector("pubDate")?.textContent || '');
+        const db = new Date(b.querySelector("pubDate")?.textContent || '');
+        return db - da;
+      });
+      
+      // Display up to 10 newest posts
+      const maxPosts = 10;
+      sortedItems.slice(0, maxPosts).forEach((item, index) => {
+        const title = item.querySelector("title")?.textContent || 'Tanpa Judul';
+        const link = item.querySelector("link")?.textContent || '#';
+        const pubDate = item.querySelector("pubDate")?.textContent || '';
+        const description = item.querySelector("description")?.textContent || '';
+        
+        // Clean HTML from description
+        const cleanDesc = description.replace(/<[^>]+>/g, '').substring(0, 150) + (description.length > 150 ? '...' : '');
+        
+        const postDate = new Date(pubDate);
+        const formattedDate = `${formatIndonesianDate(formDate)}`;
+        
+        const postCard = document.createElement('div');
+        postCard.className = 'post-card';
+        postCard.innerHTML = `
+          <div class="post-image" style="height:180px;background:var(--bg-secondary);border-radius:12px;overflow:hidden;margin-bottom:16px;">
+            <img loading="lazy" src="https://revolushine.id/img/revolushine-social-preview.jpg" alt="${title}" style="width:100%;height:180px;object-fit:cover;">
+          </div>
+          <div class="post-content">
+            <h3 class="post-title" style="font-size:18px;margin:0 0 8px;">${title}</h3>
+            <p class="post-excerpt" style="font-size:14px;color:var(--text-muted);margin:0 0 12px;line-height:1.5;">${cleanDesc}</p>
+            <div class="post-meta" style="font-size:12px;color:var(--text-muted);">
+              <span>${formatIndonesianDate(pubDate)}</span>
+            </div>
+          </div>
+        `;
+        postsGrid.appendChild(postCard);
+      });
+      
+      // Show the section
+      postsSection.style.display = 'block';
+    })
+    .catch(error => {
+      console.error('Error fetching RSS:', error);
+      postsGrid.parentElement.innerHTML = '<p style="color:var(--text-muted);">Gagal memuat artikel. Silakan coba lagi nanti.</p>';
+    });
+
+  function formatIndonesianDate(dateStr) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateStr).toLocaleDateString('id-ID', options);
+  }
+})();
+</script>
+</body>
+</html>
