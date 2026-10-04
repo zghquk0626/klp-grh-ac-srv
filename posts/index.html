@@ -132,7 +132,7 @@
 <section style="padding:120px 24px 60px;max-width:1000px;margin:0 auto;">
   <a href="../" style="color:var(--text-muted);font-size:14px;text-decoration:none;" data-i18n="t_back">&#8592; Kembali ke Beranda</a>
   <h1 style="font-size:clamp(30px,5vw,46px);margin:16px 0 12px;" data-i18n="posts_h1">Artikel Terbaru</h1>
-  <p style="font-size:17px;color:var(--text-muted);margin:0 0 36px;" data-i18n="posts_lead">Artikel terbaru seputar kulit & treatment dari Aesthetic Clinic Revolushine.</p>
+  <p style="font-size:17px;color:var(--text-muted);margin:0 0 36px;" data-i18n="posts_lead">Artikel terbaru seputar kulit &amp; treatment dari Aesthetic Clinic Revolushine.</p>
   <div id="posts-loading" style="text-align:center;padding:40px 20px;color:var(--text-muted);">
     <p style="font-size:18px;margin:0 0 8px;" data-i18n="posts_loading">Sedang memuat artikel terbaru&hellip;</p>
   </div>
@@ -244,34 +244,22 @@
 <script src="../js/i18n.js"></script>
 <script src="../quiz-logic.js"></script>
 <script src="../script.js"></script>
-
-
 <script>
 (function() {
-  // ==== Configuration ====
-  const FEED = 'https://blog.revolushine.id/feeds/posts/default?alt=json-in-script&callback=__rvPosts&max-results=12';
-  const loading = document.getElementById('posts-loading');
-  const errorBox = document.getElementById('posts-error');
-  const grid = document.getElementById('posts-grid');
+  var FEED = 'https://blog.revolushine.id/feeds/posts/default?alt=json-in-script&callback=__rvPosts&max-results=12';
+  var grid = document.getElementById('posts-grid');
+  var loading = document.getElementById('posts-loading');
+  var errBox = document.getElementById('posts-error');
   var cache = [];
   var done = false;
 
-  // ==== Helpers ====
-  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
   function stripTags(htmlStr) {
     var d = document.createElement('div');
     d.innerHTML = htmlStr || '';
     return (d.textContent || '').replace(/\s+/g, ' ').trim();
-  }
-  function fmtDate(iso, lang) {
-    var d = new Date(iso);
-    if (isNaN(d)) return '';
-    return d.toLocaleDateString(lang === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-  }
-  function readMins(htmlStr, L) {
-    var words = stripTags(htmlStr).split(/\s+/).length;
-    var m = Math.max(1, Math.round(words / 200));
-    return L === 'en' ? m + ' min read' : m + ' mnt baca';
   }
   function pickThumb(entry) {
     var htmlStr = entry.content ? entry.content.$t : '';
@@ -288,7 +276,17 @@
     }
     return 'https://blog.revolushine.id/';
   }
-  function createCard(entry, L) {
+  function fmtDate(iso, lang) {
+    var d = new Date(iso);
+    if (isNaN(d)) return '';
+    return d.toLocaleDateString(lang === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+  function readMins(htmlStr, L) {
+    var words = stripTags(htmlStr).split(/\s+/).length;
+    var m = Math.max(1, Math.round(words / 200));
+    return L === 'en' ? m + ' min read' : m + ' mnt baca';
+  }
+  function card(entry, L) {
     var title = (entry.title && entry.title.$t || '').trim() || 'Tanpa Judul';
     var url = postUrl(entry);
     var content = entry.content ? entry.content.$t : '';
@@ -332,7 +330,7 @@
       grid.innerHTML = '<p style="grid-column:1/-1;color:var(--text-muted);">' + esc(L === 'en' ? 'No articles yet.' : 'Belum ada artikel.') + '</p>';
       return;
     }
-    cache.forEach(function(e) { grid.appendChild(createCard(e, L)); });
+    cache.forEach(function(e) { grid.appendChild(card(e, L)); });
   }
   window.__rvPosts = function(data) {
     done = true;
@@ -343,17 +341,16 @@
     render((typeof currentLang !== 'undefined') ? currentLang : 'id');
   };
   document.addEventListener('langchange', function() { if (done) render(currentLang); });
-  if (window.location.search.indexOf('lang=en') !== 'undefined' && typeof setLang === 'function') setLang('en');
+  if (window.location.search.indexOf('lang=en') !== -1 && typeof setLang === 'function') setLang('en');
   var s = document.createElement('script');
   s.src = FEED;
   s.async = true;
-  s.onerror = function() { loading.hidden = true; errorBox.hidden = false; };
+  s.onerror = function() { loading.hidden = true; errBox.hidden = false; };
   document.head.appendChild(s);
   setTimeout(function() {
-    if (!done) { loading.hidden = true; errorBox.hidden = false; }
+    if (!done) { loading.hidden = true; errBox.hidden = false; }
   }, 12000);
 })();
-
 </script>
 </body>
 </html>
