@@ -102,7 +102,11 @@ const translations = {
     foot_copy: '\u00a9 2026 Aesthetic Clinic Revolushine. All rights reserved.',
     chat_status: '● Online',
     blog_back: '\u2190 All Articles', blog_h1: 'Blog',
-    blog_lead: 'Skin & treatment articles from the Aesthetic Clinic Revolushine team.'
+    blog_lead: 'Skin & treatment articles from the Aesthetic Clinic Revolushine team.',
+    posts_h1: 'Latest Articles', posts_lead: 'The latest skin & treatment articles from the Aesthetic Clinic Revolushine team.',
+    posts_loading: 'Loading the latest articles\u2026',
+    posts_error: 'Articles could not be loaded right now.',
+    posts_visit: 'Visit our blog'
   },
   id: {
     nav_treatments: 'Treatment', nav_testimonials: 'Testimoni', nav_about: 'Dokter Kami',
@@ -206,7 +210,11 @@ const translations = {
     foot_copy: '\u00a9 2026 Aesthetic Clinic Revolushine. Hak cipta dilindungi.',
     chat_status: '● Online',
     blog_back: '\u2190 Semua Artikel', blog_h1: 'Blog',
-    blog_lead: 'Artikel seputar kulit & treatment dari tim Aesthetic Clinic Revolushine.'
+    blog_lead: 'Artikel seputar kulit & treatment dari tim Aesthetic Clinic Revolushine.',
+    posts_h1: 'Artikel Terbaru', posts_lead: 'Artikel terbaru seputar kulit & treatment dari tim Aesthetic Clinic Revolushine.',
+    posts_loading: 'Sedang memuat artikel terbaru\u2026',
+    posts_error: 'Artikel tidak dapat dimuat saat ini.',
+    posts_visit: 'Kunjungi blog kami'
   }
 };
 
