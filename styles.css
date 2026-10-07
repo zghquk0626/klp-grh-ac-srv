@@ -1,6 +1,6 @@
 /* ── LOCAL FONTS ── */
-@font-face{font-family:'Futura';src:url('font/FuturaCyrillicBook.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
-@font-face{font-family:'Futura';src:url('font/FuturaCyrillicBold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:'The Seasons';src:url('font/the-seasons-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Poppins';src:url('font/Poppins-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
 
 /* ── BASE & TYPOGRAPHY ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -13,10 +13,11 @@ html{scroll-behavior:auto}
   --text-muted: #8B7087;
   --accent: #D4829D;
   --accent-light: #F5D8EC;
-  --font-main: 'Futura', 'Avenir Next', 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-main: 'Poppins', 'Avenir Next', 'Segoe UI', Roboto, Arial, sans-serif;
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 body{font-family:var(--font-main);background:var(--bg-primary);color:var(--text-main);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
+h1{font-family:'The Seasons',var(--font-main);font-weight:400;}
 img{max-width:100%;display:block}
 picture{display:contents}
 a{text-decoration:none;color:inherit}
