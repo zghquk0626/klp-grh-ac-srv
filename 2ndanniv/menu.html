@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Revolushine 2nd Anniversary</title>
+<meta name="description" content="Pilih menu favoritmu untuk perayaan anniversary ke-2 Revolushine. Choose your favorite menu for Revolushine's 2nd anniversary celebration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-primary:#FDF5F9;
+  --bg-secondary:#FFFFFF;
+  --accent:#D46091;
+  --accent-dark:#9A517F;
+  --accent-light:#F5D8EC;
+  --text-main:#888888;
+  --text-dark:#58404E;
+  --text-muted:#B98BA5;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+  --font-main:'Poppins','Avenir Next','Segoe UI',Roboto,Arial,sans-serif;
+  --font-display:'Cormorant Garamond','The Seasons',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-main);background:var(--bg-primary);color:var(--text-main);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block}
+button{font-family:var(--font-main);cursor:pointer}
+
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:100;background:rgba(253,245,249,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,96,145,.12);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand-logo{height:40px;width:auto}
+@media(max-width:380px){.brand-logo{height:32px}}
+.lang-switcher{display:flex;align-items:center;border:1.5px solid #E8C7DA;border-radius:50px;overflow:hidden;background:#fff;flex-shrink:0}
+.lang-btn{background:#fff;border:none;padding:6px 14px;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:500;color:#C9A6BA;transition:all .25s}
+.lang-btn.active{background:var(--accent);color:#fff}
+
+/* ── HERO ── */
+.hero{text-align:center;padding:44px 22px 32px}
+.hero-tagline{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:500;display:block;margin-bottom:12px}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:clamp(28px,6vw,52px);color:var(--text-dark);line-height:1.2}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-copy{font-size:14px;color:var(--text-muted);font-weight:300;max-width:420px;margin:14px auto 0;line-height:1.8}
+
+/* ── CATEGORY CARDS ── */
+.categories{max-width:640px;margin:0 auto;padding:0 20px 72px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(min-width:700px){.categories{grid-template-columns:repeat(3,1fr);max-width:900px;gap:20px}}
+/* Boncafe source images are 640x640 with hard text in the top/bottom 140px.
+   16/9 ratio + object-fit:cover shows exactly the middle 360px band (safe zone). */
+.cat-card{position:relative;border:none;padding:0;background:var(--bg-secondary);border-radius:20px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 6px 22px rgba(212,96,145,.12);transition:all .35s var(--ease);text-align:left}
+.cat-card:first-child{grid-column:1 / -1;aspect-ratio:21/9}
+@media(min-width:700px){.cat-card:first-child{grid-column:1 / -1;aspect-ratio:21/8}}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(212,96,145,.2)}
+.cat-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(88,40,62,.72) 0%,rgba(88,40,62,.15) 55%,transparent 100%)}
+.cat-label{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;color:#fff}
+.cat-name{display:block;font-family:var(--font-display);font-size:22px;line-height:1.15}
+@media(min-width:700px){.cat-name{font-size:26px}}
+.cat-count{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.85);margin-top:3px}
+
+/* ── CATEGORY OVERLAY (menu list) ── */
+.overlay{position:fixed;inset:0;z-index:300;background:rgba(88,64,78,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .35s var(--ease),visibility 0s linear .35s}
+.overlay.open{opacity:1;pointer-events:all;visibility:visible;transition:opacity .35s var(--ease)}
+.sheet{background:var(--bg-primary);width:100%;max-width:640px;height:92vh;border-radius:24px 24px 0 0;display:flex;flex-direction:column;overflow:hidden;transform:translateY(40px);transition:transform .35s var(--ease)}
+.overlay.open .sheet{transform:translateY(0)}
+@media(min-width:700px){.overlay{align-items:center}.sheet{height:auto;max-height:86vh;border-radius:24px;transform:translateY(24px)}.overlay.open .sheet{transform:translateY(0)}}
+.sheet-head{padding:20px 24px 16px;border-bottom:1px solid var(--accent-light);flex-shrink:0;position:relative}
+.sheet-tagline{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:4px}
+.sheet-title{font-family:var(--font-display);font-size:30px;color:var(--text-dark);line-height:1.1}
+.sheet-close{position:absolute;top:16px;right:18px;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--accent-light);background:none;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--text-muted);transition:all .3s;line-height:1}
+.sheet-close:hover{background:var(--accent-light);color:var(--accent)}
+.sheet-body{overflow-y:auto;padding:12px 16px 18px;-webkit-overflow-scrolling:touch}
+.sheet-body::-webkit-scrollbar{width:4px}
+.sheet-body::-webkit-scrollbar-thumb{background:var(--accent-light);border-radius:4px}
+
+.dish{background:var(--bg-secondary);border:2px solid rgba(212,96,145,.12);border-radius:16px;margin-bottom:10px;display:flex;gap:14px;align-items:center;padding:10px 14px 10px 10px;transition:border-color .25s var(--ease);text-align:left;width:100%}
+.dish:hover{border-color:var(--accent)}
+.dish-img{width:72px;height:72px;border-radius:12px;object-fit:cover;flex-shrink:0;background:var(--bg-primary)}
+.dish-info{flex:1;min-width:0}
+.dish-name{font-size:15px;font-weight:500;color:var(--text-dark);line-height:1.3}
+.dish-desc{font-size:12.5px;color:var(--text-muted);font-weight:300;line-height:1.55;margin-top:3px}
+.dish-tap{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;color:var(--accent);margin-top:5px;opacity:.75}
+
+/* ── MESSAGE POPUP ── */
+.msg-card{background:var(--bg-secondary);width:calc(100% - 48px);max-width:340px;border-radius:22px;padding:0;overflow:hidden;text-align:center;box-shadow:0 30px 80px rgba(88,40,62,.25);transform:scale(.9);transition:transform .3s var(--ease)}
+.overlay.open .msg-card{transform:scale(1)}
+.msg-img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.msg-body{padding:20px 24px 24px}
+.msg-dish{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px}
+.msg-text{font-family:var(--font-display);font-size:23px;color:var(--text-dark);line-height:1.3;margin-bottom:18px}
+.msg-btn{background:var(--accent);color:#fff;border:none;border-radius:50px;padding:12px 32px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;transition:all .3s var(--ease)}
+.msg-btn:hover{background:var(--accent-dark)}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:0 24px 48px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+footer .brand-mini{font-family:var(--font-display);font-size:18px;letter-spacing:2px;color:var(--text-dark);text-transform:uppercase;margin-bottom:6px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.cat-card{animation:fadeUp .5s var(--ease) backwards}
+.cat-card:nth-child(1){animation-delay:.05s}.cat-card:nth-child(2){animation-delay:.12s}.cat-card:nth-child(3){animation-delay:.19s}.cat-card:nth-child(4){animation-delay:.26s}.cat-card:nth-child(5){animation-delay:.33s}
+</style>
+</head>
+<body>
+
+<header>
+  <img class="brand-logo" src="https://revolushine.id/img/revolushine-logo-main.webp" alt="Revolushine">
+  <div class="lang-switcher" role="group" aria-label="Language">
+    <button class="lang-btn active" id="btn-id" onclick="setLang('id')">ID</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="hero-tagline" data-i18n="heroTagline">Revolushine 2nd Anniversary</span>
+  <h1 data-i18n-html="heroTitle"></h1>
+  <p class="hero-copy" data-i18n="heroCopy"></p>
+</section>
+
+<main class="categories" id="catGrid"></main>
+
+<footer>
+  <div class="brand-mini">Revolushine</div>
+  <div data-i18n="footer">Terima kasih telah merayakan bersama kami</div>
+</footer>
+
+<!-- Category sheet -->
+<div class="overlay" id="catOverlay" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true">
+    <div class="sheet-head">
+      <span class="sheet-tagline" id="sheetTagline"></span>
+      <h2 class="sheet-title" id="sheetTitle"></h2>
+      <button class="sheet-close" onclick="closeCat()" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+</div>
+
+<!-- Message popup -->
+<div class="overlay" id="msgOverlay" aria-hidden="true" style="z-index:400">
+  <div class="msg-card" role="alertdialog" aria-modal="true">
+    <img class="msg-img" id="msgImg" src="" alt="">
+    <div class="msg-body">
+      <div class="msg-dish" id="msgDish"></div>
+      <div class="msg-text" data-i18n="msgText">Sampaikan ke crew kami untuk memesan</div>
+      <button class="msg-btn" onclick="closeMsg()" data-i18n="msgOk">Baik, Siap!</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── MENU DATA ── */
+const PH = 'data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27250%27%20height=%27250%27%3E%3Crect%20width=%27250%27%20height=%27250%27%20fill=%27%23FDF5F9%27/%3E%3Ccircle%20cx=%27125%27%20cy=%27125%27%20r=%2762%27%20fill=%27none%27%20stroke=%27%23E8C7DA%27%20stroke-width=%278%27/%3E%3Ccircle%20cx=%27125%27%20cy=%27125%27%20r=%2732%27%20fill=%27none%27%20stroke=%27%23F5D8EC%27%20stroke-width=%276%27/%3E%3C/svg%3E';
+const CATS = [
+  {id:'rice', name:{id:'Nasi',en:'Rice & Porridge'}, img:'https://order.boncafe.co.id/web/data/category/12.jpg', dishes:[
+    {id:11,img:'https://order.boncafe.co.id/web/data/menu/79.jpg',name:'Spicy Fried Rice',desc:{id:'Nasi goreng pedas ayam dan udang bumbu pedas disajikan dengan smoked beef',en:'Spicy fried rice with seasoned chicken and shrimp served with smoked beef'}},
+    {id:12,img:'https://order.boncafe.co.id/web/data/menu/80.jpg',name:"Boncafe's Fried Rice",desc:{id:'Nasi goreng daging & sosis',en:'Beef & sausage fried rice'}},
+    {id:13,img:'https://order.boncafe.co.id/web/data/menu/81.jpg',name:'Hong Kong Fried Rice',desc:{id:'Nasi goreng ayam & udang dengan telur mata sapi',en:'Chicken & shrimp fried rice topped with a sunny-side-up egg'}},
+    {id:14,img:'https://order.boncafe.co.id/web/data/menu/82.jpg',name:'Japanese Fried Rice',desc:{id:'Nasi goreng ayam & udang dibungkus telur dadar',en:'Chicken & shrimp fried rice wrapped in an omelette'}},
+    {id:15,img:'https://order.boncafe.co.id/web/data/menu/83.jpg',name:'Seafood Fried Rice',desc:{id:'Nasi goreng kepiting, cumi-cumi, ikan dan udang',en:'Crab, squid, fish, and shrimp fried rice'}},
+    {id:16,img:'https://i.imgur.com/FsDUSE5.png',name:'Red Fried Rice',desc:{id:'Nasi goreng bumbu merah',en:'Red-seasoned fried rice'}},
+    {id:17,img:'https://order.boncafe.co.id/web/data/menu/85.jpg',name:'Spicy Lamb Fried Rice',desc:{id:'Nasi goreng kambing bumbu pedas',en:'Spicy seasoned lamb fried rice'}},
+    {id:18,img:'https://order.boncafe.co.id/web/data/menu/86.jpg',name:'Salmon Fried Rice',desc:{id:'Nasi goreng ikan salmon & paprika disajikan dengan olahan bumbu Jepang',en:'Salmon & bell pepper fried rice prepared with Japanese seasoning'}},
+    {id:19,img:'https://order.boncafe.co.id/web/data/menu/87.jpg',name:'Vegetarian Fried Rice',desc:{id:'Nasi goreng sayur',en:'Vegetable fried rice'}},
+    {id:20,img:'https://order.boncafe.co.id/web/data/menu/88.jpg',name:'Chicken Porridge',desc:{id:'Bubur ayam',en:'Chicken porridge'}}
+  ]},
+  {id:'salad', name:{id:'Salad',en:'Salad'}, img:'https://order.boncafe.co.id/web/data/category/2.jpg', dishes:[
+    {id:1,img:'https://order.boncafe.co.id/web/data/menu/8.jpg',name:'Salmon Salad',desc:{id:'Salad lettuce, kol ungu, wortel, jagung, tomat, bombay & salmon asap dengan dressing thousand island',en:'Lettuce, purple cabbage, carrot, corn, tomato, onion & smoked salmon salad with thousand island dressing'}},
+    {id:2,img:'https://order.boncafe.co.id/web/data/menu/9.jpg',name:"Chef's Salad",desc:{id:'Salad lettuce, kol ungu, wortel, jagung, tomat, bombay, daging, ayam, sosis dan udang dengan dressing thousand island',en:"Lettuce, purple cabbage, carrot, corn, tomato, onion, beef, chicken, sausage, and shrimp salad with thousand island dressing"}},
+    {id:3,img:'https://order.boncafe.co.id/web/data/menu/10.jpg',name:'Tuna Salad',desc:{id:'Salad lettuce, kol ungu, wortel, jagung, tomat, bombay & ikan tuna dengan dressing thousand island',en:'Lettuce, purple cabbage, carrot, corn, tomato, onion & tuna salad with thousand island dressing'}},
+    {id:4,img:'https://order.boncafe.co.id/web/data/menu/11.jpg',name:'Mixed Fruit Salad',desc:{id:'Salad buah koktail dengan mayonnaise dan keju',en:'Fruit cocktail salad with mayonnaise and cheese'}},
+    {id:5,img:'https://order.boncafe.co.id/web/data/menu/12.jpg',name:'Caesar Salad',desc:{id:'Salad lettuce dengan ayam, bombay, paprika, roti kering dan keju parmesan',en:'Lettuce salad with chicken, onion, bell pepper, croutons, and parmesan cheese'}}
+  ]},
+  {id:'sandwich', name:{id:'Sandwiches',en:'Sandwiches'}, img:'https://order.boncafe.co.id/web/data/category/10.jpg', dishes:[
+    {id:6,img:'https://order.boncafe.co.id/web/data/menu/64.jpg',name:'Sausage Bun',desc:{id:'Roti isi sosis (Cheese / Smoked Beef / Corned Beef)',en:'Sausage bun (Cheese / Smoked Beef / Corned Beef)'}},
+    {id:7,img:'https://order.boncafe.co.id/web/data/menu/65.jpg',name:'Chicky Bun',desc:{id:'Roti isi chicken steak, telur dadar dan keju',en:'Bun filled with chicken steak, omelette, and cheese'}},
+    {id:8,img:'https://order.boncafe.co.id/web/data/menu/66.jpg',name:'Beefy Bun',desc:{id:'Roti isi daging cincang, telur dadar dan keju',en:'Bun filled with minced beef, omelette, and cheese'}},
+    {id:9,img:'https://i.imgur.com/LJArZbp.jpeg',name:'American Burger',desc:{id:'Burger isi daging cincang disajikan dengan kentang goreng (Cheese / Smoked Beef / Egg)',en:'Minced beef burger served with french fries (Cheese / Smoked Beef / Egg)'}},
+    {id:10,img:'https://order.boncafe.co.id/web/data/menu/68.jpg',name:'American Burger Deluxe',desc:{id:'Burger isi daging cincang, keju, smoked beef dan telur disajikan dengan kentang goreng',en:'Minced beef burger with cheese, smoked beef, and egg served with french fries'}}
+  ]},
+  {id:'pasta', name:{id:'Pasta dan Omelette',en:'Omelette & Pasta'}, img:'https://order.boncafe.co.id/web/data/category/11.jpg', dishes:[
+    {id:21,img:'https://order.boncafe.co.id/web/data/menu/69.jpg',name:'Omelette Supreme',desc:{id:'Telur dadar isi jamur, smoked beef, keju, sosis dan bawang bombay disajikan dengan kentang goreng',en:'Omelette filled with mushroom, smoked beef, cheese, sausage, and onion served with french fries'}},
+    {id:22,img:'https://i.imgur.com/1UaQW41.png',name:'Spanish Omelette',desc:{id:'Telur dadar isi smoked beef, sosis dan bawang bombay disajikan dengan kentang goreng',en:'Omelette filled with smoked beef, sausage, and onion served with french fries'}},
+    {id:23,img:'https://i.imgur.com/oBnNKJV.png',name:'Swiss Omelette',desc:{id:'Telur dadar isi jamur, keju dan bawang bombay disajikan dengan kentang goreng',en:'Omelette filled with mushroom, cheese, and onion served with french fries'}},
+    {id:24,img:'https://order.boncafe.co.id/web/data/menu/72.jpg',name:'Macaroni Schotel',desc:{id:'Macaroni disajikan dengan taburan smoked beef dan keju',en:'Baked macaroni topped with smoked beef and cheese'}},
+    {id:25,img:'https://order.boncafe.co.id/web/data/menu/73.jpg',name:'Spaghetti Chicken Marinara',desc:{id:'Pasta ayam mozarella crispy dengan saus marinara',en:'Pasta with crispy mozzarella chicken and marinara sauce'}},
+    {id:26,img:'https://order.boncafe.co.id/web/data/menu/74.jpg',name:'Fettuccine Carbonara',desc:{id:'Pasta dengan smoked beef, jamur dan keju',en:'Pasta with smoked beef, mushroom, and cheese'}},
+    {id:27,img:'https://order.boncafe.co.id/web/data/menu/75.jpg',name:'Spaghetti Spicy Tuna',desc:{id:'Pasta saus pedas bertabur tuna disajikan dengan garlic bread',en:'Spicy sauce pasta topped with tuna served with garlic bread'}},
+    {id:28,img:'https://order.boncafe.co.id/web/data/menu/76.jpg',name:'Spaghetti Bolognese',desc:{id:'Pasta saus tomat dengan daging cincang',en:'Tomato sauce pasta with minced beef'}},
+    {id:29,img:'https://order.boncafe.co.id/web/data/menu/77.jpg',name:'Salmon Aglio Olio',desc:{id:'Pasta yang ditumis dengan bawang putih, minyak zaitun, cabai kering, dan potongan ikan salmon',en:'Pasta sautéed with garlic, olive oil, dried chili flakes, and salmon pieces'}},
+    {id:30,img:'https://order.boncafe.co.id/web/data/menu/78.jpg',name:'Salmon Alfredo',desc:{id:'Pasta dengan saus krim keju parmesan yang gurih dan potongan ikan salmon',en:'Pasta in a rich parmesan cream sauce with salmon pieces'}}
+  ]},
+  {id:'steak', name:{id:'Steak',en:'Steak'}, img:'https://order.boncafe.co.id/web/data/category/8.jpg', dishes:[
+    {id:31,img:'https://order.boncafe.co.id/web/data/menu/46.jpg',name:'Bangkok Rice Steak',desc:{id:'Nasi steak sapi spesial bumbu khas Thailand disajikan dengan sup tom yam',en:'Special Thai-seasoned beef steak with rice served with tom yum soup'}},
+    {id:32,img:'https://order.boncafe.co.id/web/data/menu/47.jpg',name:'Tokyo Rice Steak',desc:{id:'Nasi steak sapi spesial bumbu khas Jepang disajikan dengan sup miso',en:'Special Japanese-seasoned beef steak with rice served with miso soup'}},
+    {id:33,img:'https://order.boncafe.co.id/web/data/menu/48.jpg',name:'Seoul Rice Steak',desc:{id:'Nasi steak sapi spesial bumbu khas Korea disajikan dengan sup miso',en:'Special Korean-seasoned beef steak with rice served with miso soup'}},
+    {id:34,img:'https://order.boncafe.co.id/web/data/menu/49.jpg',name:'Teriyaki Rice Steak - Chicken',desc:{id:'Daging ayam dengan saus teriyaki disajikan dengan nasi putih',en:'Chicken with teriyaki sauce served with steamed white rice'}},
+    {id:35,img:'https://order.boncafe.co.id/web/data/menu/50.jpg',name:'Teriyaki Rice Steak - Beef',desc:{id:'Daging sapi dengan saus teriyaki disajikan dengan nasi putih',en:'Beef with teriyaki sauce served with steamed white rice'}}
+  ]}
+];
+
+const I18N = {
+  id:{heroTagline:'Revolushine 2nd Anniversary',
+      heroTitle:'Selamat datang di Revolushine<br><em>2nd Anniversary!</em>',
+      heroCopy:'Pilih menu favoritmu dan sampaikan ke crew kami untuk mencatat pesanan Anda.',
+      dishes:'Menu',footer:'Terima kasih telah merayakan bersama kami',
+      msgText:'Sampaikan ke crew kami untuk memesan',msgOk:'Baik, Siap!',tap:'Ketuk untuk lihat'},
+  en:{heroTagline:'Revolushine 2nd Anniversary',
+      heroTitle:'Welcome to Revolushine<br><em>2nd Anniversary!</em>',
+      heroCopy:'Choose your favorite menu and tell our crew to reserve your order.',
+      dishes:'Dishes',footer:'Thank you for celebrating with us',
+      msgText:'Tell our crew to reserve your order',msgOk:'Got it!',tap:'Tap to view'}
+};
+
+/* ── STATE ── */
+let lang = 'id';
+let openCat = null;
+
+/* ── LANGUAGE ── */
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('btn-id').classList.toggle('active', l==='id');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const v = I18N[l][el.dataset.i18n];
+    if(v) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const v = I18N[l][el.dataset.i18nHtml];
+    if(v) el.innerHTML = v;
+  });
+  renderCats();
+  if(openCat) renderSheet(openCat, false);
+}
+
+/* ── RENDER CATEGORY CARDS ── */
+function renderCats(){
+  const grid = document.getElementById('catGrid');
+  grid.innerHTML = CATS.map(c=>`
+    <button class="cat-card" onclick="openCatSheet('${c.id}')">
+      <img src="${c.img}" alt="${c.name[lang]}" loading="lazy">
+      <span class="cat-label">
+        <span class="cat-name">${c.name[lang]}</span>
+        <span class="cat-count">${c.dishes.length} ${I18N[lang].dishes}</span>
+      </span>
+    </button>`).join('');
+}
+
+/* ── CATEGORY SHEET ── */
+function openCatSheet(catId){
+  openCat = catId;
+  renderSheet(catId, true);
+}
+function renderSheet(catId, animate){
+  const c = CATS.find(x=>x.id===catId);
+  document.getElementById('sheetTagline').textContent = `${c.dishes.length} ${I18N[lang].dishes}`;
+  document.getElementById('sheetTitle').textContent = c.name[lang];
+  document.getElementById('sheetBody').innerHTML = c.dishes.map(d=>`
+    <button class="dish" onclick="showMsg(${d.id})">
+      <img class="dish-img" src="${d.img}" alt="${d.name}" loading="lazy" onerror="this.onerror=null;this.src='${PH}'">
+      <span class="dish-info">
+        <span class="dish-name">${d.name}</span>
+        <div class="dish-desc">${d.desc[lang]}</div>
+        <div class="dish-tap">${I18N[lang].tap}</div>
+      </span>
+    </button>`).join('');
+  const ov = document.getElementById('catOverlay');
+  ov.classList.add('open');
+  ov.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  if(animate) document.querySelector('#catOverlay .sheet-body').scrollTop = 0;
+}
+function closeCat(){
+  const ov = document.getElementById('catOverlay');
+  ov.classList.remove('open');
+  ov.setAttribute('aria-hidden','true');
+  openCat = null;
+  document.body.style.overflow='';
+}
+
+/* ── MESSAGE POPUP ── */
+function showMsg(dishId){
+  const ov = document.getElementById('msgOverlay');
+  const img = document.getElementById('msgImg');
+  const label = document.getElementById('msgDish');
+  if(dishId !== undefined){
+    const d = CATS.flatMap(c=>c.dishes).find(x=>x.id===dishId);
+    if(d){
+      label.textContent = d.name;
+      img.style.display = '';
+      img.onerror = () => { img.style.display = 'none'; };
+      img.src = d.img;
+    }
+  } else { img.style.display = 'none'; }
+  ov.classList.add('open');
+  ov.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeMsg(){
+  const ov = document.getElementById('msgOverlay');
+  ov.classList.remove('open');
+  ov.setAttribute('aria-hidden','true');
+  document.body.style.overflow = document.getElementById('catOverlay').classList.contains('open') ? 'hidden' : '';
+}
+
+/* ── CLOSE ON BACKDROP / ESC ── */
+['catOverlay','msgOverlay'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',e=>{
+    if(e.target===document.getElementById(id)) id==='catOverlay'?closeCat():closeMsg();
+  });
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(document.getElementById('msgOverlay').classList.contains('open')) closeMsg();
+    else if(document.getElementById('catOverlay').classList.contains('open')) closeCat();
+  }
+});
+
+/* ── INIT ── */
+setLang('id');
+</script>
+</body>
+</html>
